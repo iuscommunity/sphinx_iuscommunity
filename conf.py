@@ -88,6 +88,10 @@ pygments_style = 'sphinx'
 
 
 # -- Options for HTML output ---------------------------------------------------
+# Activate the theme.
+sys.path.append(os.path.abspath('_themes'))
+html_theme_path = ['_themes']
+html_theme = 'ius_pyramid'
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
