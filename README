@@ -1,6 +1,4 @@
 Creating new Sphinx documentation is simple:
 
   # git clone git://github.com/iuscommunity/sphinx_iuscommunity.git
-  # sphinx-quickstart
-  # mv index.rst-example index.rst
   # make html
