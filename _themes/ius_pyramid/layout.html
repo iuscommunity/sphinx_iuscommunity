@@ -1,0 +1,71 @@
+{% extends "basic/layout.html" %}
+
+<!-- remove some blocks -->
+{%- block sidebarlogo %}{%- endblock %}
+{%- block relbar1 %}{%- endblock %}
+{%- block relbar2 %}{%- endblock %}
+{%- block sidebarrel %}{%- endblock %}
+
+{%- block extrahead %}
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="{{ pathto('_static/ie6.css', 1) }}" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+<style>
+  a.bottomlinks:link {color: #4DC0EA; }
+  a.bottomlinks:active {color: #4DC0EA; }
+  a.bottomlinks:visited {color: #4DC0EA; }
+  a.bottomlinks:hover {color: #4DC0EA; }
+</style>
+{% endblock %}
+
+{% block header %}
+<table width=100% cellpadding=10>
+  <tr>
+    <td>
+      <a href="{{ pathto(master_doc) }}">
+        <img class="logo" src="{{ pathto('_static/site_banner.png', 1) }}" alt="Logo"/>
+      </a>
+    </td>
+  </tr>
+</table>
+{% endblock %}
+
+{%- block footer %}
+<center>
+
+<table cellpadding=55 cellspacing=0>
+  <tr>
+    <td valign=top>
+      <div><font size=4><p><b>Quick Links</b></p></font></div>
+      <div><li><a class='bottomlinks' href='{{ pathto('About') }}'>About</a></li></div>
+      <div><li><a class='bottomlinks' href='{{ pathto('Repos') }}'>Repositories</a></li></div>
+      <div><li><a class='bottomlinks' href='{{ pathto('GettingStarted') }}'>Getting Started</a></li></div>
+      <div><li><a class='bottomlinks' href='{{ pathto('FAQs') }}'>FAQs</a></li></div>
+    </td>
+  
+    <td valign=top>
+      <div><font size=4><p><b>Contact</b></p></font></div>
+      <div><li><a class='bottomlinks' href='http://launchpad.net/~ius-community'>Mailing list</a></li></div>
+      <div><li><a class='bottomlinks' href='https://answers.launchpad.net/ius'>Question & Answer</a></li></div>
+      <div><li><a class='bottomlinks' href='https://bugs.launchpad.net/ius'>Submit a Bug</a></li></div>
+      <div><li><a class='bottomlinks' href='mailto:coredev@iuscommunity.org'>coredev@iuscommunity.org</a></li></div>
+      <div><li><font color=grey>irc.freenode.net #iuscommunity</font></li></div>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td><font color=grey size=2>Hosted by</font></td>
+    <td>
+      <a href="http://www.rackspacecloud.com">
+        <img src="{{ pathto('_static/rackspace_cloud.png', 1) }}" alt="Rackspace Cloud" />
+      </a>
+    </td>
+  </tr>
+</table>
+  
+</center>
+{%- endblock %}
