@@ -17,6 +17,26 @@
   a.bottomlinks:active {color: #4DC0EA; }
   a.bottomlinks:visited {color: #4DC0EA; }
   a.bottomlinks:hover {color: #4DC0EA; }
+  
+#navibar {
+            clear: both; float: right; display: block; font-size: 1.8em; 
+            line-height: 120%; margin: 0; padding:0 10px;
+         }
+         
+#navibar ul { list-style: none; margin: 0; padding: 0; }
+#navibar ul li { float: left; list-style-type: none; }
+
+#navibar li a {
+                    font-weight: bold; color: #ffffff; display: block;
+                    line-height: 34px; padding: 0 15px; text-decoration: none;
+                    text-shadow: #0e0e6c 0px 0px 2px; border-right: solid 1px #446aa8;
+                    font-size: 13px; outline: none;
+              }
+                                  
+#navibar ul { float: left; height: 35px; margin-bottom: 3px;
+               background: url("{{ pathto('_static/bg-tabs-highlight.png', 1) }}") repeat-x;
+            }
+  
 </style>
 {% endblock %}
 
@@ -28,6 +48,17 @@
         <img class="logo" src="{{ pathto('_static/site_banner.png', 1) }}" alt="Logo"/>
       </a>
     </td>
+    
+    <td valign='bottom'>
+      <div id="navibar">
+        <ul>
+          <li><a href="{{ pathto('_rst/About') }}">About</a></li>
+          <li><a href="{{ pathto('_rst/Repos') }}">Repos</a></li>
+          <li><a href="{{ pathto('_rst/GettingStarted') }}">Getting Started</a></li>
+          <li><a href="{{ pathto('_rst/FAQs') }}">FAQs</a></li>
+        </div>
+    </td>
+    
   </tr>
 </table>
 {% endblock %}
@@ -39,10 +70,10 @@
   <tr>
     <td valign=top>
       <div><font size=4><p><b>Quick Links</b></p></font></div>
-      <div><li><a class='bottomlinks' href='{{ pathto('About') }}'>About</a></li></div>
-      <div><li><a class='bottomlinks' href='{{ pathto('Repos') }}'>Repositories</a></li></div>
-      <div><li><a class='bottomlinks' href='{{ pathto('GettingStarted') }}'>Getting Started</a></li></div>
-      <div><li><a class='bottomlinks' href='{{ pathto('FAQs') }}'>FAQs</a></li></div>
+      <div><li><a class='bottomlinks' href='{{ pathto('_rst/About') }}'>About</a></li></div>
+      <div><li><a class='bottomlinks' href='{{ pathto('_rst/Repos') }}'>Repositories</a></li></div>
+      <div><li><a class='bottomlinks' href='{{ pathto('_rst/GettingStarted') }}'>Getting Started</a></li></div>
+      <div><li><a class='bottomlinks' href='{{ pathto('_rst/FAQs') }}'>FAQs</a></li></div>
     </td>
   
     <td valign=top>
@@ -53,6 +84,12 @@
       <div><li><a class='bottomlinks' href='mailto:coredev@iuscommunity.org'>coredev@iuscommunity.org</a></li></div>
       <div><li><font color=grey>irc.freenode.net #iuscommunity</font></li></div>
     </td>
+    
+    <td>
+      <p><a href='https://launchpad.net/ius'><img src="{{ pathto('_static/launchpad.png', 1) }}" /></a></p>
+      <p><a href='http://twitter.com/iuscommunity'><img src="{{ pathto('_static/twitter.png', 1) }}" /></a></p>
+    </td>
+    
   </tr>
 </table>
 
