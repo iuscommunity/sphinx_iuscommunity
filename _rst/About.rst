@@ -41,9 +41,9 @@ IUS Community is run by full time Linux Engineers employed by Rackspace,
 therefore making the project 'Sponsored by Rackspace'. That said, **IUS
 is not a service of Rackspace**. That means: It's free! (And unsupported!)
 Please read the `End User Agreement 
-<http://dl.iuscommunity.org/pub/ius/IUS-COMMUNITY-EUA>`_. Support for IUS users can be found within our `mailing lists  
-<http://launchpad.net/~ius-community>`_ and `bug tracking system  
-<https://bugs.launchpad.net/ius>`_.
+<http://dl.iuscommunity.org/pub/ius/IUS-COMMUNITY-EUA>`_. Support for IUS users
+can be found within our `mailing lists  <http://launchpad.net/~ius-community>`_
+and `bug tracking system <http://bugs.launchpad.net/ius>`_.
 
 The IUS Community Project is also  SafeRepo Aware, see
 :doc:`TheSafeRepoInitiative`.
@@ -92,7 +92,7 @@ That said, currently we have the following goals in mind:
 
  * Provide quality RPMs for Red Hat Enterprise Linux (and clones)
  * Establish ourselves as a reliable means of upgrading certain parts of 
-RHEL
+   RHEL
  * Offer more than one major version of software per repo/distro.
  
 IUS packages the most popular branches of upstream software. For example,
