@@ -18,6 +18,7 @@ End User Agreement
 
  * http://dl.iuscommunity.org/pub/ius/IUS-COMMUNITY-EUA
 
+.. _Information_on_IUS_Packages:
 
 Information on IUS Packages
 ===========================
