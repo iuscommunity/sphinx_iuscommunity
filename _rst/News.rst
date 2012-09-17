@@ -1,6 +1,9 @@
+:tocdepth: 2
+
 ============
 News Updates
 ============
+
 
 Scheduled Maintenance for July 13, 2011
 =======================================
