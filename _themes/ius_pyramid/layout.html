@@ -35,6 +35,7 @@
                                   
 #navibar ul { float: left; height: 35px; margin-bottom: 3px;
                background: url("{{ pathto('_static/bg-tabs-highlight.png', 1) }}") repeat-x;
+               width: 14.62em;
             }
   
 </style>
@@ -52,6 +53,7 @@
     <td valign='bottom'>
       <div id="navibar">
         <ul>
+          <li><a href="{{ pathto('_rst/News') }}">Home</a></li>
           <li><a href="{{ pathto('_rst/About') }}">About</a></li>
           <li><a href="{{ pathto('_rst/Repos') }}">Repos</a></li>
           <li><a href="{{ pathto('_rst/GettingStarted') }}">Getting Started</a></li>
