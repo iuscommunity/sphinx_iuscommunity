@@ -5,6 +5,8 @@
 .. _Yum Bug #296: http://yum.baseurl.org/ticket/296
 .. _Red Hat Bug #529719: https://bugzilla.redhat.com/show_bug.cgi?id=529719
 
+.. _GettingStarted:
+
 ===============
 Getting Started
 ===============
