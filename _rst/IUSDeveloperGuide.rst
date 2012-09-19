@@ -191,6 +191,8 @@ Package Review
 All packages must be reviewed by another IUS Packager before being submitted to
 the system. Please see the IUS Package Review Guidelines.
 
+.. _Package_Wish_List:
+
 Package Wish List
 =================
 

@@ -1,5 +1,10 @@
 :tocdepth: 2
 
+.. _answers section: http://answers.launchpad.net/ius
+.. _testing repository: http://dl.iuscommunity.org/pub/ius/testing
+.. _bug tracking system: http://bugs.launchpad.net/ius
+.. _MonkeyFarm: http://github.com/rackspace/monkeyfarm
+.. _Fedora Kojii: http://fedoraproject.org/wiki/Koji
 
 ====
 FAQs
@@ -7,7 +12,7 @@ FAQs
 
 The FAQs on this page are the most common, official questions we wanted to
 answer. However, if you don’t find your question here, please check out our
-`Launchpad Answers Page <https://answers.launchpad.net/ius>`_. There you can view all questions that have been
+`answers section`_. There you can view all questions that have been
 answered, as well as ask your own.
 
 .. contents::
@@ -212,16 +217,16 @@ Currently the best way to contribute is by providing feedback of testing and
 stable packages. Our main goal is to provide stable packages using the latest
 upstream sources which can be difficult. By users reporting any issues/bugs
 they come across right away, we can get those fixed and updated packages pushed
-out asap. That said, please also see Contributing to IUS on the wiki. 
+out asap. That said, please also see :doc:`ContributingToIUS` on the wiki. 
 
 How Do I Install Packages From Testing?
 ---------------------------------------
 
 When packages are tagged as 'testing' in our buildfarm they are added to the
-`testing repository <http://dl.iuscommunity.org/pub/ius/testing>`_. If you have
-AAAinstalled the ius-release packageAAA then you
-already have this repo configured in yum, but disabled by default. Simply issue
-the following command for the package(s) you want to install from testing::
+`testing repository`_. If you have installed the ius-release package then
+you already have this repo configured in yum, but disabled by default. Simply
+issue the following command for the package(s) you want to install from
+testing::
 
     [root@linuxbox ~]# yum install PACKAGE_NAME --enablerepo=ius-testing
 
@@ -234,18 +239,16 @@ leading IUS. This is primarily due to the fact that our buildsystem is not
 publicly available. It is something that we are going to open up later on once
 IUS is fully vetted and all processes and documentation have been figured out,
 and of course once we get a public build system setup. For the time being we
-graciously request that you submit patches or SRPMS via the `tracking system
-<http://bugs.launchpad.net/ius>`_.
+graciously request that you submit patches or SRPMS via the `bug tracking system`_.
 See our :doc:`IUSDeveloperGuide` on the wiki for info on branching the Bazaar repos and
 creating merge requests. 
 
 What Packaging System Do You Use?
 ---------------------------------
 
-We built a system called `MonkeyFarm <http://github.com/rackspace/monkeyfarm>`_
-that functions much like `Fedora Kojii <http://fedoraproject.org/wiki/Koji>`_. We
-make no attempt to compete with Koji in that department, however there were
-other needs for a 'build system' outside of RPM packaging that lead us to
-continue work on our own. Additionally, the preceptor to MonkeyFarm was RPE
-(The Rackspace Packaging Environment) which was started before Koji was
+We built a system called `MonkeyFarm`_ that functions much like `Fedora
+Kojii`_. We make no attempt to compete with Koji in that department, however
+there were other needs for a 'build system' outside of RPM packaging that lead
+us to continue work on our own. Additionally, the preceptor to MonkeyFarm was
+RPE (The Rackspace Packaging Environment) which was started before Koji was
 released publicly (and before we new about it).  
