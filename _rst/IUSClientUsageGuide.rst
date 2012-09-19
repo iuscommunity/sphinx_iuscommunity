@@ -1,5 +1,12 @@
 :tocdepth: 2
 
+.. _Fedora EPEL: https://fedoraproject.org/wiki/EPEL
+.. _IUS Community Repo: http://dl.iuscommunity.org/pub/ius
+.. _LaunchPad IUS Bug #453543: https://bugs.launchpad.net/ius/+bug/453543
+.. _Yum Bug #296: http://yum.baseurl.org/ticket/296
+.. _Red Hat Bug #529719: https://bugzilla.redhat.com/show_bug.cgi?id=529719
+
+
 ======================
 IUS Client Usage Guide
 ======================
@@ -11,7 +18,7 @@ Summary
 =======
 
 This document outlines the basic client side usage of IUS. For common questions
-regarding IUS please see the Frequently Asked Questions.
+regarding IUS please see the :ref:`FAQs`.
 
 End User Agreement
 ==================
@@ -49,7 +56,7 @@ These will most often be additional libraries such as PECL for PHP, or libraries
 for Python. Supporting Packages might not replace anything in RHEL, but
 sometimes do. In should be noted that IUS is not focused on adding extra
 packages for RHEL. If we want to package something additional for stock
-RHEL we will do so through Fedora EPEL. Supporting Packages might not follow
+RHEL we will do so through `Fedora EPEL`_. Supporting Packages might not follow
 upstream stable sources in the fashion that the Primary Packages do. If it's
 stable, and works... we may not update these packages for a long time
 (or until an update is requested).
@@ -111,7 +118,7 @@ See What Packages Are Available
 ===============================
 
 You can easily see what software is available to you by doing a 'yum search'
-or by going to the IUS Community Repo directly. Keep in mind that packages will
+or by going to the `IUS Community Repo`_ directly. Keep in mind that packages will
 be added to IUS regularly so check back often::
 
     [root@el5-i386 ~]# yum list | grep -w \.ius\.
@@ -195,7 +202,7 @@ The replace plugin was written specifically for IUS to assist in upgrading from
 stock packages to IUS packageXY style packages.
 
 If for some reason these processes and the yum-plugin-replace do not work
-correctly, you can also try upgrading the old way.
+correctly, you can also try :ref:`UpgradingTheOldWay`.
 
 Using 'php' as an example, we are going to show how to upgrade from stock RHEL
 packages to the IUS counterparts::
@@ -566,9 +573,9 @@ The IUS CoreDev Team is aware of an issue with the previous versions of Yum and
 how it resolves dependencies when installing packages. For background on this
 matter please see the upstream bug reports that we have submitted:
 
- * LaunchPad IUS Bug #453543
- * Yum Bug #296
- * Red Hat Bug #529719
+ * `LaunchPad IUS Bug #453543`_
+ * `Yum Bug #296`_
+ * `Red Hat Bug #529719`_
 
 As of Yum 3.2.26 (backported: 3.2.22-23) this is no longer a problem.
 

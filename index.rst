@@ -18,3 +18,4 @@ Table Of Contents
     _rst/Repos.rst
     _rst/SettingUpAnOfficialIUSMirror.rst
     _rst/TheSafeRepoInitiative.rst
+    _rst/UpgradingTheOldWay.rst

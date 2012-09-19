@@ -14,17 +14,17 @@ This article serves to outline the steps necessary to configure a dedicated RPM
 Development server. There are some thing to consider depending on how this system
 is to be used:
 
- * Minimal Install. The majority of work will be done via the Fedora Mock
+ * **Minimal Install**. The majority of work will be done via the Fedora Mock
    utility, therefore you really don't need or want to have any unnecessary
    software or services running on the system that could effect performance or
    open up security holes.
- * Locked Down. If this system is to be used as the primary development server,
+ * **Locked Down**. If this system is to be used as the primary development server,
    it is also likely that you might want to sign RPM with a custom GPG key. The
    private GPG Key must be kept as secure as possible, therefore there should be
    no incoming access allowed to this server. SSH should really be the only
    incoming service, but should be locked down to specific management IPs rather
    than globally open.
- * Limited User Access. It is easy to simply hand out sudo access to all the
+ * **Limited User Access**. It is easy to simply hand out sudo access to all the
    users who need to access this system, however unless all of those users are
    trusted with your private GPG Key it is strongly recommended that user access
    be limited. If you are in an environment where a lot of users want/need
@@ -117,8 +117,8 @@ package::
     [root@mockbuild]# yum install yum-cron
 
 By default, yum-cron will run nightly and apply any updates that are available
-for your system. If this is not preferred you can also set CHECK_ONLY=yes in the
-configuration file /etc/sysconfig/yum-cron. This will check for updates,
+for your system. If this is not preferred you can also set **CHECK_ONLY=yes** in the
+configuration file **/etc/sysconfig/yum-cron**. This will check for updates,
 but not apply them.
 
 Ensure System is Secured
@@ -148,7 +148,7 @@ utility, we want to install the Fedora EPEL repository::
     [root@mockbuild]# rpm -Uvh http://download.fedora.redhat.com/pub/epel/5/i386/epel-release-5-3.noarch.rpm
 
 This will create the yum repositories for Fedora EPEL in
-/etc/yum.repos.d/epel.repo as well as import the EPEL GPG Key.
+**/etc/yum.repos.d/epel.repo** as well as import the EPEL GPG Key.
 
 Install Fedora Mock and Other Packages
 --------------------------------------
@@ -169,7 +169,7 @@ this system for RPM Development with Mock.
 We prefer to add an alias for the mock command that adds a unique extension to
 the end of each build. This is critical on a shared system where you might have
 multiple developers building against the same target. Add the following to
-/etc/profile.d/mock.sh as well as any other global mock environment changes you
+**/etc/profile.d/mock.sh** as well as any other global mock environment changes you
 need::
 
     alias mock="mock --uniqueext=$USER"
@@ -193,14 +193,14 @@ Create the buildroot for packaging::
     [root@rpmbuild]# mkdir buildroot.clean/{RPMS,SRPMS,SPECS,BUILD,SOURCES} -p
 
 Create the RPM Macros file to set rpmbuild defaults by adding the following to
-/etc/skel/.rpmmacros::
+**/etc/skel/.rpmmacros**::
 
     %_topdir %(pwd)
     %el5 1
     %rhel 5
     
-Note, these settings are for RHEL / CentOS 5 and would be different for Fedora
-Core or others. 
+*Note, these settings are for RHEL / CentOS 5 and would be different for Fedora
+Core or others.*
 
 We set each user's _topdir (default: /usr/src/redhat) to 'pwd' [present working
 directory] as it makes working out of multiple build roots easier. Remember,
@@ -236,12 +236,12 @@ Mock Configurations
 
 Mock comes with a number of default configurations for building against Fedora
 Core and CentOS with Fedora EPEL. All target configuration files are in
-/etc/mock.
+**/etc/mock**.
 
 Setting Global Defaults
 -----------------------
 
-Global defaults are in /etc/mock/site-defaults.cfg, of which each individual
+Global defaults are in **/etc/mock/site-defaults.cfg**, of which each individual
 target config can override. For the majority of Mock users, the defaults are
 preferred and shouldn't really need to be modified.
 

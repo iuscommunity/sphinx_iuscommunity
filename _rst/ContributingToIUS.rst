@@ -4,7 +4,6 @@
 .. _bug tracking system: http://bugs.launchpad.net/ius                  
 .. _IUS CoreDev Team: http://launchpad.net/~ius-coredev
 .. _Blue Prints: http://blueprints.launchpad.net/ius
-
 .. _Automated Testing with Jenkins CI: http://blueprints.launchpad.net/ius/+spec/automated-testing-with-hudson
 .. _IUS Triage Team: http://launchpad.net/~ius-triage
 

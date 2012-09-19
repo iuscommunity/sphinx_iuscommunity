@@ -4,7 +4,9 @@
 .. _testing repository: http://dl.iuscommunity.org/pub/ius/testing
 .. _bug tracking system: http://bugs.launchpad.net/ius
 .. _MonkeyFarm: http://github.com/rackspace/monkeyfarm
-.. _Fedora Kojii: http://fedoraproject.org/wiki/Koji
+.. _Fedora Koji: http://fedoraproject.org/wiki/Koji
+
+.. _FAQs:
 
 ====
 FAQs
@@ -247,7 +249,7 @@ What Packaging System Do You Use?
 ---------------------------------
 
 We built a system called `MonkeyFarm`_ that functions much like `Fedora
-Kojii`_. We make no attempt to compete with Koji in that department, however
+Koji`_. We make no attempt to compete with Koji in that department, however
 there were other needs for a 'build system' outside of RPM packaging that lead
 us to continue work on our own. Additionally, the preceptor to MonkeyFarm was
 RPE (The Rackspace Packaging Environment) which was started before Koji was
