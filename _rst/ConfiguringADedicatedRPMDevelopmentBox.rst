@@ -1,5 +1,7 @@
 :tocdepth: 2
 
+.. _Configuring a Dedicated RPM Development Box:
+
 ===========================================
 Configuring a Dedicated RPM Development Box
 ===========================================

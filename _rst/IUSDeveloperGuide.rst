@@ -1,5 +1,11 @@
 :tocdepth: 2
 
+.. _Fedora Packaging Guidelines: https://fedoraproject.org/wiki/Packaging:Guidelines
+.. _Fedora EPEL: https://fedoraproject.org/wiki/EPEL
+.. _Package Wish List: https://bugs.launchpad.net/ius/+bugs?field.tag=wishlist
+.. _LaunchPad: https://launchpad.net/ius
+.. _IUS Community Project: http://code.launchpad.net/ius
+
 ===================
 IUS Developer Guide
 ===================
@@ -12,14 +18,14 @@ Introduction
 
 This article outlines the basics of RPM packaging guidelines for IUS. It is a
 work in progress. If you need help on how to configure a local build system see
-Configuring a Dedicated RPM Development Box.
+:ref:`Configuring a Dedicated RPM Development Box`.
 
 Package Guidelines
 ==================
 
 The following outlines standard guidelines that packaging developers should
 follow when creating and working with packages for IUS. In general we attempt to
-follow the Fedora Packaging Guidelines where possible, which should be a
+follow the `Fedora Packaging Guidelines`_ where possible, which should be a
 starting point for anyone just getting into packaging.
 
 Package Categories
@@ -46,7 +52,7 @@ most often be additional libraries such as PECL for PHP, or libraries for
 Python. Supporting Packages might not replace anything in RHEL, but sometimes
 do. In should be noted that IUS is not focused on adding extra packages for
 RHEL. If we want to package something additional for stock RHEL we will do so
-through Fedora EPEL. Supporting Packages might not follow upstream stable
+through `Fedora EPEL`_. Supporting Packages might not follow upstream stable
 sources in the fashion that the Primary Packages do. If it's stable, and
 works... we may not update these packages for a long time (or until an update
 is requested).
@@ -61,7 +67,7 @@ Addon Packages
 
 IUS Does Not Add Packages to RHEL. IUS provides newer versions of existing
 software. If you have a package that you want to add to RHEL, you should go
-through Fedora EPEL. The exception to this is Supporting Packages. For example,
+through `Fedora EPEL`_. The exception to this is Supporting Packages. For example,
 php52 replaces stock php... however we might add php52-pecl-XXXX that might not
 exist in RHEL but adds features for the use of php52. Another exception is m
 ysql50-percona-highperf, which replaces mysql but is not just a newer version of
@@ -118,8 +124,8 @@ IUS Packages Provide/Conflict - Never Obsolete
 ----------------------------------------------
 
 Packages in the IUS repository never obsolete a RHEL package directly. Meaning,
-if I subscribe to an IUS repo nothing will update automatically. See The
-SafeRepo Initiative for more on this. However, I can remove a RHEL package and
+if I subscribe to an IUS repo nothing will update automatically. See :ref:`The
+SafeRepo Initiative` for more on this. However, I can remove a RHEL package and
 replace it with an IUS package that provides the same package. This is
 accomplished through a few steps that need to be added to the spec file of the
 IUS package.
@@ -185,25 +191,19 @@ are relevant. We do not replace our SRPM with the Fedora SRPM... but rather
 manually go through the latest Fedora spec and make any relavant changes that
 haven't been made yet.
 
-Package Review
-==============
-
-All packages must be reviewed by another IUS Packager before being submitted to
-the system. Please see the IUS Package Review Guidelines.
-
 .. _Package_Wish_List:
 
 Package Wish List
 =================
 
-IUS users are encouraged to submit packages to the Package Wish List when they
+IUS users are encouraged to submit packages to the `Package Wish List`_ when they
 want something added to IUS. This is a good place to start for new contributors
 who want to help with packaging bug might not have any packages in mind.
 
 Managing Updates
 ================
 
-See Managing Updates.
+See :ref:`Managing Updates`.
 
 Converting Existing Packages For IUS
 ====================================
@@ -317,11 +317,11 @@ we can merge from and submit the builds to the build farm.
 Branching Bazaar Repos
 ----------------------
 
-Each package has its own branch hosted on our LaunchPad project page. You can
+Each package has its own branch hosted on our `LaunchPad`_ project page. You can
 create your own branch, make changes, and then request a merge. Once merges have
 been approved your changes will appear in the next package release.
 
-Assuming you have a LaunchPad account, the following is an example of merging
+Assuming you have a `LaunchPad`_ account, the following is an example of merging
 from the official ius branch to make your changes::
 
     you@linux ]$ mkdir ius
@@ -384,7 +384,7 @@ then want to commit your changes.
 Committing Changes To Launch Pad
 --------------------------------
 
-Under the IUS Community Project branches, click 'Register a Branch'.
+Under the `IUS Community Project`_ branches, click 'Register a Branch'.
 
  * Name: <package_name>
  * Type: Hosted
@@ -394,7 +394,7 @@ Under the IUS Community Project branches, click 'Register a Branch'.
 This creates a branch like lp:~you/ius/php52. You want to commit changes locally
 first and include a detailed log of the changes you made. Then, for the IUS
 CoreDev Team to be able to merge your changes in you need to commit to the
-LaunchPad branch under your accound::
+`LaunchPad`_ branch under your accound::
 
     you@linux ]$ bzr add SOURCES/php-5.2.11-mysourcechange.patch
     
