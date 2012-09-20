@@ -229,7 +229,7 @@ div.note {
     border-right-style: none;
     border-left-style: none;
     padding: 10px 20px 10px 60px;
-    background: #e1ecfe url(dialog-note.png) no-repeat 10px 8px;
+    background: #e1ecfe no-repeat 10px 8px;
 }
  
 div.seealso {

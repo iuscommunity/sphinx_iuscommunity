@@ -4,6 +4,11 @@
 News Updates
 ============
 
+.. note:: We are committed to providing up-to-date and regularly maintained RPM
+          packages for the latest upstream versions of PHP, Python, MySQL and
+          other common software specifically for Red Hat Enterprise Linux and
+          clones.
+    
 
 Scheduled Maintenance for July 13, 2011
 =======================================

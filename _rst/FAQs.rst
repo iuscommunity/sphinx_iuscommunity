@@ -19,27 +19,6 @@ answered, as well as ask your own.
 
 .. contents::
     :backlinks: none
-.. Contents
-
-    FAQs
-        General
-            What is the IUS Community Project?
-            What is it NOT?
-            What Does IUS Stand For?
-            What is the History of the IUS Community Project
-            Why can't I just do a 'yum upgrade' and update my RPMs?
-            Why are IUS Packages named differently
-            Is IUS SafeRepo Aware?
-            Is IUS Right For Me?
-            Does Red Hat Support the Use of IUS Packages?
-            Do You Recommend IUS Over Stock RHEL Packages
-            Does IUS Cost Anything?
-        Development and Packaging Questions
-            How Can I Contribute to IUS
-            How Do I Install Packages From Testing?
-            How Can I Become a Packager?
-            What Packaging System Do You Use?
-
 
 General
 =======
