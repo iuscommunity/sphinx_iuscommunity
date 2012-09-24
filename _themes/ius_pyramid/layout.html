@@ -7,8 +7,6 @@
 {%- block sidebarrel %}{%- endblock %}
 
 {%- block extrahead %}
-<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
-<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <!--[if lte IE 6]>
 <link rel="stylesheet" href="{{ pathto('_static/ie6.css', 1) }}" type="text/css" media="screen" charset="utf-8" />
 <![endif]-->
@@ -33,9 +31,8 @@
                     font-size: 13px; outline: none;
               }
                                   
-#navibar ul { float: left; height: 35px; margin-bottom: 3px;
-               background: url("{{ pathto('_static/bg-tabs-highlight.png', 1) }}") repeat-x;
-               width: 17.68em;
+#navibar ul { float: left; height: 35px;
+              background: url("{{ pathto('_static/bg-tabs-highlight.png', 1) }}") repeat-x;
             }
   
 </style>

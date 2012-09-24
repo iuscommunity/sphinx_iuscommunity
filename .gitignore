@@ -1,4 +1,5 @@
 *.pyc
+.token
 *.swp
 *egg*
 _build
