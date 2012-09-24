@@ -223,7 +223,7 @@ Rename The Spec File
 The spec file should match the new name of the package.
 Using php as an example::
 
-    you@linuxbox buildroot] mv SPECS/php.spec SPECS/php52.spec
+    you@linuxbox buildroot]$ mv SPECS/php.spec SPECS/php52.spec
 
 Add The IUS Release Tag
 -----------------------
