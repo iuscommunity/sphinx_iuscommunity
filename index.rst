@@ -16,7 +16,6 @@ Table Of Contents
     _rst/IUSDeveloperGuide.rst
     _rst/IUSPackageWishList.rst
     _rst/ManagingUpdates.rst
-    _rst/News.rst
     _rst/Repos.rst
     _rst/SettingUpAnOfficialIUSMirror.rst
     _rst/TheSafeRepoInitiative.rst

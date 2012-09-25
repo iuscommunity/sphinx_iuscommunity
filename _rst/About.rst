@@ -8,18 +8,18 @@
 .. _bug tracking system: http://bugs.launchpad.net/ius
 .. _answers section: http://answers.launchpad.net/ius
 
-
 =====
 About
 =====
 
+.. note:: The IUS Community Project is aimed at providing up to date and       
+           regularly maintained RPM packages for the latest upstream versions of
+           PHP, Python, MySQL and other common software specifically for Redhat 
+           Enterprise Linux.  IUS can be thought of as a better way to upgrade  
+           RHEL, when you need to.
+
 .. contents::
     :backlinks: none
-
-The IUS Community Project is aimed at providing up to date and regularly
-maintained RPM packages for the latest upstream versions of PHP, Python, MySQL
-and other common software specifically for Redhat Enterprise Linux.  IUS can be
-thought of as a better way to upgrade RHEL, when you need to.
 
 History
 =======
