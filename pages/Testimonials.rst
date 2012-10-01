@@ -15,8 +15,8 @@ See what some of our users have to say about us.
 User Testimonials
 =================
 
-**Jason Garber** *Senior Systems Engineer* [ `AppCove, Inc. <http://appcove.com>`_ ]
-------------------------------------------------------------------------------------
+**Jason Garber** - *Senior Systems Engineer* [ `AppCove, Inc. <http://appcove.com>`_ ]
+--------------------------------------------------------------------------------------
 
 .. note::
     :class: testimonial1
@@ -35,8 +35,8 @@ User Testimonials
 
     The IUS Community project has provided AppCove, Inc. and all of our clients
     the perfect mix of stability and functionality.  IUS has enabled us to focus
-    on our core competencies (software development) while being confident that t
-    he packages we use are as secure and up-to-date as possible.
+    on our core competencies (software development) while being confident that the 
+    packages we use are as secure and up-to-date as possible.
 
     Our confidence in the IUS team is second to none.  AppCove has worked in
     close conjunction with the IUS team on several occasions, and they have
@@ -45,3 +45,19 @@ User Testimonials
     We highly recommend that any users of RedHat Enterprise Linux, Oracle
     Enterprise Linux, Scientific Linux, or Centos Linux take a close look at the
     IUS Community Project for their servers.
+
+**Matt Juszczak** - *Founder* [ `Bitlancer LLC <http://bitlancer.com>`_ ]
+------------------------------------------------------------------
+
+.. note::
+    :class: testimonial2
+
+    Many of our customers hesitate to use RHEL/CentOS because of the lack of recent 
+    software versions. I remember that late night when we found the IUS repository 
+    and were able to avoid an all-nighter. Not only are the packages in-line with 
+    upstream, but they're centralized, clean, consistent, well-tested, trustworthy, 
+    and opt-in.  
+    
+    Just last week, we migrated a large customer from custom-compiled 
+    packages to IUS Community, and they're now avoiding dependency headaches and 
+    enjoying up-to-date packages like the rest of us."
