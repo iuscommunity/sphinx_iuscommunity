@@ -60,4 +60,4 @@ User Testimonials
     
     Just last week, we migrated a large customer from custom-compiled 
     packages to IUS Community, and they're now avoiding dependency headaches and 
-    enjoying up-to-date packages like the rest of us."
+    enjoying up-to-date packages like the rest of us.
