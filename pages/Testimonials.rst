@@ -61,3 +61,17 @@ User Testimonials
     Just last week, we migrated a large customer from custom-compiled 
     packages to IUS Community, and they're now avoiding dependency headaches and 
     enjoying up-to-date packages like the rest of us.
+
+**Scott Arkin** - *Founder* [ `eHungry, Inc. <http://www.ehungry.com>`_ ]
+-------------------------------------------------------------------------
+
+.. note::
+    :class: testimonial1
+
+    The IUS Community Project has enabled our engineering team to complete a very 
+    in-depth infrastructure transition from various operating systems and 
+    custom-built software over to a clean, organized, and predictable infrastructure 
+    at Rackspace -- all without spending a single minute on building, testing or 
+    maintaining custom software packages.  Furthermore, we have the confidence that 
+    our software stack will continue to stay current with the latest security and 
+    maintenance updates.
