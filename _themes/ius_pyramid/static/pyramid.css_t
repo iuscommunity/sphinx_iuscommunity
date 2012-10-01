@@ -229,15 +229,39 @@ div.note {
     border-right-style: none;
     border-left-style: none;
     padding: 10px 20px 10px 60px;
+    background: #e1ecfe url(dialog-note.png) no-repeat 10px 8px;
+}
+
+div.founder {
+    border: 1px solid #a69c92;
+    padding: 10px 20px 10px 60px;
+    border-right-style: none;
+    border-left-style: none;
+    background: #f9eadb no-repeat 10px 8px;
+}
+
+div.testimonial1 {
+    border: 1px solid #69e16c;
+    padding: 10px 20px 10px 60px;
+    border-right-style: none;
+    border-left-style: none;
+    background: #e4f8e4 no-repeat 10px 8px;
+}
+
+div.testimonial2 {
+    border: 1px solid #7a9eec;
+    padding: 10px 20px 10px 60px;
+    border-right-style: none;
+    border-left-style: none;
     background: #e1ecfe no-repeat 10px 8px;
 }
  
 div.seealso {
     background: #fff6bf url(dialog-seealso.png) no-repeat 10px 8px;
     border: 2px solid #ffd324;
-    border-left-style: none;
-    border-right-style: none;
     padding: 10px 20px 10px 60px;
+    border-right-style: none;
+    border-left-style: none;
 }
  
 div.topic {
