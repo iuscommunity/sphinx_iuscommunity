@@ -18,5 +18,6 @@ Table Of Contents
     pages/ManagingUpdates.rst
     pages/Repos.rst
     pages/SettingUpAnOfficialIUSMirror.rst
+    pages/Testimonials.rst
     pages/TheSafeRepoInitiative.rst
     pages/UpgradingTheOldWay.rst
