@@ -46,8 +46,8 @@ when you really need it the latest upstream versions of software.
 What Does IUS Stand For?
 ------------------------
 
-The acronym IUS stands for 'Inline with Upstream Stable'. We also stand for
-world peace, and complimentary shwag. 
+The acronym IUS stands for **Inline with Upstream Stable**. We also stand for
+world peace, and kittens.
 
 What is the History of the IUS Community Project
 ------------------------------------------------
@@ -57,7 +57,9 @@ See the :doc:`About` page.
 Why can't I just do a 'yum upgrade' and update my RPMs?
 -------------------------------------------------------
 
-See 'Why are IUS Packages named differently' (it's the next one).
+See :ref:`Why are IUS Packages named differently`.
+
+.. _Why are IUS Packages named differently:
 
 Why are IUS Packages named differently
 --------------------------------------

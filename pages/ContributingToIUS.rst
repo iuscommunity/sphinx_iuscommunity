@@ -76,16 +76,6 @@ build system which will be released under an Open Source license. Once we have
 an instance of that setup, contributors will be able to submit and manage
 builds on their own.
 
-Documentation
-=============
-
-All official documentation is found on this wiki. Contributors are welcome to
-review and modify documentation as necessary. The wiki is open to all via
-OpenID authentication with LP. Contributors are encouraged to 'try out' howto's
-or other technical related documentation and verifying that all information is
-accurate.
-
-
 Testing and Q/A
 ===============
 

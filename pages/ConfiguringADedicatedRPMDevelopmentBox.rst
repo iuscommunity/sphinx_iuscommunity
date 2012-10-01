@@ -55,8 +55,8 @@ For this article I am using a minimal install CentOS 5.4 installation.
 Conventions and Vocabulary
 --------------------------
 
-All commands are prefixed with a generic shell, and appear in a code block i
-such as::
+All commands are prefixed with a generic shell, and appear in a code block such
+as::
 
     [user@mockbuild]$ echo "This is a regular user shell"
     
