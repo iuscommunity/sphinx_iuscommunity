@@ -57,7 +57,7 @@ Community Contribution
 ======================
 
 With the large scale use of our packages across the world, we are able to
-p rovide valuable feedback to the upstream vendors regarding the latest stable
+provide valuable feedback to the upstream vendors regarding the latest stable
 versions of their software. Any bugs reported for IUS Community Packages will
 be fixed by the `IUS CoreDev Team`_ where possible, and the report and
 suggested fix will also be pushed upstream to the software vendor. Having
