@@ -47,7 +47,7 @@ User Testimonials
     IUS Community Project for their servers.
 
 **Matt Juszczak** - *Founder* [ `Bitlancer LLC <http://bitlancer.com>`_ ]
-------------------------------------------------------------------
+-------------------------------------------------------------------------
 
 .. note::
     :class: testimonial2
