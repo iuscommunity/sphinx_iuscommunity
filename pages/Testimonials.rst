@@ -15,8 +15,8 @@ See what some of our users have to say about us.
 User Testimonials
 =================
 
-**Jason Garber** - *Senior Systems Engineer* [ `AppCove, Inc. <http://appcove.com>`_ ]
---------------------------------------------------------------------------------------
+**Jason Garber** - *Senior Systems Engineer* @ AppCove, Inc.
+------------------------------------------------------------
 
 .. note::
     :class: testimonial1
@@ -46,8 +46,8 @@ User Testimonials
     Enterprise Linux, Scientific Linux, or Centos Linux take a close look at the
     IUS Community Project for their servers.
 
-**Matt Juszczak** - *Founder* [ `Bitlancer LLC <http://bitlancer.com>`_ ]
--------------------------------------------------------------------------
+**Matt Juszczak** - *Founder* @ Bitlancer LLC
+---------------------------------------------
 
 .. note::
     :class: testimonial2
@@ -62,8 +62,8 @@ User Testimonials
     packages to IUS Community, and they're now avoiding dependency headaches and 
     enjoying up-to-date packages like the rest of us.
 
-**Scott Arkin** - *Founder* [ `eHungry, Inc. <http://www.ehungry.com>`_ ]
--------------------------------------------------------------------------
+**Scott Arkin** - *Founder* @ eHungry, Inc.
+-------------------------------------------
 
 .. note::
     :class: testimonial1
@@ -75,3 +75,18 @@ User Testimonials
     maintaining custom software packages.  Furthermore, we have the confidence that 
     our software stack will continue to stay current with the latest security and 
     maintenance updates.
+
+**Nicole Rodgers** - *Vice President of Operations* @ Technology Marketing Toolkit, Inc.
+----------------------------------------------------------------------------------------
+
+.. note::
+    :class: testimonial2
+
+	Being able to have our developers spend their time on application development
+	instead of building and installing software has made a significant difference
+	for us.  Using acn-linux and the IUS Community Project, our system
+	administrators average less than 30 minutes to go from a freshly created cloud
+	server to a fully secure and functional hosting environment.  Because of our
+	heavy use of the IUS Community Project, we are able to redirect approximately
+	$5,000 per year from system administration over to application development.
+	
