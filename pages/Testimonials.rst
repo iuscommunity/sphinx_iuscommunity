@@ -82,11 +82,11 @@ User Testimonials
 .. note::
     :class: testimonial2
 
-	Being able to have our developers spend their time on application development
-	instead of building and installing software has made a significant difference
-	for us.  Using acn-linux and the IUS Community Project, our system
-	administrators average less than 30 minutes to go from a freshly created cloud
-	server to a fully secure and functional hosting environment.  Because of our
-	heavy use of the IUS Community Project, we are able to redirect approximately
-	$5,000 per year from system administration over to application development.
+    Being able to have our developers spend their time on application development
+    instead of building and installing software has made a significant difference
+    for us.  Using acn-linux and the IUS Community Project, our system
+    administrators average less than 30 minutes to go from a freshly created cloud
+    server to a fully secure and functional hosting environment.  Because of our
+    heavy use of the IUS Community Project, we are able to redirect approximately
+    $5,000 per year from system administration over to application development.
 	
