@@ -145,7 +145,8 @@ This is not desired. The following directives in the spec help perform this::
     Conflicts: %{real_name} < %{basever}
     Conflicts: php51
     
-**Note**: This has to be done for all subpackages accordingly as well.
+.. note::
+    This has to be done for all subpackages accordingly as well.
 
 Assuming that we have other packages such as an older 'php51' for other branches
 of PHP we want our 'php52' package to conflict with those packages. We also want
@@ -246,7 +247,8 @@ before the Preamble::
     %define real_name php
     %define name php52
     
-**Note**: We are using php as an example. Replace names accordingly.
+.. note::
+    We are using php as an example. Replace names accordingly.
 
 Add the Provides/Conflicts for the Base Package
 
@@ -255,8 +257,9 @@ Provides:  %{real_name} = %{version}-%{release}
 Conflicts: %{real_name} < %{basever}
 Conflicts: php51
 
-**Note**: The 'Conflicts: php51' should list any ius packages previous to this
-one (php52 in our example). It does not need to list ius packages newer than it.
+.. note::
+    The 'Conflicts: php51' should list any ius packages previous to this
+    one (php52 in our example). It does not need to list ius packages newer than it.
 
 Update All Sub Packages
 -----------------------
@@ -277,9 +280,10 @@ example::
     extensions. If you need to compile your own PHP extensions, you will
     need to install this package.
     
-**Note**: We need to provide the '%{real_name}' of the sub package to resolve
-any dependencies in the system that are looking for the stock version of the
-software.
+.. note::
+    We need to provide the '%{real_name}' of the sub package to resolve
+    any dependencies in the system that are looking for the stock version of the
+    software.
 
 Modify The %setup Line
 ----------------------
@@ -423,8 +427,9 @@ The mock package can be installed from Fedora, and Fedora EPEL repositories::
     
     root@linux ~]# usermod -aG mock <username>
     
-**Note**: All users building with mock need to be added to the mock system group
-(as I did above for <username>).
+.. note::
+    All users building with mock need to be added to the mock system group
+    (as I did above for <username>).
 
 
 Example IUS Mock Config

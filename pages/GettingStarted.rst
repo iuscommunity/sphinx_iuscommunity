@@ -41,16 +41,21 @@ Subscribing to the IUS Yum Repository
 =====================================
 
 Subscribing to the IUS Community repositories is as easy as installing an RPM
-package. Within the repo are two packages called 'epel-release', and
-'ius-release'. The packages configure your system to use the Fedora EPEL and
+package. Within the repo are two packages called **epel-release**, and
+**ius-release**. The packages configure your system to use the Fedora EPEL and
 IUS Community repositories, as well as installs the GPG keys necessary to
 validate signed packages of both.
 
-**Note:** IUS Packages replace stock RHEL packages, however they do not
-obsolete them. Meaning, you can't just 'yum upgrade' and get our packages...
-you need to first remove the stock RHEL package such as mysql, and replace it
-with the IUS package such as mysql51. See :doc:`IUSClientUsageGuide` for full
-examples of installing software from IUS.
+.. note::
+    ius-release and epel-release packages information can be found at
+    :ref:`Release Packages`.
+
+.. note::
+    IUS Packages replace stock RHEL packages, however they do not
+    obsolete them. Meaning, you can't just 'yum upgrade' and get our packages...
+    you need to first remove the stock RHEL package such as mysql, and replace it
+    with the IUS package such as mysql51. See :doc:`IUSClientUsageGuide` for full
+    examples of installing software from IUS.
 
 Known Yum Dependency Resolution Issues
 ======================================

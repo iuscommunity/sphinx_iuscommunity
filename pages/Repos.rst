@@ -39,3 +39,19 @@ See the :ref:`GettingStarted` page.
 
 Please note that we are still just getting started, and will be adding more
 repositories in the future.
+
+.. _Release Packages:
+
+Release Packages
+================
+
+The latest ius-release and epel-release can be found in the IUS Community
+repoview:
+
+**EL5**:
+ * http://dl.iuscommunity.org/pub/ius/stable/Redhat/5/x86_64/repoview/epel-release.html
+ * http://dl.iuscommunity.org/pub/ius/stable/Redhat/5/x86_64/repoview/ius-release.html
+
+**EL6**:
+ * http://dl.iuscommunity.org/pub/ius/stable/Redhat/6/x86_64/repoview/epel-release.html 
+ * http://dl.iuscommunity.org/pub/ius/stable/Redhat/6/x86_64/repoview/ius-release.html

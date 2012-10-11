@@ -71,10 +71,11 @@ tracking system`_ to report bugs or submit patches or the
 :ref:`Package_Wish_List` for packages that you might want to build and submit
 to the project. 
 
-**Note**: We are currently in the process of coding the next version of our
-build system which will be released under an Open Source license. Once we have
-an instance of that setup, contributors will be able to submit and manage
-builds on their own.
+.. note::
+    We are currently in the process of coding the next version of our
+    build system which will be released under an Open Source license. Once we have
+    an instance of that setup, contributors will be able to submit and manage
+    builds on their own.
 
 Testing and Q/A
 ===============
