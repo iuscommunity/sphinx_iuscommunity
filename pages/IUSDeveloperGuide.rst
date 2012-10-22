@@ -6,6 +6,8 @@
 .. _LaunchPad: https://launchpad.net/ius
 .. _IUS Community Project: http://code.launchpad.net/ius
 
+.. _IUSDeveloperGuide:
+
 ===================
 IUS Developer Guide
 ===================
@@ -200,6 +202,8 @@ Package Wish List
 IUS users are encouraged to submit packages to the `Package Wish List`_ when they
 want something added to IUS. This is a good place to start for new contributors
 who want to help with packaging bug might not have any packages in mind.
+
+.. _Managing_Updates:
 
 Managing Updates
 ================
