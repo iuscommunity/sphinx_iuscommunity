@@ -5,7 +5,7 @@ Testimonials
 ============
 
 We at the IUS Community Project take great pride in our
-packging, and aim to offer the best user experience.
+packaging, and aim to offer the best user experience.
 
 See what some of our users have to say about us.
 
