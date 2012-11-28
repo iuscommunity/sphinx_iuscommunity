@@ -14,8 +14,8 @@ Tools
 Version Tracker
 ===============
 
-IUS uses `Version Tracker`_ to help identify when a new version of a package is released
-upstream.
+The IUS Community uses `Version Tracker`_ to help identify when a new version of a
+software is released upstream.
 
 `Version Tracker`_ is a Python application using the `Django`_ web framework,
 the souce for `Version Tracker`_ is available on the `Github Project`_.
