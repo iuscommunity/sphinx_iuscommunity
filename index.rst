@@ -17,6 +17,7 @@ Table Of Contents
     pages/IUSPackageWishList.rst
     pages/ManagingUpdates.rst
     pages/Repos.rst
+    pages/Tools.rst
     pages/SettingUpAnOfficialIUSMirror.rst
     pages/Testimonials.rst
     pages/TheSafeRepoInitiative.rst
