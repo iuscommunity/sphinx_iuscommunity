@@ -22,3 +22,4 @@ Table Of Contents
     pages/Testimonials.rst
     pages/TheSafeRepoInitiative.rst
     pages/UpgradingTheOldWay.rst
+    pages/WhatIsHappeningInTheCommunity.rst
