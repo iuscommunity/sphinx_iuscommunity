@@ -4,12 +4,21 @@
 .. _development: http://dl.iuscommunity.org/pub/ius/development/
 .. _archive: http://dl.iuscommunity.org/pub/ius/archive/
 
-.. _RHEL/CentOS 5 i386: http://dl.iuscommunity.org/pub/ius/stable/Redhat/5/i386/repoview/
-.. _RHEL/CentOS 5 x86_64: http://dl.iuscommunity.org/pub/ius/stable/Redhat/5/x86_64/repoview/
-.. _RHEL/CentOS 5 Source RPMS: http://dl.iuscommunity.org/pub/ius/stable/Redhat/5/SRPMS/repoview/
-.. _RHEL/CentOS 6 i386: http://dl.iuscommunity.org/pub/ius/stable/Redhat/6/i386/repoview/
-.. _RHEL/CentOS 6 x86_64: http://dl.iuscommunity.org/pub/ius/stable/Redhat/6/x86_64/repoview/
-.. _RHEL/CentOS 6 Source RPMS: http://dl.iuscommunity.org/pub/ius/stable/Redhat/6/SRPMS/repoview/
+.. _RHEL 5 i386: http://dl.iuscommunity.org/pub/ius/stable/Redhat/5/i386/repoview/
+.. _RHEL 5 x86_64: http://dl.iuscommunity.org/pub/ius/stable/Redhat/5/x86_64/repoview/
+.. _RHEL 5 Source RPMS: http://dl.iuscommunity.org/pub/ius/stable/Redhat/5/SRPMS/repoview/
+
+.. _CentOS 5 i386: http://dl.iuscommunity.org/pub/ius/stable/CentOS/5/i386/repoview/
+.. _CentOS 5 x86_64: http://dl.iuscommunity.org/pub/ius/stable/CentOS/5/x86_64/repoview/
+.. _CentOS 5 Source RPMS: http://dl.iuscommunity.org/pub/ius/stable/CentOS/5/SRPMS/repoview/
+
+.. _RHEL 6 i386: http://dl.iuscommunity.org/pub/ius/stable/Redhat/6/i386/repoview/
+.. _RHEL 6 x86_64: http://dl.iuscommunity.org/pub/ius/stable/Redhat/6/x86_64/repoview/
+.. _RHEL 6 Source RPMS: http://dl.iuscommunity.org/pub/ius/stable/Redhat/6/SRPMS/repoview/
+
+.. _CentOS 6 i386: http://dl.iuscommunity.org/pub/ius/stable/CentOS/6/i386/repoview/
+.. _CentOS 6 x86_64: http://dl.iuscommunity.org/pub/ius/stable/CentOS/6/x86_64/repoview/
+.. _CentOS 6 Source RPMS: http://dl.iuscommunity.org/pub/ius/stable/CentOS/6/SRPMS/repoview/
 
 ============
 Repositories
@@ -20,12 +29,21 @@ All packages are available from our public yum repositories.
 Available Repos
 ===============
 
- * `RHEL/CentOS 5 i386`_
- * `RHEL/CentOS 5 x86_64`_
- * `RHEL/CentOS 5 Source RPMS`_
- * `RHEL/CentOS 6 i386`_
- * `RHEL/CentOS 6 x86_64`_
- * `RHEL/CentOS 6 Source RPMS`_
+ * `RHEL 5 i386`_
+ * `RHEL 5 x86_64`_
+ * `RHEL 5 Source RPMS`_
+
+ * `CentOS 5 i386`_
+ * `CentOS 5 x86_64`_
+ * `CentOS 5 Source RPMS`_
+
+ * `RHEL 6 i386`_
+ * `RHEL 6 x86_64`_
+ * `RHEL 6 Source RPMS`_
+
+ * `CentOS 6 i386`_
+ * `CentOS 6 x86_64`_
+ * `CentOS 6 Source RPMS`_
 
 There are also `testing`_, `development`_, and `archive`_ packages available.
 
@@ -48,10 +66,18 @@ Release Packages
 The latest ius-release and epel-release can be found in the IUS Community
 repoview:
 
-**EL5**:
+**RHEL 5**:
  * http://dl.iuscommunity.org/pub/ius/stable/Redhat/5/x86_64/repoview/epel-release.html
  * http://dl.iuscommunity.org/pub/ius/stable/Redhat/5/x86_64/repoview/ius-release.html
 
-**EL6**:
+**CentOS 5**:
+ * http://dl.iuscommunity.org/pub/ius/stable/CentOS/5/x86_64/repoview/epel-release.html
+ * http://dl.iuscommunity.org/pub/ius/stable/CentOS/5/x86_64/repoview/ius-release.html
+
+**RHEL 6**:
  * http://dl.iuscommunity.org/pub/ius/stable/Redhat/6/x86_64/repoview/epel-release.html 
  * http://dl.iuscommunity.org/pub/ius/stable/Redhat/6/x86_64/repoview/ius-release.html
+
+**CentOS 6**:
+ * http://dl.iuscommunity.org/pub/ius/stable/CentOS/6/x86_64/repoview/epel-release.html
+ * http://dl.iuscommunity.org/pub/ius/stable/CentOS/6/x86_64/repoview/ius-release.html
