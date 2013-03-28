@@ -28,5 +28,5 @@ Redhat Enterprise Linux packages.
 These packages can be viewed in the existing repositories along side their
 Redhat counterparts:
 
-  http://dl.iuscommunity.org/pub/ius/stable/
+  http://iuscommunity.org/pages/Repos.html
 
