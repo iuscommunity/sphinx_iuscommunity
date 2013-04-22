@@ -7,6 +7,17 @@
 {%- block sidebarrel %}{%- endblock %}
 {%- block sidebartoc %}{%- endblock %}
 
+{%- block sidebarsearch %}
+    {%- include "searchbox.html" %}
+        {% if pagename == 'pages/IUSClientUsageGuide' %}
+        <h3>Translations</h3>
+        <p style="font-size: 100%">
+            <a target=_blank href="http://science.webhostinggeeks.com/ius-klijent-vodica-za"><b>Serbo-Croatian</b></a>
+            <i>language by Vera Djuraskovic.</i>
+        {% endif %}
+        </p>
+{%- endblock %}
+
 {%- block extrahead %}
 <!--[if lte IE 6]>
 <link rel="stylesheet" href="{{ pathto('_static/ie6.css', 1) }}" type="text/css" media="screen" charset="utf-8" />
