@@ -360,7 +360,7 @@ CentOS 5 x86_64 + Fedora EPEL 5 + IUS 5 repositories.
     
     [ius]
     name=ius
-    mirrorlist=http://dl.iuscommunity.org/mirrorlist?repo=ius-el5&arch=$basearch
+    mirrorlist=http://dmirr.iuscommunity.org/mirrorlist/?repo=ius-el5&arch=$basearch
     """
 
 A Sample Build with Mock
@@ -453,4 +453,4 @@ output of the rpmbuild command that mock ran. Modify your spec, rebuild the
 source rpm again, and then rebuild with mock once again. However, this time you
 want to skip the initial setup of the chroot so be sure to add the --no-clean
 flag to avoid cleaning the existing chroot and starting from scratch (it will be
-much faster). 
+much faster).
