@@ -27,7 +27,7 @@ Terminology
   system can subscribe to in order to install additional packages that the Stock
   Distro doesn’t provide.
 * **3rd Party Package**: Refers to an rpm package that a 3rd Party Repo provides.
-* **Stock Package**: Refers to an rpm package that a Stock Distro provides. i
+* **Stock Package**: Refers to an rpm package that a Stock Distro provides.
 
 The Current Problem with 3rd Party Repos
 ========================================
