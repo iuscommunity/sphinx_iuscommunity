@@ -33,16 +33,16 @@ servers. Until now, these packages have only been available internally to
 Rackspace customers. After a while we started thinking: Why not make this
 available publicly for everyone to benefit?
 
-The project follows a typical 'Open Source => Enterprise' model.  Essentially,
-IUS is 'The Fedora of Rackspace RPMS'. Updates for existing packages, as well
-as new packages will be made available to the community first during
-a 'testing' stage. We give it some time to bake and allow IUS users to test the
-packages out and submit bug reports if necessary. After testing, those packages
-will join the IUS 'stable' repository. After 'stable' packages have seen real
-world usage and have proven to be ready for enterprise/production use, the
-Rackspace RPM Development Team will port changes to our 'Enterprise' packages
-that are only available to Rackspace customers. It serves as yet another level
-of testing before full enterprise use.
+Updates for existing packages, as well as new packages, will be made available
+to the community first during a 'testing' stage. We give it some time to bake
+and allow IUS users to test the packages out and submit bug reports if
+necessary. After testing, those packages will join the IUS 'stable' repository.
+For new packages, we require the requester to do some testing and give feedback
+before we will push a package into the stable repository. For updates, we allow
+two weeks for feedback before pushing package into the stable repository.
+Updates that contain fixes for CVEs will get pushed into the stable repository
+sooner. We want to make sure that the the community has given some time to test
+the update, but also want to push the update in a timely fashion.
 
 IUS Community is run by full time Linux Engineers employed by Rackspace,
 therefore making the project 'Sponsored by Rackspace'. That said, **IUS is not
