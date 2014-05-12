@@ -165,7 +165,7 @@ Do You Recommend IUS Over Stock RHEL Packages
 
 No, not necessarily. We do not want to give the impression that our packages
 are better than those found in RHEL. Red Hat has teams of developers working
-tirelessly to ensure the stability and reliability of their packages. IUS Does
+tirelessly to ensure the stability and reliability of their packages. IUS does
 not have the resources to even begin to compete with the stability and quality
 of the official packages maintained by Red Hat. Plus, we are also following the
 latest and greatest sources from upstream directly which inevitably opens up a
