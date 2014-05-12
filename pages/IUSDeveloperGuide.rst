@@ -233,9 +233,7 @@ Using php as an example::
 Add The IUS Release Tag
 -----------------------
 
-IUS packages are designated by a '.ius' tag in the release. For community
-packages, this should just be '.ius'. Enterprise packages will likely be tagged
-with '.ius.ent' or simply '.rs' as they are now::
+IUS packages are designated by a '.ius' tag in the release.
 
     Release: 1.ius%{?dist}
 
