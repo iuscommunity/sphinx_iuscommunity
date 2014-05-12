@@ -98,7 +98,7 @@ currently we have the following goals in mind:
  * Offer more than one major version of software per repo/distro.
  
 IUS packages the most popular branches of upstream software. For example, we
-currently maintain packages for PHP 5.2, PHP 5.3, MySQL 5.0, MySQL 5.1, etc all
+currently maintain packages for PHP 5.5, MySQL 5.6, and Python 3.4, all
 within the same repository. This approach allows end users to have more control
 over the software on their server, without the fuss of maintaining multiple
 repos.
