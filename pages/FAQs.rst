@@ -234,4 +234,4 @@ Koji`_. We make no attempt to compete with Koji in that department, however
 there were other needs for a 'build system' outside of RPM packaging that lead
 us to continue work on our own. Additionally, the preceptor to MonkeyFarm was
 RPE (The Rackspace Packaging Environment) which was started before Koji was
-released publicly (and before we new about it).  
+released publicly (and before we knew about it).
