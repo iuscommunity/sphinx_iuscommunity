@@ -117,7 +117,7 @@ Replacement Packages
 
 This type of package Provides the same software that another Stock Package
 (i.e. php53 provides php). The IUS Community Project is an example of a 3rd
-Party Repo that only provides Replacement Packages. The following rules apply:
+Party Repo that provides Replacement Packages. The following rules apply:
 
 * Can not Obsolete a Stock Distro Package
 * Can not have the same name as another Stock Distro Package
