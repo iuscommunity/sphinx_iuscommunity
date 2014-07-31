@@ -153,8 +153,8 @@ apply:
 * Must not automatically install, upgrade, or replace Stock Distro Packages
   when subscribing to the repo.
 * Executable binaries must be renamed with the major version number. I.e.
-  ‘/usr/bin/python’ -> ‘/usr/bin/python2.6′.
+  ‘/usr/bin/python’ -> ‘/usr/bin/python2.7′.
 * An identifier can/should be added to the release, such as Release:
   1.ius.parallel%{?dist}.
-* All directories must have alternate paths. I.e. ‘/var/lib/mysql’ ->
-  ‘/var/lib/mysql51′. 
+* All directories must have alternate paths. I.e. ‘/usr/lib/python2.6’ ->
+  ‘/usr/lib/python2.7′.
