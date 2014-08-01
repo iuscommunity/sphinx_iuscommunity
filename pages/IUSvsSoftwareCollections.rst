@@ -8,7 +8,7 @@
 .. _parallel installable: https://iuscommunity.org/pages/TheSafeRepoInitiative.html#parallel-installable-packages
 .. _Filesystem Hierarchy Standard: http://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard
 .. _addon: https://iuscommunity.org/pages/TheSafeRepoInitiative.html#addon-packages
-.. _Life Cycle: https://access.redhat.com/support/policy/updates/rhscl/
+.. _Product Life Cycle: https://access.redhat.com/support/policy/updates/rhscl/
 
 ============================
 IUS vs. Software Collections
@@ -71,6 +71,16 @@ Releases
 * IUS packages are updated in line with the upstream software project.  This
   means that once upstream releases a new version, we will begin building RPMs
   as soon as possible.
-* The SCL `Life Cycle`_ states that new packages will be released every 18
-  months.  These release are snapshots with backported security fixes, and are
-  supported for a period of three years.
+* The SCL `Product Life Cycle`_ states that new packages will be released
+  every 18 months.  These release are snapshots with backported security fixes,
+  and are supported for a period of three years.
+
+More Info
+=========
+
+* https://www.softwarecollections.org
+* https://iuscommunity.org/pages/TheSafeRepoInitiative.html
+* https://www.redhat.com/about/news/archive/2013/6/red-hat-software-collections-1.0-beta-now-available
+* http://developerblog.redhat.com/2013/09/12/rhscl1-ga/
+* https://access.redhat.com/site/documentation/en-US/Red_Hat_Developer_Toolset/1/html/Software_Collections_Guide/
+* https://access.redhat.com/support/policy/updates/rhscl/
