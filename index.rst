@@ -23,3 +23,4 @@ Table Of Contents
     pages/TheSafeRepoInitiative.rst
     pages/UpgradingTheOldWay.rst
     pages/WhatIsHappeningInTheCommunity.rst
+    pages/IUSvsSoftwareCollections.rst
