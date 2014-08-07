@@ -2,13 +2,9 @@
 
 .. _2013-09-12: http://developerblog.redhat.com/2013/09/12/rhscl1-ga/
 .. _Software Collections: https://www.softwarecollections.org
-.. _Terminology: https://iuscommunity.org/pages/TheSafeRepoInitiative.html#terminology
-.. _The SafeRepo Initiative: https://iuscommunity.org/pages/TheSafeRepoInitiative.html
-.. _replacement: https://iuscommunity.org/pages/TheSafeRepoInitiative.html#replacement-packages
-.. _parallel installable: https://iuscommunity.org/pages/TheSafeRepoInitiative.html#parallel-installable-packages
 .. _Filesystem Hierarchy Standard: http://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard
-.. _addon: https://iuscommunity.org/pages/TheSafeRepoInitiative.html#addon-packages
 .. _Product Life Cycle: https://access.redhat.com/support/policy/updates/rhscl/
+.. _Red Hat's MySQL 5.5 migration guide: https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/5/html/Deployment_Guide/ch-Migrating_from_MySQL_5.0_to_MySQL_5.5.html
 
 ============================
 IUS vs. Software Collections
@@ -27,18 +23,14 @@ also know as SCL.  The front page has this statement::
     versions of software on the same system, without affecting system-wide
     installed packages.
 
-This may sound like a similar goal as IUS, but there are important differences in execution.
-
-Terminology
-===========
-
-Please refer to the `Terminology`_ section of `The SafeRepo Initiative`_.
+This may sound like a similar goal as IUS, but there are several important
+differences in execution.
 
 Types of Packages
 =================
 
-* IUS provides `replacement`_ and `parallel installable`_ packages.
-* SCL provides `addon`_ packages only.
+* IUS provides :ref:`Replacement_Packages` and :ref:`Parallel_Installable_Packages`.
+* SCL provides :ref:`Addon_Packages`.
 
 File Locations
 ==============
@@ -74,6 +66,16 @@ Releases
 * The SCL `Product Life Cycle`_ states that new packages will be released
   every 18 months.  These release are snapshots with backported security fixes,
   and are supported for a period of three years.
+
+FAQ
+===
+
+Q. What is the difference between mysql55-server and mysql55-mysql-server?
+
+A. The package mysql55-server is from the IUS repo.  The package
+   mysql55-mysql-server is an SCL RPM that Red Hat chose to add to the base EL5
+   repos.  Please refer to `Red Hat's MySQL 5.5 migration guide`_ for more
+   information.
 
 More Info
 =========

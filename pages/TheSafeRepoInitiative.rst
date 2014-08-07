@@ -16,18 +16,21 @@ The SafeRepo Initiative is a ‘proposal’ [if you will] for a standard in 3rd
 party Yum repositories. Currently there is none. It is more of an idea, rather
 than an official specification. The idea of safe repositories came about while
 building out the IUS Community Project, and as such this proposal is lead by
-the IUS Core Development Team. 
+the IUS Core Development Team. We strive to follow this policy whenever
+possible.  There is one notable exception, see
+:doc:`IUSvsSoftwareCollections`.
 
 Terminology
 ===========
 
 * **Distro** or **Stock Distro**: Refers to a Linux distribution as it comes from the
   vendor, such as Redhat, CentOS, Fedora, Etc.
-* **Repo** or **3rd Party Repo**: Refers to any secondary yum repository that a linux
+* **Repo** or **3rd Party Repo**: Refers to any secondary yum repository that a Linux
   system can subscribe to in order to install additional packages that the Stock
-  Distro doesn’t provide.
+  Distro doesn’t provide by default.
 * **3rd Party Package**: Refers to an rpm package that a 3rd Party Repo provides.
-* **Stock Package**: Refers to an rpm package that a Stock Distro provides.
+* **Stock Package**: Refers to an rpm package that a Stock Distro provides in
+  default repositories.
 
 The Current Problem with 3rd Party Repos
 ========================================
@@ -97,6 +100,8 @@ party packages:
 * Replacement Packages
 * Parallel Installable Packages 
 
+.. _Addon_Packages:
+
 Addon Packages
 ==============
 
@@ -111,6 +116,8 @@ addon packages. The following rules apply:
 * Must not automatically install, upgrade, or replace Stock Distro Packages
   when subscribing to the repo. Should the Stock Distro later add the package,
   the 3rd Party Repo should then remove the package from its repo. 
+
+.. _Replacement_Packages:
 
 Replacement Packages
 ====================
@@ -129,6 +136,8 @@ Party Repo that provides Replacement Packages. The following rules apply:
 
 Must not automatically install, upgrade, or replace Stock Distro Packages when
 subscribing to the repo. 
+
+.. _Parallel_Installable_Packages:
 
 Parallel Installable Packages
 =============================
