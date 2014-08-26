@@ -44,7 +44,7 @@ File Locations
 
 * Files from IUS packages are installed to standard `Filesystem Hierarchy
   Standard`_ locations (/usr/bin, /usr/lib, etc).
-* Files from SCL packages are installed under /opt/rh.
+* Files from SCL packages are installed under /opt.
 
 Usage
 =====
