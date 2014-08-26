@@ -128,15 +128,15 @@ Replacement Packages
 ====================
 
 This type of package provides the same software that another Stock Package
-(i.e. php53 provides php). The IUS Community Project is an example of a 3rd
+(i.e. php55u provides php). The IUS Community Project is an example of a 3rd
 Party Repo that provides Replacement Packages. The following rules apply:
 
 * Can not Obsolete a Stock Distro Package
 * Can not have the same name as another Stock Distro Package
 * Must Provide the software it is replacing and be [more or less] compatible
   with other Stock Distro Packages that require it.
-* Must explicitly Conflict with a Stock Distro Package (via the spec). For
-  example the package php53 "Conflicts: php < 5.3", but it "Provides: php =
+* Must explicitly conflict with a Stock Distro Package (via the spec). For
+  example the package php55u "Conflicts: php < 5.5", but it "Provides: php =
   %{version}". 
 
 Must not automatically install, upgrade, or replace Stock Distro Packages when
@@ -161,7 +161,7 @@ apply:
 * Can not Obsolete a Stock Distro Package:
 * Can not have the same name as another Stock Distro Package
 * Can not Provide the software it is installing next to. For example,
-  python26 does not "Provide: python" because this might confuse other Stock
+  python27 does not "Provide: python" because this might confuse other Stock
   Distro Packages to think that it can find python and its libraries in the stock
   location (it can't).
 * Must not automatically install, upgrade, or replace Stock Distro Packages
