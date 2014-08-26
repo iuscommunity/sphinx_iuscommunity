@@ -1,5 +1,9 @@
 :tocdepth: 2
 
+.. _provide: http://docs.fedoraproject.org/en-US/Fedora_Draft_Documentation/0.1/html/RPM_Guide/ch-dependencies.html#RPM_Guide-Dependencies-capabilities
+.. _obsolete: http://docs.fedoraproject.org/en-US/Fedora_Draft_Documentation/0.1/html/RPM_Guide/ch-dependencies.html#RPM_Guide-Dependencies-obsoletes
+.. _conflict: http://docs.fedoraproject.org/en-US/Fedora_Draft_Documentation/0.1/html/RPM_Guide/ch-dependencies.html#RPM_Guide-Dependencies-conflicts
+
 .. _The SafeRepo Initiative:
 
 =======================
@@ -54,20 +58,20 @@ Some examples of safe repositories:
 
 * IUS Community: The IUS Community Project provides packages for RHEL that follow
   the latest upstream stable source versions of specific software such as PHP,
-  MySQL, Python, Etc. IUS is a safe repo because it uses alternate package names
-  that provide the same software (for example php52 provides php) but do not
-  obsolete. IUS packages explicitly conflict with stock packages, therefore
+  MySQL, Python, etc. IUS is a safe repo because it uses alternate package names
+  that `provide`_ the same software (for example php55u provides php) but do not
+  `obsolete`_. IUS packages explicitly `conflict`_ with stock packages, therefore
   preventing anything from IUS automatically installing on/over RHEL. 
 
 So what is an ‘unsafe repository’? 
 -----------------------------------
 
-* Any 3rd Party Repo offering 3rd Party Packages that obsolete or directly
+* Any 3rd Party Repo offering 3rd Party Packages that `obsolete`_ or directly
   replace Stock Packages because they have the same package name. For example, if
-  a repository has ‘php-5.2.11′ and you subscribe to it, your server will
+  a repository has php-5.5.16 and you subscribe to it, your server will
   automatically upgrade PHP to that version. 
 
-* Any 3rd Party Repo with packages that explicitly Obsolete Stock Distro
+* Any 3rd Party Repo with packages that explicitly `obsolete`_ Stock Distro
   Packages. 
 
 Making The Community Aware
