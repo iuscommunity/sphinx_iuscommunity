@@ -23,7 +23,14 @@ also know as SCL.  The front page has this statement::
     versions of software on the same system, without affecting system-wide
     installed packages.
 
-This may sound like a similar goal as IUS, but there are several important
+Here is our mission statement for the IUS Community project::
+
+    The IUS Community Project is aimed at providing up to date and regularly
+    maintained RPM packages for the latest upstream versions of PHP, Python,
+    MySQL and other common software specifically for Red Hat Enterprise Linux.
+    IUS can be thought of as a better way to upgrade RHEL, when you need to.
+
+Both projects seek to solve a similar problem, but there are several important
 differences in execution.
 
 Types of Packages
