@@ -4,7 +4,7 @@
 .. _Software Collections: https://www.softwarecollections.org
 .. _Filesystem Hierarchy Standard: http://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard
 .. _Product Life Cycle: https://access.redhat.com/support/policy/updates/rhscl/
-.. _Red Hat's MySQL 5.5 migration guide: https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/5/html/Deployment_Guide/ch-Migrating_from_MySQL_5.0_to_MySQL_5.5.html
+.. _RHEL 5 MySQL 5.5 migration guide: https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/5/html/Deployment_Guide/ch-Migrating_from_MySQL_5.0_to_MySQL_5.5.html
 
 ============================
 IUS vs. Software Collections
@@ -74,7 +74,7 @@ Q. What is the difference between mysql55-server and mysql55-mysql-server?
 
 A. The package mysql55-server is from the IUS repo.  The package
    mysql55-mysql-server is an SCL RPM that Red Hat chose to add to the base EL5
-   repos.  Please refer to `Red Hat's MySQL 5.5 migration guide`_ for more
+   repos.  Please refer to the `RHEL 5 MySQL 5.5 migration guide`_ for more
    information.
 
 More Info
