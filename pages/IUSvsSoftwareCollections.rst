@@ -30,7 +30,7 @@ Here is our mission statement for the IUS Community project::
     MySQL and other common software specifically for Red Hat Enterprise Linux.
     IUS can be thought of as a better way to upgrade RHEL, when you need to.
 
-Both projects seek to solve a similar problem, but there are several important
+Both projects seek to solve the same problem, but there are several important
 differences in execution.
 
 Types of Packages
