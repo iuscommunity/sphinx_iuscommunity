@@ -78,10 +78,11 @@ Making The Community Aware
 ==========================
 
 System administrators and end users need to know if a 3rd Party Repo they are
-subscribing a server to is safe. By choosing to follow the development
-practices of the SafeRepo Initiative tells your users that you value
-standardization and the assurance that using your custom package repository
-isn’t going to bork their otherwise clean/stock Linux distribution.
+subscribing a server to is safe. Choosing to follow the development practices
+of the SafeRepo Initiative tells your users that you value standardization and
+provides assurance that using your custom package repository isn’t going to
+cause their installation to be in an inconsistent state from unexpected or
+unwanted package updates.
 
 SafeRepo is not a certification, rather a push for awareness. If you are
 interested in making your repositories safer, see the specification below. Once
