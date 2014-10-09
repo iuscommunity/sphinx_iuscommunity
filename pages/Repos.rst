@@ -50,6 +50,12 @@ Available Repos
  * `CentOS 6 x86_64`_
  * `CentOS 6 Source RPMS`_
 
+ * `RHEL 7 x86_64`_
+ * `RHEL 7 Source RPMS`_
+
+ * `CentOS 7 x86_64`_
+ * `CentOS 7 Source RPMS`_
+
 There are also `testing`_, `development`_, and `archive`_ packages available.
 
 Installing Packages
