@@ -137,10 +137,9 @@ Party Repo that provides Replacement Packages. The following rules apply:
   with other Stock Distro Packages that require it.
 * Must explicitly conflict with a Stock Distro Package (via the spec). For
   example the package php55u "Conflicts: php < 5.5", but it "Provides: php =
-  %{version}". 
-
-Must not automatically install, upgrade, or replace Stock Distro Packages when
-subscribing to the repo. 
+  %{version}".
+* Must not automatically install, upgrade, or replace Stock Distro Packages when
+  subscribing to the repo.
 
 .. _Parallel_Installable_Packages:
 
