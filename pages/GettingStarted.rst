@@ -3,7 +3,7 @@
 .. _End User Agreement: http://dl.iuscommunity.org/pub/ius/IUS-COMMUNITY-EUA
 .. _Launchpad IUS Bug #453543: http://bugs.launchpad.net/ius/+bug/453543
 .. _Launchpad: http://bugs.launchpad.net/ius
-.. _Yum Bug #296: http://yum.baseurl.org/ticket/296
+.. _Yum Bug #296: http://web.archive.org/web/20120114083114/http://yum.baseurl.org/ticket/296
 .. _Red Hat Bug #529719: https://bugzilla.redhat.com/show_bug.cgi?id=529719
 
 .. _GettingStarted:
