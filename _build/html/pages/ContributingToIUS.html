@@ -1,0 +1,307 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Contributing to IUS &mdash; IUS Community Project 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="IUS Community Project 0.1 documentation" href="../index.html" />
+    <link rel="next" title="Creating A GPG Key and Signing RPMs" href="CreatingAGPGKeyandSigningRPMs.html" />
+    <link rel="prev" title="Configuring a Dedicated RPM Development Box" href="ConfiguringADedicatedRPMDevelopmentBox.html" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="../_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+<style>
+  a.bottomlinks:link {color: #4DC0EA; }
+  a.bottomlinks:active {color: #4DC0EA; }
+  a.bottomlinks:visited {color: #4DC0EA; }
+  a.bottomlinks:hover {color: #4DC0EA; }
+  
+#navibar {
+            clear: both; float: right; display: block; font-size: 1.8em; 
+            line-height: 120%; margin: 0; padding:0 10px;
+         }
+         
+#navibar ul { list-style: none; margin: 0; padding: 0; }
+#navibar ul li { float: left; list-style-type: none; }
+
+#navibar li a {
+                    font-weight: bold; color: #ffffff; display: block;
+                    line-height: 34px; padding: 0 15px; text-decoration: none;
+                    text-shadow: #0e0e6c 0px 0px 2px; border-right: solid 1px #446aa8;
+                    font-size: 13px; outline: none;
+              }
+                                  
+#navibar ul { float: left; height: 35px;
+              background: url("../_static/bg-tabs-highlight.png") repeat-x;
+            }
+  
+</style>
+
+  </head>
+  <body>
+<table width=100% cellpadding=0
+  <tr>
+    <td>
+      <a href="About.html">
+        <img class="logo" src="../_static/site_banner.png" alt="Logo"/>
+      </a>
+    </td>
+  </tr>
+
+  <tr>    
+    <td valign='bottom'>
+      <div id="navibar">
+        <ul>
+          <li><a href="WhatIsHappeningInTheCommunity.html">What's Happening</a></li>
+          <li><a href="About.html">About</a></li>
+          <li><a href="Documentation.html">Docs</a></li>
+          <li><a href="Testimonials.html">Testimonials</a></li>
+          <li><a href="Repos.html">Repos</a></li>
+          <li><a href="Tools.html">Tools</a></li>
+          <li><a href="GettingStarted.html">Getting Started</a></li>
+          <li><a href="FAQs.html">FAQs</a></li>
+          <li><a href="../index.html">Sitemap</a></li>
+        </div>
+    </td>
+    
+  </tr>
+</table>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="contributing-to-ius">
+<h1>Contributing to IUS<a class="headerlink" href="#contributing-to-ius" title="Permalink to this headline">¶</a></h1>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#contributing-to-ius" id="id2">Contributing to IUS</a><ul>
+<li><a class="reference internal" href="#summary" id="id3">Summary</a></li>
+<li><a class="reference internal" href="#general-project-participation" id="id4">General Project Participation</a></li>
+<li><a class="reference internal" href="#public-relations" id="id5">Public Relations</a></li>
+<li><a class="reference internal" href="#rpm-packaging" id="id6">RPM Packaging</a></li>
+<li><a class="reference internal" href="#testing-and-q-a" id="id7">Testing and Q/A</a></li>
+<li><a class="reference internal" href="#id1" id="id8">IUS Triage Team</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>This article outlines how you can join the IUS Team(s) and get involved with
+the project. There are many opportunities for all level of technical
+backgrounds.</p>
+</div>
+<div class="section" id="general-project-participation">
+<h2>General Project Participation<a class="headerlink" href="#general-project-participation" title="Permalink to this headline">¶</a></h2>
+<p>The easiest, and most effective way to contribute to the IUS Community is to
+simply participate in the project. All contributors should join the <a class="reference external" href="http://launchpad.net/~ius-community">IUS
+Community Team</a> in LaunchPad [LP] as well as join the mailing list for the
+team.  This is where end-users and community members are encouraged to
+communicate.</p>
+<p>The <a class="reference external" href="http://launchpad.net/~ius-coredev">IUS CoreDev Team</a> will frequently post &#8216;blueprints&#8217; on LP when they have
+an idea regarding projects or tasks that need to happen at some point.
+Contributors can frequently review the <a class="reference external" href="http://blueprints.launchpad.net/ius">Blue Prints</a> page on LP to see if
+there are any projects or tasks that they can square away.</p>
+<p>The <a class="reference external" href="http://launchpad.net/~ius-coredev">IUS CoreDev Team</a> hangs out in #iuscommunity on freenode.net (IRC). Its
+always tooo quiet in there. Dropping in to say hi, or to simply say
+&#8220;Hey, thanks for adding packageXY!&#8221; is always appreciated. (We get lonely too)</p>
+</div>
+<div class="section" id="public-relations">
+<h2>Public Relations<a class="headerlink" href="#public-relations" title="Permalink to this headline">¶</a></h2>
+<p>IUS started in mid-2009. We have seen, and continue to see significant growth.
+That said, we believe IUS is one of the best resources available for upgrading
+software on RHEL... so we want to ensure that the project continues to reach
+new markets and more users. By googling around for &#8216;PHP on RHEL&#8217; or &#8216;MySQL 5.1
+on RHEL&#8217; or similar... you will find pages and pages of howtos and blogs about
+end-users bending over backwards to upgrade their software. Often times this
+includes source installs, or just one-off recompiles of SRPMS with no real
+intention of maintaining that package for the long haul. There are still so
+many people that haven&#8217;t found IUS, but the need too! If you come across these
+posts, contact the author and introduce them to &#8216;a better way to upgrade RHEL&#8217;!
+Other than blogs you can often find similar posts on sites like
+<a class="reference external" href="http://serverfault.com">http://serverfault.com</a> where users are in desperate need of being introduced to
+IUS.</p>
+<p>Speaking of blogs, the PR team can really help bring new users to the project
+by blogging themselves. Write a howto on an experience you had with IUS, or how
+IUS solved a problem for you.</p>
+</div>
+<div class="section" id="rpm-packaging">
+<h2>RPM Packaging<a class="headerlink" href="#rpm-packaging" title="Permalink to this headline">¶</a></h2>
+<p>RPM Packaging is the heart of the project. There are some limitations to
+packaging at the moment simply because our &#8216;build farm&#8217; is internal, and not
+publicly available. For those wanting to participate in packaging, please see
+the <a class="reference internal" href="IUSDeveloperGuide.html"><em>IUS Developer Guide</em></a>. A good place to start is by checking out the <a class="reference external" href="http://bugs.launchpad.net/ius">bug
+tracking system</a> to report bugs or submit patches or the
+<a class="reference internal" href="IUSDeveloperGuide.html#id1"><em>Package Wish List</em></a> for packages that you might want to build and submit
+to the project.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">We are currently in the process of coding the next version of our
+build system which will be released under an Open Source license. Once we have
+an instance of that setup, contributors will be able to submit and manage
+builds on their own.</p>
+</div>
+</div>
+<div class="section" id="testing-and-q-a">
+<h2>Testing and Q/A<a class="headerlink" href="#testing-and-q-a" title="Permalink to this headline">¶</a></h2>
+<p>Almost all updates sit in &#8216;testing&#8217; for around 2 weeks before being pushed to
+stable. An email is sent out to &#8216;ius-community&#8217; on Sundays (weekly) with a list
+of all packages in testing. You can also see what is in testing by simply
+running &#8216;yum check-update &#8211;enablerepo=ius-testing&#8217; on a box subscribed to IUS.</p>
+<p>Testers are encouraged to review this list weekly, and perform standard
+installations from ius-testing to verify the updates are smooth. Providing
+feedback to the project (good or bad) regarding an update that is in testing is
+very helpful for us to know things are running well. If you see an update in
+testing, and test it... you can provide feedback via any open bugs for that
+milestone which shouldn&#8217;t be hard to find:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Go to: <a class="reference external" href="https://code.launchpad.net/ius">https://code.launchpad.net/ius</a></li>
+<li>Find the &#8216;Series&#8217; for the package in question</li>
+<li>Find the milestone for this release under &#8220;Milestones and Releases&#8221;</li>
+<li>Here you should be able to find any bugs associated with the update.
+There is often a &#8216;bug&#8217; related to the release (packageXY Source Version
+Update, etc) which would be a good place to report bugs. If not, and no
+other bugs listed relate to the issue you saw... feel free to create a bug
+and link it to this milestone.</li>
+</ul>
+</div></blockquote>
+<p>Contributors can also help with testing by enabling the &#8216;ius-testing&#8217;
+repository on any of their non-production machines that might be running IUS
+packages...  and submitting bugs if anything breaks during nightly updates.</p>
+<p>The Testing Team is also responsible for development of testing tools, scripts,
+and automation. See: <a class="reference external" href="http://blueprints.launchpad.net/ius/+spec/automated-testing-with-hudson">Automated Testing with Jenkins CI</a></p>
+</div>
+<div class="section" id="id1">
+<h2>IUS Triage Team<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Contributors can join the <a class="reference external" href="http://launchpad.net/~ius-triage">IUS Triage Team</a> on LP and join the mailing list
+there.  Triage is an important part of ensuring the project makes forward
+progress and that issues don&#8217;t sit forever unresolved.</p>
+<blockquote>
+<div><ul>
+<li><p class="first">Engaging end users on <a class="reference external" href="mailto:ius-community&#37;&#52;&#48;lists&#46;launchpad&#46;net">ius-community<span>&#64;</span>lists<span>&#46;</span>launchpad<span>&#46;</span>net</a></p>
+</li>
+<li><dl class="first docutils">
+<dt>Reviewing new issues (bugs) submitted to LP</dt>
+<dd><ul class="first last simple">
+<li>Researching if necessary</li>
+<li>Posting follow up information that might help developers resolve the issue</li>
+<li>Making the initial response to end user (possibly requesting more information)</li>
+<li>Routing the issue to the right developer</li>
+<li>Linking the issue to relating &#8216;Series&#8217; and Bzr branches</li>
+<li>Attaching links to any related external bugs</li>
+<li>Setting category/status/severity appropriately</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">Following up with idle LP issues and working to get them resolved/closed.</p>
+</li>
+<li><p class="first">Tracking upstream. Ensuring issues are created [or exist] in LP when new
+source versions are available upstream for IUS package updates.</p>
+</li>
+<li><p class="first">Subscribing upstream &#8216;announce&#8217; mailing lists to the ius-triage list to
+ensure updates are handled promptly.</p>
+</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/pages/ContributingToIUS.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        
+        </p>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<center>
+
+<table cellpadding=55 cellspacing=0>
+  <tr>
+    <td valign=top>
+      <div><font size=4><p><b>Quick Links</b></p></font></div>
+      <div><li><a class='bottomlinks' href='About.html'>About</a></li></div>
+      <div><li><a class='bottomlinks' href='../index.html'>Sitemap</a></li></div>
+      <div><li><a class='bottomlinks' href='Repos.html'>Repositories</a></li></div>
+      <div><li><a class='bottomlinks' href='GettingStarted.html'>Getting Started</a></li></div>
+      <div><li><a class='bottomlinks' href='FAQs.html'>FAQs</a></li></div>
+    </td>
+  
+    <td valign=top>
+      <div><font size=4><p><b>Contact</b></p></font></div>
+      <div><li><a class='bottomlinks' href='http://launchpad.net/~ius-community'>Mailing list</a></li></div>
+      <div><li><a class='bottomlinks' href='https://answers.launchpad.net/ius'>Question & Answer</a></li></div>
+      <div><li><a class='bottomlinks' href='https://bugs.launchpad.net/ius'>Submit a Bug</a></li></div>
+      <div><li><a class='bottomlinks' href='mailto:coredev@iuscommunity.org'>coredev@iuscommunity.org</a></li></div>
+      <div><li><font color=grey>irc.freenode.net #iuscommunity</font></li></div>
+    </td>
+    
+    <td>
+      <p><a href='https://launchpad.net/ius'><img src="../_static/launchpad.png" /></a></p>
+      <p><a href='https://github.com/iuscommunity-pkg'><img src="../_static/github.png" /></a></p>
+    </td>
+    
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td><font color=grey size=2>Hosted by</font></td>
+    <td>
+      <a href="http://www.rackspacecloud.com">
+        <img src="../_static/rackspace_cloud.png" alt="Rackspace Cloud" />
+      </a>
+    </td>
+  </tr>
+</table>
+  
+</center>
+  </body>
+</html>

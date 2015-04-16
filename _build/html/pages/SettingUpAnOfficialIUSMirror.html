@@ -1,0 +1,280 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Setting up an Official IUS Mirror &mdash; IUS Community Project 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="IUS Community Project 0.1 documentation" href="../index.html" />
+    <link rel="next" title="Testimonials" href="Testimonials.html" />
+    <link rel="prev" title="Tools" href="Tools.html" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="../_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+<style>
+  a.bottomlinks:link {color: #4DC0EA; }
+  a.bottomlinks:active {color: #4DC0EA; }
+  a.bottomlinks:visited {color: #4DC0EA; }
+  a.bottomlinks:hover {color: #4DC0EA; }
+  
+#navibar {
+            clear: both; float: right; display: block; font-size: 1.8em; 
+            line-height: 120%; margin: 0; padding:0 10px;
+         }
+         
+#navibar ul { list-style: none; margin: 0; padding: 0; }
+#navibar ul li { float: left; list-style-type: none; }
+
+#navibar li a {
+                    font-weight: bold; color: #ffffff; display: block;
+                    line-height: 34px; padding: 0 15px; text-decoration: none;
+                    text-shadow: #0e0e6c 0px 0px 2px; border-right: solid 1px #446aa8;
+                    font-size: 13px; outline: none;
+              }
+                                  
+#navibar ul { float: left; height: 35px;
+              background: url("../_static/bg-tabs-highlight.png") repeat-x;
+            }
+  
+</style>
+
+  </head>
+  <body>
+<table width=100% cellpadding=0
+  <tr>
+    <td>
+      <a href="About.html">
+        <img class="logo" src="../_static/site_banner.png" alt="Logo"/>
+      </a>
+    </td>
+  </tr>
+
+  <tr>    
+    <td valign='bottom'>
+      <div id="navibar">
+        <ul>
+          <li><a href="WhatIsHappeningInTheCommunity.html">What's Happening</a></li>
+          <li><a href="About.html">About</a></li>
+          <li><a href="Documentation.html">Docs</a></li>
+          <li><a href="Testimonials.html">Testimonials</a></li>
+          <li><a href="Repos.html">Repos</a></li>
+          <li><a href="Tools.html">Tools</a></li>
+          <li><a href="GettingStarted.html">Getting Started</a></li>
+          <li><a href="FAQs.html">FAQs</a></li>
+          <li><a href="../index.html">Sitemap</a></li>
+        </div>
+    </td>
+    
+  </tr>
+</table>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="setting-up-an-official-ius-mirror">
+<h1>Setting up an Official IUS Mirror<a class="headerlink" href="#setting-up-an-official-ius-mirror" title="Permalink to this headline">¶</a></h1>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#setting-up-an-official-ius-mirror" id="id1">Setting up an Official IUS Mirror</a><ul>
+<li><a class="reference internal" href="#disclaimer" id="id2">Disclaimer</a></li>
+<li><a class="reference internal" href="#summary" id="id3">Summary</a></li>
+<li><a class="reference internal" href="#submitting-a-request-to-ius-core-development" id="id4">Submitting a Request to IUS Core Development</a></li>
+<li><a class="reference internal" href="#configuring-rsync" id="id5">Configuring Rsync</a></li>
+<li><a class="reference internal" href="#the-initial-sync" id="id6">The Initial Sync</a></li>
+<li><a class="reference internal" href="#setting-up-cron" id="id7">Setting Up Cron</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="disclaimer">
+<h2>Disclaimer<a class="headerlink" href="#disclaimer" title="Permalink to this headline">¶</a></h2>
+<p>These are new processes, and subject to change. IUS uses dMirr for disributed
+mirror server management which is a project we started. That said, dMirr itself
+is in beta and does not yet have all the required features for downstream
+mirrors. Once a proper dMirr command line client is available, these processes
+will change (and we will notify you).</p>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>This article outlines a basic way of syncing with IUS. That said, you aren&#8217;t
+required to use these scripts or processes if you wish to write your own.
+The basics of it are:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Upstream Official Repository is rsync://dl.iuscommunity.org/ius</li>
+<li>The file named CURRENT in the root of the repo is generated at the end of
+every push. Therefore, you can automate syncing whenever this file changes
+from what you have locally.</li>
+<li>Syncs should be done as near to the time that CURRENT changes as possible.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="submitting-a-request-to-ius-core-development">
+<h2>Submitting a Request to IUS Core Development<a class="headerlink" href="#submitting-a-request-to-ius-core-development" title="Permalink to this headline">¶</a></h2>
+<p>Before you can access the upstream rsync service, you must submit a request to
+have all downstream hosts added to our firewall. Send an email to
+<a class="reference external" href="mailto:coredev&#37;&#52;&#48;iuscommunity&#46;org">coredev<span>&#64;</span>iuscommunity<span>&#46;</span>org</a>:</p>
+<div class="highlight-python"><div class="highlight"><pre>Contact Name:
+Contact Email:
+List of Downstream Mirror Hosts:
+Path to &#39;ius&#39; (i.e. /pub/ius):
+Protocols Supported (rsync, ftp, http):
+</pre></div>
+</div>
+</div>
+<div class="section" id="configuring-rsync">
+<h2>Configuring Rsync<a class="headerlink" href="#configuring-rsync" title="Permalink to this headline">¶</a></h2>
+<p>The IUS Upstream Repository can be mirrored via rsync. The following is a
+preferred method as it allows mirrors to remain in sync hourly, but only pulling
+updates if there has been changes:</p>
+<p>Copy the following script somewhere, and make it executable:</p>
+<p><strong>/root/scripts/sync-ius.sh</strong>:</p>
+<div class="highlight-python"><div class="highlight"><pre># check to make sure we arent&#39; already running
+RES=$(ps -ef | grep &quot;[/bin/bash] /root/scripts/sync-ius.sh&quot; | wc -l)
+if [ $RES -gt 2 ]; then
+    echo &quot;IUS sync already running....&quot;
+    exit
+fi
+
+UPSTREAM_URI=&#39;rsync://dl.iuscommunity.org/ius&#39;
+LOCAL_DIR=&#39;/var/www/pub/ius&#39;
+TMP=$(mktemp -d)
+SYNC_CMD=&quot;rsync -aH --exclude-from=/etc/rsync/exclude.ius.txt --numeric-ids --delete --delete-after --delay-updates ${UPSTREAM_URI}/* ${LOCAL_DIR}&quot;
+
+mkdir -p ${LOCAL_DIR}
+
+# check with current file, if it diffs then we sync
+CURRENT=$(rsync ${UPSTREAM_URI}/CURRENT ${TMP}/CURRENT &amp;&amp; cat ${TMP}/CURRENT)
+MY_CURRENT=$(cat ${LOCAL_DIR}/CURRENT 2&gt;/dev/null || echo &quot;&quot;)
+
+if [ &quot;x${CURRENT}&quot; != &quot;x${MY_CURRENT}&quot; ]; then
+    echo &quot;Local IUS repository is out of sync with CURRENT&quot;
+    if [ &quot;x$1&quot; = &quot;x--randomize&quot; ]; then
+        let SEC=$(($RANDOM%3000+1))
+        echo &quot;Sleeping ${SEC} seconds to randomize sync time...&quot;
+        sleep $SEC
+    fi
+    ${SYNC_CMD}
+else
+    echo &quot;Local IUS repository is in sync with CURRENT&quot;
+fi
+</pre></div>
+</div>
+</div>
+<div class="section" id="the-initial-sync">
+<h2>The Initial Sync<a class="headerlink" href="#the-initial-sync" title="Permalink to this headline">¶</a></h2>
+<p>It is a good idea to run the initial sync manually so that the hourly cronjob
+doesn&#8217;t try to run while we are syncing (though the script protects against it).
+Plus, it allows you to detect any issues that might come up:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># /root/scripts/sync-ius.sh</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="setting-up-cron">
+<h2>Setting Up Cron<a class="headerlink" href="#setting-up-cron" title="Permalink to this headline">¶</a></h2>
+<p>To ensure not all downstream mirrors attempt to sync at the same time we
+randomize a sleep interval in the script, so be sure to add the &#8216;&#8211;randomize&#8217;
+flag to sync-ius.sh in your cron.</p>
+<p><strong>/etc/cron.d/sync-ius:</strong>:</p>
+<div class="highlight-python"><div class="highlight"><pre>1 * * * * root /root/scripts/sync-ius.sh --randomize &gt;/dev/null 2&gt;&amp;1
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/pages/SettingUpAnOfficialIUSMirror.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        
+        </p>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<center>
+
+<table cellpadding=55 cellspacing=0>
+  <tr>
+    <td valign=top>
+      <div><font size=4><p><b>Quick Links</b></p></font></div>
+      <div><li><a class='bottomlinks' href='About.html'>About</a></li></div>
+      <div><li><a class='bottomlinks' href='../index.html'>Sitemap</a></li></div>
+      <div><li><a class='bottomlinks' href='Repos.html'>Repositories</a></li></div>
+      <div><li><a class='bottomlinks' href='GettingStarted.html'>Getting Started</a></li></div>
+      <div><li><a class='bottomlinks' href='FAQs.html'>FAQs</a></li></div>
+    </td>
+  
+    <td valign=top>
+      <div><font size=4><p><b>Contact</b></p></font></div>
+      <div><li><a class='bottomlinks' href='http://launchpad.net/~ius-community'>Mailing list</a></li></div>
+      <div><li><a class='bottomlinks' href='https://answers.launchpad.net/ius'>Question & Answer</a></li></div>
+      <div><li><a class='bottomlinks' href='https://bugs.launchpad.net/ius'>Submit a Bug</a></li></div>
+      <div><li><a class='bottomlinks' href='mailto:coredev@iuscommunity.org'>coredev@iuscommunity.org</a></li></div>
+      <div><li><font color=grey>irc.freenode.net #iuscommunity</font></li></div>
+    </td>
+    
+    <td>
+      <p><a href='https://launchpad.net/ius'><img src="../_static/launchpad.png" /></a></p>
+      <p><a href='https://github.com/iuscommunity-pkg'><img src="../_static/github.png" /></a></p>
+    </td>
+    
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td><font color=grey size=2>Hosted by</font></td>
+    <td>
+      <a href="http://www.rackspacecloud.com">
+        <img src="../_static/rackspace_cloud.png" alt="Rackspace Cloud" />
+      </a>
+    </td>
+  </tr>
+</table>
+  
+</center>
+  </body>
+</html>

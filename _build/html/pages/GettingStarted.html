@@ -1,0 +1,234 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Getting Started &mdash; IUS Community Project 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="IUS Community Project 0.1 documentation" href="../index.html" />
+    <link rel="next" title="IUS Client Usage Guide" href="IUSClientUsageGuide.html" />
+    <link rel="prev" title="FAQs" href="FAQs.html" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="../_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+<style>
+  a.bottomlinks:link {color: #4DC0EA; }
+  a.bottomlinks:active {color: #4DC0EA; }
+  a.bottomlinks:visited {color: #4DC0EA; }
+  a.bottomlinks:hover {color: #4DC0EA; }
+  
+#navibar {
+            clear: both; float: right; display: block; font-size: 1.8em; 
+            line-height: 120%; margin: 0; padding:0 10px;
+         }
+         
+#navibar ul { list-style: none; margin: 0; padding: 0; }
+#navibar ul li { float: left; list-style-type: none; }
+
+#navibar li a {
+                    font-weight: bold; color: #ffffff; display: block;
+                    line-height: 34px; padding: 0 15px; text-decoration: none;
+                    text-shadow: #0e0e6c 0px 0px 2px; border-right: solid 1px #446aa8;
+                    font-size: 13px; outline: none;
+              }
+                                  
+#navibar ul { float: left; height: 35px;
+              background: url("../_static/bg-tabs-highlight.png") repeat-x;
+            }
+  
+</style>
+
+  </head>
+  <body>
+<table width=100% cellpadding=0
+  <tr>
+    <td>
+      <a href="About.html">
+        <img class="logo" src="../_static/site_banner.png" alt="Logo"/>
+      </a>
+    </td>
+  </tr>
+
+  <tr>    
+    <td valign='bottom'>
+      <div id="navibar">
+        <ul>
+          <li><a href="WhatIsHappeningInTheCommunity.html">What's Happening</a></li>
+          <li><a href="About.html">About</a></li>
+          <li><a href="Documentation.html">Docs</a></li>
+          <li><a href="Testimonials.html">Testimonials</a></li>
+          <li><a href="Repos.html">Repos</a></li>
+          <li><a href="Tools.html">Tools</a></li>
+          <li><a href="#">Getting Started</a></li>
+          <li><a href="FAQs.html">FAQs</a></li>
+          <li><a href="../index.html">Sitemap</a></li>
+        </div>
+    </td>
+    
+  </tr>
+</table>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="getting-started">
+<span id="gettingstarted"></span><h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#getting-started" id="id2">Getting Started</a><ul>
+<li><a class="reference internal" href="#reporting-bugs-and-feature-requests" id="id3">Reporting Bugs and Feature Requests</a></li>
+<li><a class="reference internal" href="#accessing-our-yum-repositories" id="id4">Accessing our Yum Repositories</a></li>
+<li><a class="reference internal" href="#subscribing-to-the-ius-yum-repository" id="id5">Subscribing to the IUS Yum Repository</a></li>
+<li><a class="reference internal" href="#known-yum-dependency-resolution-issues" id="id6">Known Yum Dependency Resolution Issues</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>Before using any packages from the IUS Community repositories, you should first
+read and agree with the <a class="reference external" href="http://dl.iuscommunity.org/pub/ius/IUS-COMMUNITY-EUA">End User Agreement</a>.</p>
+<p>All technical collaboration, bug tracking, blueprint planning, etc takes place
+at LaunchPad/IUS.</p>
+<p>General discussions happen within the IUS Community Members mailing list.
+Join the team on Launchpad and you will be able to subscribe to the list.</p>
+<div class="section" id="reporting-bugs-and-feature-requests">
+<h2>Reporting Bugs and Feature Requests<a class="headerlink" href="#reporting-bugs-and-feature-requests" title="Permalink to this headline">¶</a></h2>
+<p>Bugs and Feature Requests can be submitted via our <a class="reference external" href="http://bugs.launchpad.net/ius">Launchpad</a> tracking system.</p>
+</div>
+<div class="section" id="accessing-our-yum-repositories">
+<h2>Accessing our Yum Repositories<a class="headerlink" href="#accessing-our-yum-repositories" title="Permalink to this headline">¶</a></h2>
+<p>Our official yum repository is available at <a class="reference external" href="http://dl.iuscommunity.org/pub/ius">http://dl.iuscommunity.org/pub/ius</a>.
+Additional mirrors are available, and can be viewed <a class="reference external" href="http://dmirr.iuscommunity.org/ius/">here</a>.</p>
+</div>
+<div class="section" id="subscribing-to-the-ius-yum-repository">
+<span id="id1"></span><h2>Subscribing to the IUS Yum Repository<a class="headerlink" href="#subscribing-to-the-ius-yum-repository" title="Permalink to this headline">¶</a></h2>
+<p>Subscribing to the IUS Community repositories is as easy as installing an RPM
+package. Within the repo are two packages called <strong>epel-release</strong>, and
+<strong>ius-release</strong>. The packages configure your system to use the Fedora EPEL and
+IUS Community repositories, as well as installs the GPG keys necessary to
+validate signed packages of both.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">ius-release and epel-release packages information can be found at
+<a class="reference internal" href="Repos.html#release-packages"><em>Release Packages</em></a>.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">IUS Packages replace stock RHEL packages, however they do not
+obsolete them. Meaning, you can&#8217;t just &#8216;yum upgrade&#8217; and get our packages...
+you need to first remove the stock RHEL package such as mysql, and replace it
+with the IUS package such as mysql51. See <a class="reference internal" href="IUSClientUsageGuide.html"><em>IUS Client Usage Guide</em></a> for full
+examples of installing software from IUS.</p>
+</div>
+</div>
+<div class="section" id="known-yum-dependency-resolution-issues">
+<h2>Known Yum Dependency Resolution Issues<a class="headerlink" href="#known-yum-dependency-resolution-issues" title="Permalink to this headline">¶</a></h2>
+<p>The IUS CoreDev Team is aware of an issue with older versions of Yum and how it
+resolves dependencies when installing packages. For background on this matter
+please see the upstream bug reports that we have submitted:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://bugs.launchpad.net/ius/+bug/453543">Launchpad IUS Bug #453543</a></li>
+<li><a class="reference external" href="http://web.archive.org/web/20120114083114/http://yum.baseurl.org/ticket/296">Yum Bug #296</a></li>
+<li><a class="reference external" href="https://bugzilla.redhat.com/show_bug.cgi?id=529719">Red Hat Bug #529719</a></li>
+</ul>
+</div></blockquote>
+<p>Please be sure that you are using yum &gt; 3.2.26, or RHEL&#8217;s version 3.2.22-23.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/pages/GettingStarted.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        
+        </p>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<center>
+
+<table cellpadding=55 cellspacing=0>
+  <tr>
+    <td valign=top>
+      <div><font size=4><p><b>Quick Links</b></p></font></div>
+      <div><li><a class='bottomlinks' href='About.html'>About</a></li></div>
+      <div><li><a class='bottomlinks' href='../index.html'>Sitemap</a></li></div>
+      <div><li><a class='bottomlinks' href='Repos.html'>Repositories</a></li></div>
+      <div><li><a class='bottomlinks' href='#'>Getting Started</a></li></div>
+      <div><li><a class='bottomlinks' href='FAQs.html'>FAQs</a></li></div>
+    </td>
+  
+    <td valign=top>
+      <div><font size=4><p><b>Contact</b></p></font></div>
+      <div><li><a class='bottomlinks' href='http://launchpad.net/~ius-community'>Mailing list</a></li></div>
+      <div><li><a class='bottomlinks' href='https://answers.launchpad.net/ius'>Question & Answer</a></li></div>
+      <div><li><a class='bottomlinks' href='https://bugs.launchpad.net/ius'>Submit a Bug</a></li></div>
+      <div><li><a class='bottomlinks' href='mailto:coredev@iuscommunity.org'>coredev@iuscommunity.org</a></li></div>
+      <div><li><font color=grey>irc.freenode.net #iuscommunity</font></li></div>
+    </td>
+    
+    <td>
+      <p><a href='https://launchpad.net/ius'><img src="../_static/launchpad.png" /></a></p>
+      <p><a href='https://github.com/iuscommunity-pkg'><img src="../_static/github.png" /></a></p>
+    </td>
+    
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td><font color=grey size=2>Hosted by</font></td>
+    <td>
+      <a href="http://www.rackspacecloud.com">
+        <img src="../_static/rackspace_cloud.png" alt="Rackspace Cloud" />
+      </a>
+    </td>
+  </tr>
+</table>
+  
+</center>
+  </body>
+</html>

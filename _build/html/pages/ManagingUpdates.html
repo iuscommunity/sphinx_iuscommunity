@@ -1,0 +1,234 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Managing Updates &mdash; IUS Community Project 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="IUS Community Project 0.1 documentation" href="../index.html" />
+    <link rel="next" title="Repositories" href="Repos.html" />
+    <link rel="prev" title="IUS Package Wish List" href="IUSPackageWishList.html" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="../_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+<style>
+  a.bottomlinks:link {color: #4DC0EA; }
+  a.bottomlinks:active {color: #4DC0EA; }
+  a.bottomlinks:visited {color: #4DC0EA; }
+  a.bottomlinks:hover {color: #4DC0EA; }
+  
+#navibar {
+            clear: both; float: right; display: block; font-size: 1.8em; 
+            line-height: 120%; margin: 0; padding:0 10px;
+         }
+         
+#navibar ul { list-style: none; margin: 0; padding: 0; }
+#navibar ul li { float: left; list-style-type: none; }
+
+#navibar li a {
+                    font-weight: bold; color: #ffffff; display: block;
+                    line-height: 34px; padding: 0 15px; text-decoration: none;
+                    text-shadow: #0e0e6c 0px 0px 2px; border-right: solid 1px #446aa8;
+                    font-size: 13px; outline: none;
+              }
+                                  
+#navibar ul { float: left; height: 35px;
+              background: url("../_static/bg-tabs-highlight.png") repeat-x;
+            }
+  
+</style>
+
+  </head>
+  <body>
+<table width=100% cellpadding=0
+  <tr>
+    <td>
+      <a href="About.html">
+        <img class="logo" src="../_static/site_banner.png" alt="Logo"/>
+      </a>
+    </td>
+  </tr>
+
+  <tr>    
+    <td valign='bottom'>
+      <div id="navibar">
+        <ul>
+          <li><a href="WhatIsHappeningInTheCommunity.html">What's Happening</a></li>
+          <li><a href="About.html">About</a></li>
+          <li><a href="Documentation.html">Docs</a></li>
+          <li><a href="Testimonials.html">Testimonials</a></li>
+          <li><a href="Repos.html">Repos</a></li>
+          <li><a href="Tools.html">Tools</a></li>
+          <li><a href="GettingStarted.html">Getting Started</a></li>
+          <li><a href="FAQs.html">FAQs</a></li>
+          <li><a href="../index.html">Sitemap</a></li>
+        </div>
+    </td>
+    
+  </tr>
+</table>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="managing-updates">
+<span id="id1"></span><h1>Managing Updates<a class="headerlink" href="#managing-updates" title="Permalink to this headline">¶</a></h1>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#managing-updates" id="id2">Managing Updates</a><ul>
+<li><a class="reference internal" href="#what-should-be-updated" id="id3">What Should be Updated</a><ul>
+<li><a class="reference internal" href="#upsream-source-updates" id="id4">Upsream Source Updates</a></li>
+<li><a class="reference internal" href="#back-up-porting-from-rhel-and-fedora" id="id5">Back-Up-Porting from RHEL and Fedora</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#update-frequency" id="id6">Update Frequency</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="what-should-be-updated">
+<h2>What Should be Updated<a class="headerlink" href="#what-should-be-updated" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="upsream-source-updates">
+<h3>Upsream Source Updates<a class="headerlink" href="#upsream-source-updates" title="Permalink to this headline">¶</a></h3>
+<p>One of the goals of IUS is to remain inline with upstream stable sources. That
+said, anytime a new source update is available an update is general acceptable.
+That said, the developer has full right to skip a source update under the
+following conditions:</p>
+<blockquote>
+<div><ul class="simple">
+<li>The update is not applicable to the project. I.E. A fix was applied for a
+specific operating system that IUS doesn&#8217;t support.</li>
+<li>The update does not have any security fixes. Any security fixes needs to be
+applied asap. Alternatively security and major bug fixes can be backported if
+preferred.</li>
+<li>The update significantly breaks backward compatibility (which should not
+happen in a minor release update... so if it does be sure to wag your finger
+at the upstream devs and let them know what the business is).</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="back-up-porting-from-rhel-and-fedora">
+<h3>Back-Up-Porting from RHEL and Fedora<a class="headerlink" href="#back-up-porting-from-rhel-and-fedora" title="Permalink to this headline">¶</a></h3>
+<p>It is very common that backports to RHEL packages and updates in the current
+version of Fedora might apply IUS packages. We call this <a class="reference internal" href="Vocabulary.html#back-up-porting"><em>back-up-porting</em></a>.
+This is sometimes required to get security fixes applied before the next upstream
+stable source release. Doing so takes a more intimate knowledge of the source of
+your package and should not be done without caution and thorough testing.</p>
+<p>We also follow changes in Fedora to remain inline with what users expect. For
+example, adding a new subpackage for PHP or changing a default config setting.
+Changes like this should applied to IUS packages where possible and compatible
+with previous versions.</p>
+</div>
+</div>
+<div class="section" id="update-frequency">
+<h2>Update Frequency<a class="headerlink" href="#update-frequency" title="Permalink to this headline">¶</a></h2>
+<p>Some upstream devs don&#8217;t really have any concept of release management and just
+push out new updates whenever it is convenient. Though IUS is following upstream
+stable, we also kind of want to take the precautions to keep our releases as
+stable as possible. A good rule of thumb is to let a number of changes/fixes/etc
+acumulate and pushing out one larger update. Updates should be done no more than
+once every two weeks [preferably once a month] for the same package, unless a
+security or major bug fix is required.</p>
+<p>Our goal as packagers should not be zero day releases [to stable] for new
+upstream stable sources. Getting a zero day release out to testing is great,
+and by all means please do. But be sure that update gets proper testing before
+making it to stable.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/pages/ManagingUpdates.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        
+        </p>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<center>
+
+<table cellpadding=55 cellspacing=0>
+  <tr>
+    <td valign=top>
+      <div><font size=4><p><b>Quick Links</b></p></font></div>
+      <div><li><a class='bottomlinks' href='About.html'>About</a></li></div>
+      <div><li><a class='bottomlinks' href='../index.html'>Sitemap</a></li></div>
+      <div><li><a class='bottomlinks' href='Repos.html'>Repositories</a></li></div>
+      <div><li><a class='bottomlinks' href='GettingStarted.html'>Getting Started</a></li></div>
+      <div><li><a class='bottomlinks' href='FAQs.html'>FAQs</a></li></div>
+    </td>
+  
+    <td valign=top>
+      <div><font size=4><p><b>Contact</b></p></font></div>
+      <div><li><a class='bottomlinks' href='http://launchpad.net/~ius-community'>Mailing list</a></li></div>
+      <div><li><a class='bottomlinks' href='https://answers.launchpad.net/ius'>Question & Answer</a></li></div>
+      <div><li><a class='bottomlinks' href='https://bugs.launchpad.net/ius'>Submit a Bug</a></li></div>
+      <div><li><a class='bottomlinks' href='mailto:coredev@iuscommunity.org'>coredev@iuscommunity.org</a></li></div>
+      <div><li><font color=grey>irc.freenode.net #iuscommunity</font></li></div>
+    </td>
+    
+    <td>
+      <p><a href='https://launchpad.net/ius'><img src="../_static/launchpad.png" /></a></p>
+      <p><a href='https://github.com/iuscommunity-pkg'><img src="../_static/github.png" /></a></p>
+    </td>
+    
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td><font color=grey size=2>Hosted by</font></td>
+    <td>
+      <a href="http://www.rackspacecloud.com">
+        <img src="../_static/rackspace_cloud.png" alt="Rackspace Cloud" />
+      </a>
+    </td>
+  </tr>
+</table>
+  
+</center>
+  </body>
+</html>

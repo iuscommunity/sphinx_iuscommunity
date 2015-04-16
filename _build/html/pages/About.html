@@ -1,0 +1,275 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>About &mdash; IUS Community Project 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="IUS Community Project 0.1 documentation" href="../index.html" />
+    <link rel="next" title="Available Packages" href="AvailablePackages.html" />
+    <link rel="prev" title="Table Of Contents" href="../index.html" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="../_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+<style>
+  a.bottomlinks:link {color: #4DC0EA; }
+  a.bottomlinks:active {color: #4DC0EA; }
+  a.bottomlinks:visited {color: #4DC0EA; }
+  a.bottomlinks:hover {color: #4DC0EA; }
+  
+#navibar {
+            clear: both; float: right; display: block; font-size: 1.8em; 
+            line-height: 120%; margin: 0; padding:0 10px;
+         }
+         
+#navibar ul { list-style: none; margin: 0; padding: 0; }
+#navibar ul li { float: left; list-style-type: none; }
+
+#navibar li a {
+                    font-weight: bold; color: #ffffff; display: block;
+                    line-height: 34px; padding: 0 15px; text-decoration: none;
+                    text-shadow: #0e0e6c 0px 0px 2px; border-right: solid 1px #446aa8;
+                    font-size: 13px; outline: none;
+              }
+                                  
+#navibar ul { float: left; height: 35px;
+              background: url("../_static/bg-tabs-highlight.png") repeat-x;
+            }
+  
+</style>
+
+  </head>
+  <body>
+<table width=100% cellpadding=0
+  <tr>
+    <td>
+      <a href="#">
+        <img class="logo" src="../_static/site_banner.png" alt="Logo"/>
+      </a>
+    </td>
+  </tr>
+
+  <tr>    
+    <td valign='bottom'>
+      <div id="navibar">
+        <ul>
+          <li><a href="WhatIsHappeningInTheCommunity.html">What's Happening</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="Documentation.html">Docs</a></li>
+          <li><a href="Testimonials.html">Testimonials</a></li>
+          <li><a href="Repos.html">Repos</a></li>
+          <li><a href="Tools.html">Tools</a></li>
+          <li><a href="GettingStarted.html">Getting Started</a></li>
+          <li><a href="FAQs.html">FAQs</a></li>
+          <li><a href="../index.html">Sitemap</a></li>
+        </div>
+    </td>
+    
+  </tr>
+</table>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="about">
+<h1>About<a class="headerlink" href="#about" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The IUS Community Project is aimed at providing up to date and
+regularly maintained RPM packages for the latest upstream versions of
+PHP, Python, MySQL and other common software specifically for Redhat
+Enterprise Linux.  IUS can be thought of as a better way to upgrade
+RHEL, when you need to.</p>
+</div>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#about" id="id2">About</a><ul>
+<li><a class="reference internal" href="#history" id="id3">History</a></li>
+<li><a class="reference internal" href="#community-contribution" id="id4">Community Contribution</a></li>
+<li><a class="reference internal" href="#ius-in-production" id="id5">IUS in Production</a></li>
+<li><a class="reference internal" href="#project-goals" id="id6">Project Goals</a></li>
+<li><a class="reference internal" href="#contacting-the-ius-core-development-team" id="id7">Contacting the IUS Core Development Team</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="history">
+<h2>History<a class="headerlink" href="#history" title="Permalink to this headline">¶</a></h2>
+<p>The IUS Community Project is a brain child of the RPM Development Team at
+<a class="reference external" href="http://www.rackspace.com">Rackspace Hosting</a>. Since 2006, we have provided and maintain packages for
+the latest versions of PHP/MySQL and other common software on Red Hat
+Enterprise Linux, because a lot of our customers strongly demand it. Internally
+we maintain a number of package sets for an audience of thousands of production
+servers. Until now, these packages have only been available internally to
+Rackspace customers. After a while we started thinking: Why not make this
+available publicly for everyone to benefit?</p>
+<p>Updates for existing packages, as well as new packages, will be made available
+to the community first during a &#8216;testing&#8217; stage. We give it some time to bake
+and allow IUS users to test the packages out and submit bug reports if
+necessary. After testing, those packages will join the IUS &#8216;stable&#8217; repository.
+For new packages, we require the requester to do some testing and give feedback
+before we will push a package into the stable repository. For updates, we allow
+two weeks for feedback before pushing package into the stable repository.
+Updates that contain fixes for CVEs will get pushed into the stable repository
+sooner. We want to make sure that the the community has given some time to test
+the update, but also want to push the update in a timely fashion.</p>
+<p>IUS Community is run by full time Linux Engineers employed by Rackspace,
+therefore making the project &#8216;Sponsored by Rackspace&#8217;. That said, <strong>IUS is not
+a service of Rackspace</strong>. That means: It&#8217;s free! (And unsupported!) Please read
+the <a class="reference external" href="http://dl.iuscommunity.org/pub/ius/IUS-COMMUNITY-EUA">End User Agreement</a>. Support for IUS users can be found within our
+<a class="reference external" href="http://launchpad.net/~ius-community">mailing lists</a> and <a class="reference external" href="http://bugs.launchpad.net/ius">bug tracking system</a>.</p>
+<p>The IUS Community Project is also  SafeRepo Aware, see
+<a class="reference internal" href="TheSafeRepoInitiative.html"><em>The SafeRepo Initiative</em></a>.</p>
+</div>
+<div class="section" id="community-contribution">
+<h2>Community Contribution<a class="headerlink" href="#community-contribution" title="Permalink to this headline">¶</a></h2>
+<p>With the large scale use of our packages across the world, we are able to
+provide valuable feedback to the upstream vendors regarding the latest stable
+versions of their software. Any bugs reported for IUS Community Packages will
+be fixed by the <a class="reference external" href="http://launchpad.net/~ius-coredev">IUS CoreDev Team</a> where possible, and the report and
+suggested fix will also be pushed upstream to the software vendor. Having
+a large community that is constantly using the latest versions of software from
+the vendor (without having to manually update it) gets real time feedback to
+those vendors, helping them solidify their product more rapidly.</p>
+<p>By using IUS Community Packages, you are constantly helping upstream vendors to
+make their products better. All you have to do is be vocal and report any
+issues you might have after a package update to the IUS Community Repositories.</p>
+</div>
+<div class="section" id="ius-in-production">
+<h2>IUS in Production<a class="headerlink" href="#ius-in-production" title="Permalink to this headline">¶</a></h2>
+<p>IUS Community Packages offer the latest upstream stable versions of software
+built for Red Hat Enterprise Linux. There is an inherent risk when using
+bleeding edge software, and as such users must understand that they are
+forfeiting the stability of Red Hat packages in favor of getting updated
+software. That said, we attempt to fulfill the demand for servers that
+absolutely need the latest versions of software. We like to think of IUS as &#8220;a
+better way to upgrade RHEL, if you really need to.&#8221;</p>
+<p>IUS has a strict packaging model that enables users to subscribe to our repo,
+but only receive new packages and updates if you explicitly install one of our
+packages sets. Therefore, you can enjoy the stability of Red Hat Enterprise
+Linux for the majority of the system but also provide your developers with the
+latest PHP, Python, MySQL etc if that is what their applications demand.</p>
+</div>
+<div class="section" id="project-goals">
+<h2>Project Goals<a class="headerlink" href="#project-goals" title="Permalink to this headline">¶</a></h2>
+<p>The IUS Community Project is new, ever growing and changing.  That said,
+currently we have the following goals in mind:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Provide quality RPMs for Red Hat Enterprise Linux (and clones)</li>
+<li>Establish ourselves as a reliable means of upgrading certain parts of
+RHEL</li>
+<li>Offer more than one major version of software per repo/distro.</li>
+</ul>
+</div></blockquote>
+<p>IUS packages the most popular branches of upstream software. For example, we
+currently maintain packages for PHP 5.5, MySQL 5.6, and Python 3.4, all
+within the same repository. This approach allows end users to have more control
+over the software on their server, without the fuss of maintaining multiple
+repos.</p>
+</div>
+<div class="section" id="contacting-the-ius-core-development-team">
+<h2>Contacting the IUS Core Development Team<a class="headerlink" href="#contacting-the-ius-core-development-team" title="Permalink to this headline">¶</a></h2>
+<p>If you are unable to communicate via our <a class="reference external" href="http://bugs.launchpad.net/ius">bug tracking system</a>, <a class="reference external" href="http://launchpad.net/~ius-community">mailing
+lists</a>, or <a class="reference external" href="http://answers.launchpad.net/ius">answers section</a>, please send us an email to
+<a class="reference external" href="mailto:coredev&#37;&#52;&#48;iuscommunity&#46;org">coredev<span>&#64;</span>iuscommunity<span>&#46;</span>org</a>.</p>
+<p>We also hangout in #iuscommunity on irc.freenode.net.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/pages/About.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        
+        </p>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<center>
+
+<table cellpadding=55 cellspacing=0>
+  <tr>
+    <td valign=top>
+      <div><font size=4><p><b>Quick Links</b></p></font></div>
+      <div><li><a class='bottomlinks' href='#'>About</a></li></div>
+      <div><li><a class='bottomlinks' href='../index.html'>Sitemap</a></li></div>
+      <div><li><a class='bottomlinks' href='Repos.html'>Repositories</a></li></div>
+      <div><li><a class='bottomlinks' href='GettingStarted.html'>Getting Started</a></li></div>
+      <div><li><a class='bottomlinks' href='FAQs.html'>FAQs</a></li></div>
+    </td>
+  
+    <td valign=top>
+      <div><font size=4><p><b>Contact</b></p></font></div>
+      <div><li><a class='bottomlinks' href='http://launchpad.net/~ius-community'>Mailing list</a></li></div>
+      <div><li><a class='bottomlinks' href='https://answers.launchpad.net/ius'>Question & Answer</a></li></div>
+      <div><li><a class='bottomlinks' href='https://bugs.launchpad.net/ius'>Submit a Bug</a></li></div>
+      <div><li><a class='bottomlinks' href='mailto:coredev@iuscommunity.org'>coredev@iuscommunity.org</a></li></div>
+      <div><li><font color=grey>irc.freenode.net #iuscommunity</font></li></div>
+    </td>
+    
+    <td>
+      <p><a href='https://launchpad.net/ius'><img src="../_static/launchpad.png" /></a></p>
+      <p><a href='https://github.com/iuscommunity-pkg'><img src="../_static/github.png" /></a></p>
+    </td>
+    
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td><font color=grey size=2>Hosted by</font></td>
+    <td>
+      <a href="http://www.rackspacecloud.com">
+        <img src="../_static/rackspace_cloud.png" alt="Rackspace Cloud" />
+      </a>
+    </td>
+  </tr>
+</table>
+  
+</center>
+  </body>
+</html>

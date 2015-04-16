@@ -1,0 +1,398 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>FAQs &mdash; IUS Community Project 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="IUS Community Project 0.1 documentation" href="../index.html" />
+    <link rel="next" title="Getting Started" href="GettingStarted.html" />
+    <link rel="prev" title="Creating A GPG Key and Signing RPMs" href="CreatingAGPGKeyandSigningRPMs.html" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="../_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+<style>
+  a.bottomlinks:link {color: #4DC0EA; }
+  a.bottomlinks:active {color: #4DC0EA; }
+  a.bottomlinks:visited {color: #4DC0EA; }
+  a.bottomlinks:hover {color: #4DC0EA; }
+  
+#navibar {
+            clear: both; float: right; display: block; font-size: 1.8em; 
+            line-height: 120%; margin: 0; padding:0 10px;
+         }
+         
+#navibar ul { list-style: none; margin: 0; padding: 0; }
+#navibar ul li { float: left; list-style-type: none; }
+
+#navibar li a {
+                    font-weight: bold; color: #ffffff; display: block;
+                    line-height: 34px; padding: 0 15px; text-decoration: none;
+                    text-shadow: #0e0e6c 0px 0px 2px; border-right: solid 1px #446aa8;
+                    font-size: 13px; outline: none;
+              }
+                                  
+#navibar ul { float: left; height: 35px;
+              background: url("../_static/bg-tabs-highlight.png") repeat-x;
+            }
+  
+</style>
+
+  </head>
+  <body>
+<table width=100% cellpadding=0
+  <tr>
+    <td>
+      <a href="About.html">
+        <img class="logo" src="../_static/site_banner.png" alt="Logo"/>
+      </a>
+    </td>
+  </tr>
+
+  <tr>    
+    <td valign='bottom'>
+      <div id="navibar">
+        <ul>
+          <li><a href="WhatIsHappeningInTheCommunity.html">What's Happening</a></li>
+          <li><a href="About.html">About</a></li>
+          <li><a href="Documentation.html">Docs</a></li>
+          <li><a href="Testimonials.html">Testimonials</a></li>
+          <li><a href="Repos.html">Repos</a></li>
+          <li><a href="Tools.html">Tools</a></li>
+          <li><a href="GettingStarted.html">Getting Started</a></li>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="../index.html">Sitemap</a></li>
+        </div>
+    </td>
+    
+  </tr>
+</table>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="faqs">
+<span id="id1"></span><h1>FAQs<a class="headerlink" href="#faqs" title="Permalink to this headline">¶</a></h1>
+<p>The FAQs on this page are the most common, official questions we wanted to
+answer. However, if you don’t find your question here, please check out our
+<a class="reference external" href="http://answers.launchpad.net/ius">answers section</a>. There you can view all questions that have been
+answered, as well as ask your own.</p>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#faqs" id="id3">FAQs</a><ul>
+<li><a class="reference internal" href="#general" id="id4">General</a><ul>
+<li><a class="reference internal" href="#what-is-the-ius-community-project" id="id5">What is the IUS Community Project?</a></li>
+<li><a class="reference internal" href="#what-is-it-not" id="id6">What is it NOT?</a></li>
+<li><a class="reference internal" href="#what-does-ius-stand-for" id="id7">What Does IUS Stand For?</a></li>
+<li><a class="reference internal" href="#what-is-the-history-of-the-ius-community-project" id="id8">What is the History of the IUS Community Project</a></li>
+<li><a class="reference internal" href="#why-can-t-i-just-do-a-yum-upgrade-and-update-my-rpms" id="id9">Why can&#8217;t I just do a &#8216;yum upgrade&#8217; and update my RPMs?</a></li>
+<li><a class="reference internal" href="#why-are-ius-packages-named-differently" id="id10">Why are IUS Packages named differently</a></li>
+<li><a class="reference internal" href="#is-ius-saferepo-aware" id="id11">Is IUS SafeRepo Aware?</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#is-ius-right-for-me" id="id12">Is IUS Right For Me?</a><ul>
+<li><a class="reference internal" href="#am-i-a-rackspace-customer" id="id13">Am I a Rackspace Customer?</a></li>
+<li><a class="reference internal" href="#is-there-anyway-to-make-my-application-work-with-stock-rhel-packages" id="id14">Is there anyway to make my application work with stock RHEL packages?</a></li>
+<li><a class="reference internal" href="#can-i-afford-the-risk" id="id15">Can I afford the risk?</a></li>
+<li><a class="reference internal" href="#am-i-upgrading-software-because-i-failed-a-pci-security-scan" id="id16">Am I upgrading software because I failed a PCI Security Scan?</a></li>
+<li><a class="reference internal" href="#does-red-hat-support-the-use-of-ius-packages" id="id17">Does Red Hat Support the Use of IUS Packages?</a></li>
+<li><a class="reference internal" href="#do-you-recommend-ius-over-stock-rhel-packages" id="id18">Do You Recommend IUS Over Stock RHEL Packages</a></li>
+<li><a class="reference internal" href="#does-ius-cost-anything" id="id19">Does IUS Cost Anything?</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#development-and-packaging-questions" id="id20">Development and Packaging Questions</a><ul>
+<li><a class="reference internal" href="#how-can-i-contribute-to-ius" id="id21">How Can I Contribute to IUS</a></li>
+<li><a class="reference internal" href="#how-do-i-install-packages-from-testing" id="id22">How Do I Install Packages From Testing?</a></li>
+<li><a class="reference internal" href="#how-can-i-become-a-packager" id="id23">How Can I Become a Packager?</a></li>
+<li><a class="reference internal" href="#what-packaging-system-do-you-use" id="id24">What Packaging System Do You Use?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="general">
+<h2>General<a class="headerlink" href="#general" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="what-is-the-ius-community-project">
+<h3>What is the IUS Community Project?<a class="headerlink" href="#what-is-the-ius-community-project" title="Permalink to this headline">¶</a></h3>
+<p>The IUS Community Project is an effort to package rpms of the latest stable
+versions of the most commonly requested software on Red Hat Enterprise Linux
+and CentOS. IUS provides a better way to upgrade PHP/MySQL/Python/Etc on RHEL
+or CentOS. The project is run by professional Linux Engineers that are
+primarily focused on RPM Development in the web hosting industry.</p>
+</div>
+<div class="section" id="what-is-it-not">
+<h3>What is it NOT?<a class="headerlink" href="#what-is-it-not" title="Permalink to this headline">¶</a></h3>
+<p>For one, IUS is not a service of Rackspace but rather is Sponsored by
+Rackspace. Additionally, IUS is not the same as Fedora EPEL or similar repos.
+EPEL is geared towards adding packages to RHEL, and has strict guidelines that
+none of their packages replace anything in RHEL. IUS on the other hand is
+explicitly geared towards providing packages that do replace existing software
+in RHEL. Essentially, we are offering a proper way to upgrade software on RHEL
+when you really need it the latest upstream versions of software.</p>
+</div>
+<div class="section" id="what-does-ius-stand-for">
+<h3>What Does IUS Stand For?<a class="headerlink" href="#what-does-ius-stand-for" title="Permalink to this headline">¶</a></h3>
+<p>The acronym IUS stands for <strong>Inline with Upstream Stable</strong>. We also stand for
+world peace, and kittens.</p>
+</div>
+<div class="section" id="what-is-the-history-of-the-ius-community-project">
+<h3>What is the History of the IUS Community Project<a class="headerlink" href="#what-is-the-history-of-the-ius-community-project" title="Permalink to this headline">¶</a></h3>
+<p>See the <a class="reference internal" href="About.html"><em>About</em></a> page.</p>
+</div>
+<div class="section" id="why-can-t-i-just-do-a-yum-upgrade-and-update-my-rpms">
+<h3>Why can&#8217;t I just do a &#8216;yum upgrade&#8217; and update my RPMs?<a class="headerlink" href="#why-can-t-i-just-do-a-yum-upgrade-and-update-my-rpms" title="Permalink to this headline">¶</a></h3>
+<p>See <a class="reference internal" href="#why-are-ius-packages-named-differently"><em>Why are IUS Packages named differently</em></a>.</p>
+</div>
+<div class="section" id="why-are-ius-packages-named-differently">
+<span id="id2"></span><h3>Why are IUS Packages named differently<a class="headerlink" href="#why-are-ius-packages-named-differently" title="Permalink to this headline">¶</a></h3>
+<p>There is great debate around the naming conventions used for IUS Packages. For
+example the equivalent of &#8216;mysql&#8217; in IUS is mysql50, or mysql51, etc. The
+reason for this is simple, if the name of the package was the same as the stock
+package then as soon as you subscribed to the IUS Repositories your system
+would update nearly every package in the repo. This is what we call &#8216;bad
+ju-ju&#8217;. The majority of IUS users want to upgrade something specific like
+mysql, php, etc.; not everything. Additionally, the naming convention also
+allows us to offer multiple branches of software via the same repository as
+well. Meaning, you subscribe once and are always one install away from
+installing the latest that IUS has to offer.</p>
+<p>The alternative is to maintain multiple repositories for every package set. So
+rather than having all packages in one repository, you would have a repository
+for php52, php53, mysql50, mysql51, python26, etc… not too mention all the
+supporting packages that might not warrant their own repository like
+php-pear18, or mysqlclient15.</p>
+<p>Another major reason is for compatibility (or clarity) when mixing with other
+repos. for example when subscribing a RHEL box to EPEL, which has a number of
+php-pecl-XXX packages. All php-pecl packages in EPEL are built against stock
+php-5.1.6. If I introduced another repository with php-5.2.x in it and the
+packages were still named &#8216;php&#8217; that would be quite confusing, not to mentioned
+incompatible since the php-pecl packages in EPEL wouldn&#8217;t work. Having an
+alternative name makes it clear that php52 is not php.</p>
+<p>Long story short, from a packaging stand point, we have decided that this is
+the best way to maintain packages for IUS based on our package sets. Ease of
+installation might feel a bit janky or cumbersome, but if you look at it from
+the stance of long term use and supportability of IUS it really isn&#8217;t that bad.</p>
+</div>
+<div class="section" id="is-ius-saferepo-aware">
+<h3>Is IUS SafeRepo Aware?<a class="headerlink" href="#is-ius-saferepo-aware" title="Permalink to this headline">¶</a></h3>
+<p>It sure is! For more info on what this means, see the <a class="reference internal" href="TheSafeRepoInitiative.html"><em>The SafeRepo Initiative</em></a>.</p>
+</div>
+</div>
+<div class="section" id="is-ius-right-for-me">
+<h2>Is IUS Right For Me?<a class="headerlink" href="#is-ius-right-for-me" title="Permalink to this headline">¶</a></h2>
+<p>Ask yourself these questions:</p>
+<div class="section" id="am-i-a-rackspace-customer">
+<h3>Am I a Rackspace Customer?<a class="headerlink" href="#am-i-a-rackspace-customer" title="Permalink to this headline">¶</a></h3>
+<p>IUS is kind of like the &#8216;Fedora of Rackspace packages&#8217;. We&#8217;ve been offering
+similar services to Rackspace Hosting customers since late 2006. Please ask
+your AM or Support Team what packages and services are offered, rather than
+using IUS in your production. That said, for systems outside of Rackspace or
+for testing/dev environments IUS gives you a chance to try out the latest
+versions of software before it makes its way to Rackspace production.</p>
+</div>
+<div class="section" id="is-there-anyway-to-make-my-application-work-with-stock-rhel-packages">
+<h3>Is there anyway to make my application work with stock RHEL packages?<a class="headerlink" href="#is-there-anyway-to-make-my-application-work-with-stock-rhel-packages" title="Permalink to this headline">¶</a></h3>
+<p>If it is possible, stick with stock Red Hat packages. Thoroughly consider why
+you think you need upgraded versions that IUS provides and make a wise and
+educated decision.</p>
+</div>
+<div class="section" id="can-i-afford-the-risk">
+<h3>Can I afford the risk?<a class="headerlink" href="#can-i-afford-the-risk" title="Permalink to this headline">¶</a></h3>
+<p>IUS might introduce bugs/stability issues because it is bleeding edge versions
+of software. There is no way around that… so it is a give and take situation.
+You get the latest and greatest… but you also get to be one of the first people
+to find bugs before everyone else.</p>
+</div>
+<div class="section" id="am-i-upgrading-software-because-i-failed-a-pci-security-scan">
+<h3>Am I upgrading software because I failed a PCI Security Scan?<a class="headerlink" href="#am-i-upgrading-software-because-i-failed-a-pci-security-scan" title="Permalink to this headline">¶</a></h3>
+<p>Before jumping the gun and upgrading your packages because some &#8216;Security
+Professional&#8217; or software told you too, don&#8217;t. Atleast not without further
+consideration. Red Hat uses a packaging model called &#8216;back porting&#8217; where the
+security fixes are back-ported to older versions of software. Therefore, the
+PCI scan may fail but in fact the software is patched for the known
+vulnerability.</p>
+<p>Always check the errata for the package in question, ensure you are updated to
+the latest, and verify if or if not that security vulnerability has been
+patched. You can read more about how Red Hat back-ports security fixes here:</p>
+<p><a class="reference external" href="http://www.redhat.com/security/updates/backporting/?sc_cid=3093">http://www.redhat.com/security/updates/backporting/?sc_cid=3093</a></p>
+</div>
+<div class="section" id="does-red-hat-support-the-use-of-ius-packages">
+<h3>Does Red Hat Support the Use of IUS Packages?<a class="headerlink" href="#does-red-hat-support-the-use-of-ius-packages" title="Permalink to this headline">¶</a></h3>
+<p>Ha! No.</p>
+<p>The idea behind IUS is to provide and maintain packages for RHEL (and other
+distros) that are inline with the latest versions of upstream software. So, if
+you upgrade say, php to our php52 packages and then try to obtain support from
+Redhat regarding PHP you will likely not get it.</p>
+<p>There are two main reasons that most people want to use IUS: The first being
+that they absolutely need newer versions of software that RHEL does not
+provide, and the other being for people that need to do testing of upstream
+versions. Think of IUS as a better way to upgrade RHEL, if you really need to.</p>
+</div>
+<div class="section" id="do-you-recommend-ius-over-stock-rhel-packages">
+<h3>Do You Recommend IUS Over Stock RHEL Packages<a class="headerlink" href="#do-you-recommend-ius-over-stock-rhel-packages" title="Permalink to this headline">¶</a></h3>
+<p>No, not necessarily. We do not want to give the impression that our packages
+are better than those found in RHEL. Red Hat has teams of developers working
+tirelessly to ensure the stability and reliability of their packages. IUS does
+not have the resources to even begin to compete with the stability and quality
+of the official packages maintained by Red Hat. Plus, we are also following the
+latest and greatest sources from upstream directly which inevitably opens up a
+higher level of risk that those packages will introduce bugs.</p>
+<p>IUS is recommended for users that absolutely need newer versions of specific
+software than RHEL can provide. IUS is not intended for users that want to
+update their entire OS. You don&#8217;t want to use IUS packages just because it
+&#8216;feels good&#8217; or is &#8216;cool&#8217; to have newer software. Though, don&#8217;t get me wrong,
+IUS is pretty cool.</p>
+<p>IUS solves the problem of: &#8220;How do I upgrade software on my RHEL machine, and
+keep that software updated and maintained for bugs/security issues?&#8221; You can
+look all over the internets and see dozens of &#8216;how-to&#8217; articles where people
+explain how they upgraded PHP/MySQL/etc. on their RHEL server. But how many do
+you find that explain how they keep that version of PHP/MySQL/etc. updated and
+patched? Not many, until now.</p>
+</div>
+<div class="section" id="does-ius-cost-anything">
+<h3>Does IUS Cost Anything?<a class="headerlink" href="#does-ius-cost-anything" title="Permalink to this headline">¶</a></h3>
+<p>Nope, but we do ask that if you&#8217;ve found IUS useful that you drop us a line and
+say hi or blog about it to get the word out for us.</p>
+</div>
+</div>
+<div class="section" id="development-and-packaging-questions">
+<h2>Development and Packaging Questions<a class="headerlink" href="#development-and-packaging-questions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="how-can-i-contribute-to-ius">
+<h3>How Can I Contribute to IUS<a class="headerlink" href="#how-can-i-contribute-to-ius" title="Permalink to this headline">¶</a></h3>
+<p>Currently the best way to contribute is by providing feedback of testing and
+stable packages. Our main goal is to provide stable packages using the latest
+upstream sources which can be difficult. By users reporting any issues/bugs
+they come across right away, we can get those fixed and updated packages pushed
+out asap. That said, please also see <a class="reference internal" href="ContributingToIUS.html"><em>Contributing to IUS</em></a> on the wiki.</p>
+</div>
+<div class="section" id="how-do-i-install-packages-from-testing">
+<h3>How Do I Install Packages From Testing?<a class="headerlink" href="#how-do-i-install-packages-from-testing" title="Permalink to this headline">¶</a></h3>
+<p>When packages are tagged as &#8216;testing&#8217; in our buildfarm they are added to the
+<a class="reference external" href="http://dl.iuscommunity.org/pub/ius/testing">testing repository</a>. If you have installed the ius-release package then
+you already have this repo configured in yum, but disabled by default. Simply
+issue the following command for the package(s) you want to install from
+testing:</p>
+<div class="highlight-python"><div class="highlight"><pre>[root@linuxbox ~]# yum install PACKAGE_NAME --enablerepo=ius-testing
+</pre></div>
+</div>
+</div>
+<div class="section" id="how-can-i-become-a-packager">
+<h3>How Can I Become a Packager?<a class="headerlink" href="#how-can-i-become-a-packager" title="Permalink to this headline">¶</a></h3>
+<p>Currently we are not opening up access for packagers outside of the IUS Core
+Development Team, which is currently the Engineers at Rackspace that are
+leading IUS. This is primarily due to the fact that our buildsystem is not
+publicly available. It is something that we are going to open up later on once
+IUS is fully vetted and all processes and documentation have been figured out,
+and of course once we get a public build system setup. For the time being we
+graciously request that you submit patches or SRPMS via the <a class="reference external" href="http://bugs.launchpad.net/ius">bug tracking system</a>.
+See our <a class="reference internal" href="IUSDeveloperGuide.html"><em>IUS Developer Guide</em></a> on the wiki for info on branching the Bazaar repos and
+creating merge requests.</p>
+</div>
+<div class="section" id="what-packaging-system-do-you-use">
+<h3>What Packaging System Do You Use?<a class="headerlink" href="#what-packaging-system-do-you-use" title="Permalink to this headline">¶</a></h3>
+<p>We built a system called MonkeyFarm that functions much like <a class="reference external" href="http://fedoraproject.org/wiki/Koji">Fedora
+Koji</a>. We make no attempt to compete with Koji in that department, however
+there were other needs for a &#8216;build system&#8217; outside of RPM packaging that lead
+us to continue work on our own. Additionally, the preceptor to MonkeyFarm was
+RPE (The Rackspace Packaging Environment) which was started before Koji was
+released publicly (and before we knew about it).</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/pages/FAQs.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        
+        </p>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<center>
+
+<table cellpadding=55 cellspacing=0>
+  <tr>
+    <td valign=top>
+      <div><font size=4><p><b>Quick Links</b></p></font></div>
+      <div><li><a class='bottomlinks' href='About.html'>About</a></li></div>
+      <div><li><a class='bottomlinks' href='../index.html'>Sitemap</a></li></div>
+      <div><li><a class='bottomlinks' href='Repos.html'>Repositories</a></li></div>
+      <div><li><a class='bottomlinks' href='GettingStarted.html'>Getting Started</a></li></div>
+      <div><li><a class='bottomlinks' href='#'>FAQs</a></li></div>
+    </td>
+  
+    <td valign=top>
+      <div><font size=4><p><b>Contact</b></p></font></div>
+      <div><li><a class='bottomlinks' href='http://launchpad.net/~ius-community'>Mailing list</a></li></div>
+      <div><li><a class='bottomlinks' href='https://answers.launchpad.net/ius'>Question & Answer</a></li></div>
+      <div><li><a class='bottomlinks' href='https://bugs.launchpad.net/ius'>Submit a Bug</a></li></div>
+      <div><li><a class='bottomlinks' href='mailto:coredev@iuscommunity.org'>coredev@iuscommunity.org</a></li></div>
+      <div><li><font color=grey>irc.freenode.net #iuscommunity</font></li></div>
+    </td>
+    
+    <td>
+      <p><a href='https://launchpad.net/ius'><img src="../_static/launchpad.png" /></a></p>
+      <p><a href='https://github.com/iuscommunity-pkg'><img src="../_static/github.png" /></a></p>
+    </td>
+    
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td><font color=grey size=2>Hosted by</font></td>
+    <td>
+      <a href="http://www.rackspacecloud.com">
+        <img src="../_static/rackspace_cloud.png" alt="Rackspace Cloud" />
+      </a>
+    </td>
+  </tr>
+</table>
+  
+</center>
+  </body>
+</html>

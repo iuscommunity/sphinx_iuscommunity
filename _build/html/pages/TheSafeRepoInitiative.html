@@ -1,0 +1,342 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>The SafeRepo Initiative &mdash; IUS Community Project 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="IUS Community Project 0.1 documentation" href="../index.html" />
+    <link rel="next" title="Upgrading the Old Way" href="UpgradingTheOldWay.html" />
+    <link rel="prev" title="Testimonials" href="Testimonials.html" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="../_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+<style>
+  a.bottomlinks:link {color: #4DC0EA; }
+  a.bottomlinks:active {color: #4DC0EA; }
+  a.bottomlinks:visited {color: #4DC0EA; }
+  a.bottomlinks:hover {color: #4DC0EA; }
+  
+#navibar {
+            clear: both; float: right; display: block; font-size: 1.8em; 
+            line-height: 120%; margin: 0; padding:0 10px;
+         }
+         
+#navibar ul { list-style: none; margin: 0; padding: 0; }
+#navibar ul li { float: left; list-style-type: none; }
+
+#navibar li a {
+                    font-weight: bold; color: #ffffff; display: block;
+                    line-height: 34px; padding: 0 15px; text-decoration: none;
+                    text-shadow: #0e0e6c 0px 0px 2px; border-right: solid 1px #446aa8;
+                    font-size: 13px; outline: none;
+              }
+                                  
+#navibar ul { float: left; height: 35px;
+              background: url("../_static/bg-tabs-highlight.png") repeat-x;
+            }
+  
+</style>
+
+  </head>
+  <body>
+<table width=100% cellpadding=0
+  <tr>
+    <td>
+      <a href="About.html">
+        <img class="logo" src="../_static/site_banner.png" alt="Logo"/>
+      </a>
+    </td>
+  </tr>
+
+  <tr>    
+    <td valign='bottom'>
+      <div id="navibar">
+        <ul>
+          <li><a href="WhatIsHappeningInTheCommunity.html">What's Happening</a></li>
+          <li><a href="About.html">About</a></li>
+          <li><a href="Documentation.html">Docs</a></li>
+          <li><a href="Testimonials.html">Testimonials</a></li>
+          <li><a href="Repos.html">Repos</a></li>
+          <li><a href="Tools.html">Tools</a></li>
+          <li><a href="GettingStarted.html">Getting Started</a></li>
+          <li><a href="FAQs.html">FAQs</a></li>
+          <li><a href="../index.html">Sitemap</a></li>
+        </div>
+    </td>
+    
+  </tr>
+</table>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="the-saferepo-initiative">
+<span id="id1"></span><h1>The SafeRepo Initiative<a class="headerlink" href="#the-saferepo-initiative" title="Permalink to this headline">¶</a></h1>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#the-saferepo-initiative" id="id5">The SafeRepo Initiative</a><ul>
+<li><a class="reference internal" href="#introduction" id="id6">Introduction</a></li>
+<li><a class="reference internal" href="#terminology" id="id7">Terminology</a></li>
+<li><a class="reference internal" href="#the-current-problem-with-3rd-party-repos" id="id8">The Current Problem with 3rd Party Repos</a><ul>
+<li><a class="reference internal" href="#some-examples-of-safe-repositories" id="id9">Some examples of safe repositories:</a></li>
+<li><a class="reference internal" href="#so-what-is-an-unsafe-repository" id="id10">So what is an &#8216;unsafe repository&#8217;?</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#making-the-community-aware" id="id11">Making The Community Aware</a></li>
+<li><a class="reference internal" href="#the-saferepo-specification" id="id12">The SafeRepo Specification</a></li>
+<li><a class="reference internal" href="#addon-packages" id="id13">Addon Packages</a></li>
+<li><a class="reference internal" href="#replacement-packages" id="id14">Replacement Packages</a></li>
+<li><a class="reference internal" href="#parallel-installable-packages" id="id15">Parallel Installable Packages</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>The SafeRepo Initiative is a &#8216;proposal&#8217; [if you will] for a standard in 3rd
+party Yum repositories. Currently there is none. It is more of an idea, rather
+than an official specification. The idea of safe repositories came about while
+building out the IUS Community Project, and as such this proposal is lead by
+the IUS Core Development Team. We strive to follow this policy whenever
+possible.  There is one notable exception, see
+<a class="reference internal" href="IUSvsSoftwareCollections.html"><em>IUS vs. Software Collections</em></a>.</p>
+</div>
+<div class="section" id="terminology">
+<h2>Terminology<a class="headerlink" href="#terminology" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><strong>Distro</strong> or <strong>Stock Distro</strong>: Refers to a Linux distribution as it comes from the
+vendor, such as Redhat, CentOS, Fedora, Etc.</li>
+<li><strong>Repo</strong> or <strong>3rd Party Repo</strong>: Refers to any secondary yum repository that a Linux
+system can subscribe to in order to install additional packages that the Stock
+Distro doesn&#8217;t provide by default.</li>
+<li><strong>3rd Party Package</strong>: Refers to an rpm package that a 3rd Party Repo provides.</li>
+<li><strong>Stock Package</strong>: Refers to an rpm package that a Stock Distro provides in
+default repositories.</li>
+</ul>
+</div>
+<div class="section" id="the-current-problem-with-3rd-party-repos">
+<h2>The Current Problem with 3rd Party Repos<a class="headerlink" href="#the-current-problem-with-3rd-party-repos" title="Permalink to this headline">¶</a></h2>
+<p>3rd party yum repositories introduce a level of unknown compatibility, as well
+as unknown usage. One repo might offer 3rd Party Packages that are meant to
+replace existing Stock Packages within a Stock Distro, and others might
+explicitly only add packages to a distribution. However there are many that you
+just don&#8217;t know what they will do when you subscribe, and often they simply
+override Stock Packages from the Distro which is unsafe in a production
+environment.</p>
+<div class="section" id="some-examples-of-safe-repositories">
+<h3>Some examples of safe repositories:<a class="headerlink" href="#some-examples-of-safe-repositories" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Fedora EPEL: Extra Packages for Enterprise Linux is a repository geared towards
+adding packages to RHEL, but have strict guidelines that packages will never
+replace or conflict with existing RHEL packages. Therefore, subscribing to EPEL
+is safe in that nothing will happen unless you explicitly install a package
+from the repo.</li>
+<li>IUS Community: The IUS Community Project provides packages for RHEL that follow
+the latest upstream stable source versions of specific software such as PHP,
+MySQL, Python, etc. IUS is a safe repo because it uses alternate package names
+that <a class="reference external" href="http://docs.fedoraproject.org/en-US/Fedora_Draft_Documentation/0.1/html/RPM_Guide/ch-dependencies.html#RPM_Guide-Dependencies-capabilities">provide</a> the same software (for example php55u provides php) but do not
+<a class="reference external" href="http://docs.fedoraproject.org/en-US/Fedora_Draft_Documentation/0.1/html/RPM_Guide/ch-dependencies.html#RPM_Guide-Dependencies-obsoletes">obsolete</a>. IUS packages explicitly <a class="reference external" href="http://docs.fedoraproject.org/en-US/Fedora_Draft_Documentation/0.1/html/RPM_Guide/ch-dependencies.html#RPM_Guide-Dependencies-conflicts">conflict</a> with stock packages, therefore
+preventing anything from IUS automatically installing on/over RHEL.</li>
+</ul>
+</div>
+<div class="section" id="so-what-is-an-unsafe-repository">
+<h3>So what is an &#8216;unsafe repository&#8217;?<a class="headerlink" href="#so-what-is-an-unsafe-repository" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Any 3rd Party Repo offering 3rd Party Packages that <a class="reference external" href="http://docs.fedoraproject.org/en-US/Fedora_Draft_Documentation/0.1/html/RPM_Guide/ch-dependencies.html#RPM_Guide-Dependencies-obsoletes">obsolete</a> or directly
+replace Stock Packages because they have the same package name. For example, if
+a repository has php-5.5.16 and you subscribe to it, your server will
+automatically upgrade PHP to that version.</li>
+<li>Any 3rd Party Repo with packages that explicitly <a class="reference external" href="http://docs.fedoraproject.org/en-US/Fedora_Draft_Documentation/0.1/html/RPM_Guide/ch-dependencies.html#RPM_Guide-Dependencies-obsoletes">obsolete</a> Stock Distro
+Packages.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="making-the-community-aware">
+<h2>Making The Community Aware<a class="headerlink" href="#making-the-community-aware" title="Permalink to this headline">¶</a></h2>
+<p>System administrators and end users need to know if a 3rd Party Repo they are
+subscribing a server to is safe. Choosing to follow the development practices
+of the SafeRepo Initiative tells your users that you value standardization and
+provides assurance that using your custom package repository isn&#8217;t going to
+cause their installation to be in an inconsistent state from unexpected or
+unwanted package updates.</p>
+<p>SafeRepo is not a certification, rather a push for awareness. If you are
+interested in making your repositories safer, see the specification below. Once
+you feel your repo meets the requirements, add a notice to your site that says
+something to the affect of &#8220;This site is SafeRepo Aware!&#8221;. Be sure to link it
+back to us so they know what it means. Additionally, If you&#8217;d like to be added
+to our list of known safe repositories just send us an email to
+<a class="reference external" href="mailto:coredev&#37;&#52;&#48;iuscommunity&#46;org">coredev<span>&#64;</span>iuscommunity<span>&#46;</span>org</a>.</p>
+</div>
+<div class="section" id="the-saferepo-specification">
+<h2>The SafeRepo Specification<a class="headerlink" href="#the-saferepo-specification" title="Permalink to this headline">¶</a></h2>
+<p>The following outlines the basic steps and requirements necessary to make your
+3rd party yum repo SafeRepo Aware. Package requirements to provide a SafeRepo
+are simple, though differ based on the type of package they are. The following
+are general package types as they relate to creating a safe repository of 3rd
+party packages:</p>
+<ul class="simple">
+<li>Addon Packages</li>
+<li>Replacement Packages</li>
+<li>Parallel Installable Packages</li>
+</ul>
+</div>
+<div class="section" id="addon-packages">
+<span id="id2"></span><h2>Addon Packages<a class="headerlink" href="#addon-packages" title="Permalink to this headline">¶</a></h2>
+<p>This type of package provides software that does not currently exist in the
+Stock Distro. The Fedora EPEL repositories are perfect examples of strictly
+addon packages. The following rules apply:</p>
+<ul class="simple">
+<li>Can not Obsolete a Stock Distro Package</li>
+<li>Can not have the same name as another Stock Distro Package</li>
+<li>Does not Conflict with a Stock Distro Package. If it does, it is a
+Replacement Packages.</li>
+<li>Must not automatically install, upgrade, or replace Stock Distro Packages
+when subscribing to the repo. Should the Stock Distro later add the package,
+the 3rd Party Repo should then remove the package from its repo.</li>
+</ul>
+</div>
+<div class="section" id="replacement-packages">
+<span id="id3"></span><h2>Replacement Packages<a class="headerlink" href="#replacement-packages" title="Permalink to this headline">¶</a></h2>
+<p>This type of package provides the same software that another Stock Package
+(i.e. php55u provides php). The IUS Community Project is an example of a 3rd
+Party Repo that provides Replacement Packages. The following rules apply:</p>
+<ul class="simple">
+<li>Can not Obsolete a Stock Distro Package</li>
+<li>Can not have the same name as another Stock Distro Package</li>
+<li>Must Provide the software it is replacing and be [more or less] compatible
+with other Stock Distro Packages that require it.</li>
+<li>Must explicitly conflict with a Stock Distro Package (via the spec). For
+example the package php55u &#8220;Conflicts: php &lt; 5.5&#8221;, but it &#8220;Provides: php =
+%{version}&#8221;.</li>
+<li>Must not automatically install, upgrade, or replace Stock Distro Packages when
+subscribing to the repo.</li>
+</ul>
+</div>
+<div class="section" id="parallel-installable-packages">
+<span id="id4"></span><h2>Parallel Installable Packages<a class="headerlink" href="#parallel-installable-packages" title="Permalink to this headline">¶</a></h2>
+<p>This type of package is very much like a Replacement Package, however it is
+meant to be installed side-by-side with the Stock Distro Package that it would
+otherwise replace. Some distros sometimes use this technique to introduce newer
+software while not interrupting the system and software that require the older
+version of it. Python for example is a system critical piece of software.
+Upgrading it will always cause issues, however by parallel installing a newer
+version of python you have the best of both words. Users/Applications that
+require a newer version of that software can explicitly call the alternate
+location while other software continues to work fine. The following rules
+apply:</p>
+<ul class="simple">
+<li>Can not Obsolete a Stock Distro Package:</li>
+<li>Can not have the same name as another Stock Distro Package</li>
+<li>Can not Provide the software it is installing next to. For example,
+python27 does not &#8220;Provide: python&#8221; because this might confuse other Stock
+Distro Packages to think that it can find python and its libraries in the stock
+location (it can&#8217;t).</li>
+<li>Must not automatically install, upgrade, or replace Stock Distro Packages
+when subscribing to the repo.</li>
+<li>Executable binaries must be renamed with the major version number. I.e.
+&#8216;/usr/bin/python&#8217; -&gt; &#8216;/usr/bin/python2.7&#8217;.</li>
+<li>An identifier can/should be added to the release, such as Release:
+1.ius.parallel%{?dist}.</li>
+<li>All directories must have alternate paths. I.e. &#8216;/usr/lib/python2.6&#8217; -&gt;
+&#8216;/usr/lib/python2.7&#8217;.</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/pages/TheSafeRepoInitiative.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        
+        </p>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<center>
+
+<table cellpadding=55 cellspacing=0>
+  <tr>
+    <td valign=top>
+      <div><font size=4><p><b>Quick Links</b></p></font></div>
+      <div><li><a class='bottomlinks' href='About.html'>About</a></li></div>
+      <div><li><a class='bottomlinks' href='../index.html'>Sitemap</a></li></div>
+      <div><li><a class='bottomlinks' href='Repos.html'>Repositories</a></li></div>
+      <div><li><a class='bottomlinks' href='GettingStarted.html'>Getting Started</a></li></div>
+      <div><li><a class='bottomlinks' href='FAQs.html'>FAQs</a></li></div>
+    </td>
+  
+    <td valign=top>
+      <div><font size=4><p><b>Contact</b></p></font></div>
+      <div><li><a class='bottomlinks' href='http://launchpad.net/~ius-community'>Mailing list</a></li></div>
+      <div><li><a class='bottomlinks' href='https://answers.launchpad.net/ius'>Question & Answer</a></li></div>
+      <div><li><a class='bottomlinks' href='https://bugs.launchpad.net/ius'>Submit a Bug</a></li></div>
+      <div><li><a class='bottomlinks' href='mailto:coredev@iuscommunity.org'>coredev@iuscommunity.org</a></li></div>
+      <div><li><font color=grey>irc.freenode.net #iuscommunity</font></li></div>
+    </td>
+    
+    <td>
+      <p><a href='https://launchpad.net/ius'><img src="../_static/launchpad.png" /></a></p>
+      <p><a href='https://github.com/iuscommunity-pkg'><img src="../_static/github.png" /></a></p>
+    </td>
+    
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td><font color=grey size=2>Hosted by</font></td>
+    <td>
+      <a href="http://www.rackspacecloud.com">
+        <img src="../_static/rackspace_cloud.png" alt="Rackspace Cloud" />
+      </a>
+    </td>
+  </tr>
+</table>
+  
+</center>
+  </body>
+</html>

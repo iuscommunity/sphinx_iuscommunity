@@ -1,0 +1,275 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>IUS vs. Software Collections &mdash; IUS Community Project 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="IUS Community Project 0.1 documentation" href="../index.html" />
+    <link rel="prev" title="What Is Happening In The Community" href="WhatIsHappeningInTheCommunity.html" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="../_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+<style>
+  a.bottomlinks:link {color: #4DC0EA; }
+  a.bottomlinks:active {color: #4DC0EA; }
+  a.bottomlinks:visited {color: #4DC0EA; }
+  a.bottomlinks:hover {color: #4DC0EA; }
+  
+#navibar {
+            clear: both; float: right; display: block; font-size: 1.8em; 
+            line-height: 120%; margin: 0; padding:0 10px;
+         }
+         
+#navibar ul { list-style: none; margin: 0; padding: 0; }
+#navibar ul li { float: left; list-style-type: none; }
+
+#navibar li a {
+                    font-weight: bold; color: #ffffff; display: block;
+                    line-height: 34px; padding: 0 15px; text-decoration: none;
+                    text-shadow: #0e0e6c 0px 0px 2px; border-right: solid 1px #446aa8;
+                    font-size: 13px; outline: none;
+              }
+                                  
+#navibar ul { float: left; height: 35px;
+              background: url("../_static/bg-tabs-highlight.png") repeat-x;
+            }
+  
+</style>
+
+  </head>
+  <body>
+<table width=100% cellpadding=0
+  <tr>
+    <td>
+      <a href="About.html">
+        <img class="logo" src="../_static/site_banner.png" alt="Logo"/>
+      </a>
+    </td>
+  </tr>
+
+  <tr>    
+    <td valign='bottom'>
+      <div id="navibar">
+        <ul>
+          <li><a href="WhatIsHappeningInTheCommunity.html">What's Happening</a></li>
+          <li><a href="About.html">About</a></li>
+          <li><a href="Documentation.html">Docs</a></li>
+          <li><a href="Testimonials.html">Testimonials</a></li>
+          <li><a href="Repos.html">Repos</a></li>
+          <li><a href="Tools.html">Tools</a></li>
+          <li><a href="GettingStarted.html">Getting Started</a></li>
+          <li><a href="FAQs.html">FAQs</a></li>
+          <li><a href="../index.html">Sitemap</a></li>
+        </div>
+    </td>
+    
+  </tr>
+</table>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="ius-vs-software-collections">
+<h1>IUS vs. Software Collections<a class="headerlink" href="#ius-vs-software-collections" title="Permalink to this headline">¶</a></h1>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#ius-vs-software-collections" id="id2">IUS vs. Software Collections</a><ul>
+<li><a class="reference internal" href="#introduction" id="id3">Introduction</a></li>
+<li><a class="reference internal" href="#types-of-packages" id="id4">Types of Packages</a></li>
+<li><a class="reference internal" href="#file-locations" id="id5">File Locations</a></li>
+<li><a class="reference internal" href="#usage" id="id6">Usage</a></li>
+<li><a class="reference internal" href="#releases" id="id7">Releases</a></li>
+<li><a class="reference internal" href="#faq" id="id8">FAQ</a></li>
+<li><a class="reference internal" href="#more-info" id="id9">More Info</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>On <a class="reference external" href="http://developerblog.redhat.com/2013/09/12/rhscl1-ga/">2013-09-12</a>, Red Hat released a product called <a class="reference external" href="https://www.softwarecollections.org">Software Collections</a>,
+also know as SCL.  The front page has this statement:</p>
+<div class="highlight-python"><div class="highlight"><pre>Software Collections give you power to build, install, and use multiple
+versions of software on the same system, without affecting system-wide
+installed packages.
+</pre></div>
+</div>
+<p>Here is our mission statement for the IUS Community project:</p>
+<div class="highlight-python"><div class="highlight"><pre>The IUS Community Project is aimed at providing up to date and regularly
+maintained RPM packages for the latest upstream versions of PHP, Python,
+MySQL and other common software specifically for Red Hat Enterprise Linux.
+IUS can be thought of as a better way to upgrade RHEL, when you need to.
+</pre></div>
+</div>
+<p>Both projects seek to solve the same problem, but there are several important
+differences in execution.</p>
+</div>
+<div class="section" id="types-of-packages">
+<h2>Types of Packages<a class="headerlink" href="#types-of-packages" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>IUS provides <a class="reference internal" href="TheSafeRepoInitiative.html#replacement-packages"><em>Replacement Packages</em></a> and <a class="reference internal" href="TheSafeRepoInitiative.html#parallel-installable-packages"><em>Parallel Installable Packages</em></a>.</li>
+<li>SCL provides <a class="reference internal" href="TheSafeRepoInitiative.html#addon-packages"><em>Addon Packages</em></a>.</li>
+</ul>
+</div>
+<div class="section" id="file-locations">
+<h2>File Locations<a class="headerlink" href="#file-locations" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Files from IUS packages are installed to standard <a class="reference external" href="http://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard">Filesystem Hierarchy
+Standard</a> locations (/usr/bin, /usr/lib, etc).</li>
+<li>Files from SCL packages are installed under /opt.</li>
+</ul>
+</div>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">Usage of IUS packages are the same or very close to stock packages:</p>
+<div class="highlight-python"><div class="highlight"><pre>php -v
+service mysqld start
+mysql -V
+python2.7 -V
+</pre></div>
+</div>
+</li>
+<li><p class="first">Usage of SCL packages are very different from stock packages:</p>
+<div class="highlight-python"><div class="highlight"><pre>scl enable php54 &quot;php -v&quot;
+service mysql55-mysqld start
+scl enable mysql55 &quot;mysql -V&quot;
+scl enable python27 &quot;python -V&quot;
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="releases">
+<h2>Releases<a class="headerlink" href="#releases" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>IUS packages are updated in line with the upstream software project.  This
+means that once upstream releases a new version, we will begin building RPMs
+as soon as possible.</li>
+<li>The SCL <a class="reference external" href="https://access.redhat.com/support/policy/updates/rhscl/">Product Life Cycle</a> states that new packages will be released
+every 18 months.  These release are snapshots with backported security fixes,
+and are supported for a period of three years.</li>
+</ul>
+</div>
+<div class="section" id="faq">
+<h2>FAQ<a class="headerlink" href="#faq" title="Permalink to this headline">¶</a></h2>
+<ol class="upperalpha simple" start="17">
+<li>What is the difference between mysql55-server and mysql55-mysql-server?</li>
+</ol>
+<ol class="upperalpha simple">
+<li>The package mysql55-server is from the IUS repo.  The package
+mysql55-mysql-server is an SCL RPM that Red Hat chose to add to the base EL5
+repos.  Please refer to the <a class="reference external" href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/5/html/Deployment_Guide/ch-Migrating_from_MySQL_5.0_to_MySQL_5.5.html">RHEL 5 MySQL 5.5 migration guide</a> for more
+information.</li>
+</ol>
+</div>
+<div class="section" id="more-info">
+<h2>More Info<a class="headerlink" href="#more-info" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https://www.softwarecollections.org">https://www.softwarecollections.org</a></li>
+<li><a class="reference external" href="https://iuscommunity.org/pages/TheSafeRepoInitiative.html">https://iuscommunity.org/pages/TheSafeRepoInitiative.html</a></li>
+<li><a class="reference external" href="https://www.redhat.com/about/news/archive/2013/6/red-hat-software-collections-1.0-beta-now-available">https://www.redhat.com/about/news/archive/2013/6/red-hat-software-collections-1.0-beta-now-available</a></li>
+<li><a class="reference external" href="http://developerblog.redhat.com/2013/09/12/rhscl1-ga/">http://developerblog.redhat.com/2013/09/12/rhscl1-ga/</a></li>
+<li><a class="reference external" href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Developer_Toolset/1/html/Software_Collections_Guide/">https://access.redhat.com/site/documentation/en-US/Red_Hat_Developer_Toolset/1/html/Software_Collections_Guide/</a></li>
+<li><a class="reference external" href="https://access.redhat.com/support/policy/updates/rhscl/">https://access.redhat.com/support/policy/updates/rhscl/</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/pages/IUSvsSoftwareCollections.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        
+        </p>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<center>
+
+<table cellpadding=55 cellspacing=0>
+  <tr>
+    <td valign=top>
+      <div><font size=4><p><b>Quick Links</b></p></font></div>
+      <div><li><a class='bottomlinks' href='About.html'>About</a></li></div>
+      <div><li><a class='bottomlinks' href='../index.html'>Sitemap</a></li></div>
+      <div><li><a class='bottomlinks' href='Repos.html'>Repositories</a></li></div>
+      <div><li><a class='bottomlinks' href='GettingStarted.html'>Getting Started</a></li></div>
+      <div><li><a class='bottomlinks' href='FAQs.html'>FAQs</a></li></div>
+    </td>
+  
+    <td valign=top>
+      <div><font size=4><p><b>Contact</b></p></font></div>
+      <div><li><a class='bottomlinks' href='http://launchpad.net/~ius-community'>Mailing list</a></li></div>
+      <div><li><a class='bottomlinks' href='https://answers.launchpad.net/ius'>Question & Answer</a></li></div>
+      <div><li><a class='bottomlinks' href='https://bugs.launchpad.net/ius'>Submit a Bug</a></li></div>
+      <div><li><a class='bottomlinks' href='mailto:coredev@iuscommunity.org'>coredev@iuscommunity.org</a></li></div>
+      <div><li><font color=grey>irc.freenode.net #iuscommunity</font></li></div>
+    </td>
+    
+    <td>
+      <p><a href='https://launchpad.net/ius'><img src="../_static/launchpad.png" /></a></p>
+      <p><a href='https://github.com/iuscommunity-pkg'><img src="../_static/github.png" /></a></p>
+    </td>
+    
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td><font color=grey size=2>Hosted by</font></td>
+    <td>
+      <a href="http://www.rackspacecloud.com">
+        <img src="../_static/rackspace_cloud.png" alt="Rackspace Cloud" />
+      </a>
+    </td>
+  </tr>
+</table>
+  
+</center>
+  </body>
+</html>

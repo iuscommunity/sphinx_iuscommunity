@@ -1,0 +1,408 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Creating A GPG Key and Signing RPMs &mdash; IUS Community Project 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="IUS Community Project 0.1 documentation" href="../index.html" />
+    <link rel="next" title="FAQs" href="FAQs.html" />
+    <link rel="prev" title="Contributing to IUS" href="ContributingToIUS.html" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="../_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+<style>
+  a.bottomlinks:link {color: #4DC0EA; }
+  a.bottomlinks:active {color: #4DC0EA; }
+  a.bottomlinks:visited {color: #4DC0EA; }
+  a.bottomlinks:hover {color: #4DC0EA; }
+  
+#navibar {
+            clear: both; float: right; display: block; font-size: 1.8em; 
+            line-height: 120%; margin: 0; padding:0 10px;
+         }
+         
+#navibar ul { list-style: none; margin: 0; padding: 0; }
+#navibar ul li { float: left; list-style-type: none; }
+
+#navibar li a {
+                    font-weight: bold; color: #ffffff; display: block;
+                    line-height: 34px; padding: 0 15px; text-decoration: none;
+                    text-shadow: #0e0e6c 0px 0px 2px; border-right: solid 1px #446aa8;
+                    font-size: 13px; outline: none;
+              }
+                                  
+#navibar ul { float: left; height: 35px;
+              background: url("../_static/bg-tabs-highlight.png") repeat-x;
+            }
+  
+</style>
+
+  </head>
+  <body>
+<table width=100% cellpadding=0
+  <tr>
+    <td>
+      <a href="About.html">
+        <img class="logo" src="../_static/site_banner.png" alt="Logo"/>
+      </a>
+    </td>
+  </tr>
+
+  <tr>    
+    <td valign='bottom'>
+      <div id="navibar">
+        <ul>
+          <li><a href="WhatIsHappeningInTheCommunity.html">What's Happening</a></li>
+          <li><a href="About.html">About</a></li>
+          <li><a href="Documentation.html">Docs</a></li>
+          <li><a href="Testimonials.html">Testimonials</a></li>
+          <li><a href="Repos.html">Repos</a></li>
+          <li><a href="Tools.html">Tools</a></li>
+          <li><a href="GettingStarted.html">Getting Started</a></li>
+          <li><a href="FAQs.html">FAQs</a></li>
+          <li><a href="../index.html">Sitemap</a></li>
+        </div>
+    </td>
+    
+  </tr>
+</table>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="creating-a-gpg-key-and-signing-rpms">
+<h1>Creating A GPG Key and Signing RPMs<a class="headerlink" href="#creating-a-gpg-key-and-signing-rpms" title="Permalink to this headline">¶</a></h1>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#creating-a-gpg-key-and-signing-rpms" id="id1">Creating A GPG Key and Signing RPMs</a><ul>
+<li><a class="reference internal" href="#summary" id="id2">Summary</a></li>
+<li><a class="reference internal" href="#creating-a-public-private-gpg-key-pair" id="id3">Creating a Public/Private GPG Key Pair</a></li>
+<li><a class="reference internal" href="#exporting-private-public-keys-for-safe-keeping" id="id4">Exporting Private/Public Keys for Safe Keeping</a></li>
+<li><a class="reference internal" href="#exporting-the-public-gpg-key" id="id5">Exporting the Public GPG Key</a></li>
+<li><a class="reference internal" href="#importing-a-private-key" id="id6">Importing a Private Key</a></li>
+<li><a class="reference internal" href="#signing-rpms-with-your-gpg-key" id="id7">Signing RPMs With Your GPG Key</a></li>
+<li><a class="reference internal" href="#installing-a-public-gpg-key" id="id8">Installing a Public GPG Key</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>This howto outlines how to create a GPG Key for signing RPMs. It uses the
+<strong>gnupg</strong> package and gpg utilities (notice that gnupg2 will not work with
+these steps).</p>
+</div>
+<div class="section" id="creating-a-public-private-gpg-key-pair">
+<h2>Creating a Public/Private GPG Key Pair<a class="headerlink" href="#creating-a-public-private-gpg-key-pair" title="Permalink to this headline">¶</a></h2>
+<p>The following commands create a Private/Public GPG Key Pair (Note you should
+actually login console/ssh with this user, not sudo to it):</p>
+<div class="highlight-python"><div class="highlight"><pre>[you@linuxbox ~]$ gpg --gen-key
+</pre></div>
+</div>
+<p>You will be asked a series of questions, answer as follows (answers in italic):</p>
+<ul class="simple">
+<li>Please select what kind of key you want: (1) DSA and ElGamal (default)</li>
+<li>What keysize do you want? 2048</li>
+<li>Key is valid for? 0 (key does not expire)</li>
+<li>Real name: John Doe</li>
+<li>Email Address: <a class="reference external" href="mailto:jdoe&#37;&#52;&#48;example&#46;com">jdoe<span>&#64;</span>example<span>&#46;</span>com</a></li>
+<li>Comment: RPM Development</li>
+</ul>
+<p><em>Note: Replace the last three accordingly. This should be a generic name/email
+but should exist should anyone send email to the address.</em></p>
+<p>You will be prompted to enter a passphrase. Make this a strong, cryptic,
+passphrase and store it somewhere so you never forget it. Next you will be
+asked to generate a lot of random bits.... type on the keyboard, move the mouse
+(console), etc... until it completes (it takes a while). A handy way I&#8217;ve found
+to generate entropy is to just run a grep on &#8216;/&#8217; like:</p>
+<div class="highlight-python"><div class="highlight"><pre>[you@linuxbox ~]$ grep -ri &#39;something bogus&#39; /
+</pre></div>
+</div>
+<p><em>Note: probably not preferred to do the above in production. Run that for a
+while until the GPG key generation completes. On successful completion, the
+command spits out something like the following</em>:</p>
+<div class="highlight-python"><div class="highlight"><pre>pub   1024D/454CBFAB 2009-12-30
+      Key fingerprint = 2D38 3000 DD7D 68C0 45D3  76C0 F08E B2EE 454C BFAB
+uid                  John Doe (RPM Developer) &lt;jdoe@example.com&gt;
+sub   2048g/767143C3 2009-12-30
+</pre></div>
+</div>
+<p>Take notice of the first portion, specifically <strong>454CBFAB</strong> as this is the id of
+the public key.</p>
+</div>
+<div class="section" id="exporting-private-public-keys-for-safe-keeping">
+<h2>Exporting Private/Public Keys for Safe Keeping<a class="headerlink" href="#exporting-private-public-keys-for-safe-keeping" title="Permalink to this headline">¶</a></h2>
+<p>You must export the keys so that you can save them to a secure location (and so
+they can be imported in the future). To list the keys you have installed:</p>
+<div class="highlight-python"><div class="highlight"><pre>[you@linuxbox ~]$ gpg --list-secret-keys
+/home/you/.gnupg/secring.gpg
+----------------------------
+sec   1024D/454CBFAB 2009-12-30
+uid                  John Doe (RPM Developer) &lt;jdoe@example.com&gt;
+ssb   2048g/767143C3 2009-12-30
+</pre></div>
+</div>
+</div>
+<div class="section" id="exporting-the-public-gpg-key">
+<h2>Exporting the Public GPG Key<a class="headerlink" href="#exporting-the-public-gpg-key" title="Permalink to this headline">¶</a></h2>
+<p>In order to use the GPG Key with RHN, you will need to make the Public portion
+available in a Public GPG Key. The following commands make this happen:</p>
+<div class="highlight-python"><div class="highlight"><pre>[you@linuxbox ~]$ gpg --export-secret-key -a 454CBFAB &gt; MYORG-GPG-KEY.private
+[you@linuxbox ~]$ gpg --export -a 454CBFAB &gt; MYORG-GPG-KEY.public
+</pre></div>
+</div>
+<p>You should change &#8216;MYORG&#8217; to something else more appropriate for your
+organization. The Key-ID (454CBFAB) in this example is obtained from the output
+in the previous example. You now have your public and private keys. The keys
+look like:</p>
+<div class="highlight-python"><div class="highlight"><pre>[you@linuxbox ~]$ cat MYORG-GPG-KEY*
+
+-----BEGIN PGP PRIVATE KEY BLOCK-----
+Version: GnuPG v1.4.5 (GNU/Linux)
+
+lQHhBEs71qsRBAChJ9cAdA4zn46ANnjmd4EKHc3j7s0gsdh/FKHtVo6CkX81Pp0I
+OMWpUPp9m7gfbsvRDPCaznT3/BXFKB9ICKNRh3gLL2jGyzazUrh+WosWy7VQLzlx
+um2ve+iTnTv7kt3n7Jsm1cPj9pE6G9mfuLyZZONLjDtIPf382Lf1W6KzNwCgnoGL
+vy5kGo8Wqx6aBBK+gffgx50D/i3nfA5YA+2UvkpVUSjBWmqhXAZMRfNpfDzDd/v+
+xuo2L0VbKF/l8OaL51fP+OSgZPLYrss9Z7Qco2GIapdPD8wJsjK4HY6mt+8EwOG2
+k9wRY+3uWtbuxJFBwA23s3L9S5WtGutP6AqCxspRVN/wRVtwT6olOzGYDEROY4Vn
+pDsnA/4ytLCvwGS27N6GlbumKXTaUWIXWkOVUW8KevkpVc5a1uitUpBUX+Z8mBdc
+3qvSnrNsutOgmqaFYGRwHRGkv9kniNCQDFAj3h40hWXZpGjvUXRsC6cw0TGXh0Nm
+fvai8VhRVolLV2yhUiT7M5nYeKW27ysVUQq0DCFW4j5VjvMaEv4DAwJFo0ixdOak
+iGBra3mmX610A7XfkGeRKkqkTozWGEoJoQXCjGxqMte6TUbJ9At+DvW4uirq59OA
+kIEb/LQrSm9obiBEb2UgKFJQTSBEZXZlbG9wZXIpIDxqZG9lQGV4YW1wbGUuY29t
+PohgBBMRAgAgBQJLO9arAhsDBgsJCAcDAgQVAggDBBYCAwECHgECF4AACgkQ8I6y
+7kVMv6uCnQCeLw4Xi1xEaqi5+1hNGPfpUbuvqmwAn33XfvOWsyXelF6mSLPcZCPq
+m+27nQJjBEs71rMQCACIWoPREd46vuHIxJAwwFmrvyBWFnerS9FsDmHctkQmc/9J
+YzKs2FjrAMgSfhKoGiJCJuVhRrKfBzWWY55z0wnlFHUGZrJUrqnNfKjO6zXlSfrQ
+u8+g2kN1KPtoPQNzkpllNdhfkOz9/axa/+xr5SxqTjqx/D6hmiXw1OMuagGxQoqS
+zEmbv5BUUScPFm9KzUsu/2NIUO01WZxYPwaCfYUxDojLpvoNvHloue6NcKDOsLfT
+T7q0/A5MTcSt6Qr1paHa45cW2TLVe1jK8SmtGsMeU3pRTXj5HPN8TbCviLR6t9Uz
+myFBBORf0i7+jethEc/A+ARgXeutDDN97NFI3DEzAAMFB/91fjswPYAX83twAIFk
+zXXQYg3hKhlHP49D79U+SEpMtPSdXIPJ8CZAuc62KYUUBK/ERmmM986Mfai9OMVE
+rV+O2cZmyg/HZ5BaDLm5nY47ZoezTInI3n83BMJF8ET30uW4NUZa0Su+KjrjE+jA
+8i7RvHYjRrffxxyILd28GE5M/uVJKd8f+lq42QCiHx5zir0SqSVHOU2MMd028do7
+niNTRcoHpqNsiCfIALdICCXGeQDK+XRhFCQcIU9wYObKfJJLv4TLPgRaCFZ7+1Zj
+UMZaK34wivBc250t1rurA9eF59xTflCRA4P/fGKeXOj9vEQzQjz0mhXTfMuR87FP
+UnAI/gMDAkWjSLF05qSIYFqaObOxESIozAW3jB87HcEWYJ/9BSTkHCy+iL0N9321
+RXxvMkvLNgy9TvvA003Q6/qhnXwjULXdTgW0k8hadiQVWy59IuA+Tq2ISQQYEQIA
+CQUCSzvWswIbDAAKCRDwjrLuRUy/q5kiAJwJWfDhc+U3cQddOrdcdoBrlVh1/ACf
+YERkTP/fz8oJqTr2/CBfhLhsTi0=
+=C/iH
+-----END PGP PRIVATE KEY BLOCK-----
+
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+Version: GnuPG v1.4.5 (GNU/Linux)
+
+mQGiBEs71qsRBAChJ9cAdA4zn46ANnjmd4EKHc3j7s0gsdh/FKHtVo6CkX81Pp0I
+OMWpUPp9m7gfbsvRDPCaznT3/BXFKB9ICKNRh3gLL2jGyzazUrh+WosWy7VQLzlx
+um2ve+iTnTv7kt3n7Jsm1cPj9pE6G9mfuLyZZONLjDtIPf382Lf1W6KzNwCgnoGL
+vy5kGo8Wqx6aBBK+gffgx50D/i3nfA5YA+2UvkpVUSjBWmqhXAZMRfNpfDzDd/v+
+xuo2L0VbKF/l8OaL51fP+OSgZPLYrss9Z7Qco2GIapdPD8wJsjK4HY6mt+8EwOG2
+k9wRY+3uWtbuxJFBwA23s3L9S5WtGutP6AqCxspRVN/wRVtwT6olOzGYDEROY4Vn
+pDsnA/4ytLCvwGS27N6GlbumKXTaUWIXWkOVUW8KevkpVc5a1uitUpBUX+Z8mBdc
+3qvSnrNsutOgmqaFYGRwHRGkv9kniNCQDFAj3h40hWXZpGjvUXRsC6cw0TGXh0Nm
+fvai8VhRVolLV2yhUiT7M5nYeKW27ysVUQq0DCFW4j5VjvMaErQrSm9obiBEb2Ug
+KFJQTSBEZXZlbG9wZXIpIDxqZG9lQGV4YW1wbGUuY29tPohgBBMRAgAgBQJLO9ar
+AhsDBgsJCAcDAgQVAggDBBYCAwECHgECF4AACgkQ8I6y7kVMv6uCnQCeLw4Xi1xE
+aqi5+1hNGPfpUbuvqmwAn33XfvOWsyXelF6mSLPcZCPqm+27uQINBEs71rMQCACI
+WoPREd46vuHIxJAwwFmrvyBWFnerS9FsDmHctkQmc/9JYzKs2FjrAMgSfhKoGiJC
+JuVhRrKfBzWWY55z0wnlFHUGZrJUrqnNfKjO6zXlSfrQu8+g2kN1KPtoPQNzkpll
+NdhfkOz9/axa/+xr5SxqTjqx/D6hmiXw1OMuagGxQoqSzEmbv5BUUScPFm9KzUsu
+/2NIUO01WZxYPwaCfYUxDojLpvoNvHloue6NcKDOsLfTT7q0/A5MTcSt6Qr1paHa
+45cW2TLVe1jK8SmtGsMeU3pRTXj5HPN8TbCviLR6t9UzmyFBBORf0i7+jethEc/A
++ARgXeutDDN97NFI3DEzAAMFB/91fjswPYAX83twAIFkzXXQYg3hKhlHP49D79U+
+SEpMtPSdXIPJ8CZAuc62KYUUBK/ERmmM986Mfai9OMVErV+O2cZmyg/HZ5BaDLm5
+nY47ZoezTInI3n83BMJF8ET30uW4NUZa0Su+KjrjE+jA8i7RvHYjRrffxxyILd28
+GE5M/uVJKd8f+lq42QCiHx5zir0SqSVHOU2MMd028do7niNTRcoHpqNsiCfIALdI
+CCXGeQDK+XRhFCQcIU9wYObKfJJLv4TLPgRaCFZ7+1ZjUMZaK34wivBc250t1rur
+A9eF59xTflCRA4P/fGKeXOj9vEQzQjz0mhXTfMuR87FPUnAIiEkEGBECAAkFAks7
+1rMCGwwACgkQ8I6y7kVMv6uZIgCfbpZ8kaevKp55GIGoOWuVo/b/Zc8An1Q3TG8G
+a9p0vD3QA6XzbZEnOJ0C
+=Xmla
+-----END PGP PUBLIC KEY BLOCK-----
+</pre></div>
+</div>
+<p>The <strong>Public Key</strong> is the only portion that should ever be made public. The
+Private Key must be kept secure, preferably on a system that does not allow
+outside access from the public internet. It is also recommended to make a hard
+copy (burned cd/usb key) of the Public/Private key pair and keep that somewheere
+secure like a Safe Deposit Box or similar. Anyone who obtains your
+Private/Public key pair can sign RPMs as if they were signed by you and
+potentially perform malicious acts to your users.</p>
+<p>You will need to make the public key available, so lets assume that you have
+uploaded this key to your web server (generally in the /pub folder or root of
+your repository). For this document we will assume that the MYORG-GPG-KEY is
+available at the following URL:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://www.example.com/pub/MYORG-GPG-KEY">http://www.example.com/pub/MYORG-GPG-KEY</a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="importing-a-private-key">
+<h2>Importing a Private Key<a class="headerlink" href="#importing-a-private-key" title="Permalink to this headline">¶</a></h2>
+<p>If you wish to import your Private key to another server, or to restore from
+backup, the following imports your key:</p>
+<div class="highlight-python"><div class="highlight"><pre>[you@linuxbox ~]$ gpg --import MYORG-GPG-KEY.private
+gpg: key 454CBFAB: secret key imported
+gpg: key 454CBFAB: public key &quot;John Doe (RPM Developer) &lt;jdoe@example.com&gt;&quot; imported
+gpg: Total number processed: 1
+gpg:               imported: 1
+gpg:       secret keys read: 1
+gpg:   secret keys imported: 1
+
+[you@linuxbox ~]$ gpg --list-secret-keys
+/home/you/.gnupg/secring.gpg
+----------------------------
+sec   1024D/454CBFAB 2009-12-30
+uid                  John Doe (RPM Developer) &lt;jdoe@example.com&gt;
+ssb   2048g/767143C3 2009-12-30
+</pre></div>
+</div>
+</div>
+<div class="section" id="signing-rpms-with-your-gpg-key">
+<h2>Signing RPMs With Your GPG Key<a class="headerlink" href="#signing-rpms-with-your-gpg-key" title="Permalink to this headline">¶</a></h2>
+<p>Now that we have the GPG keys configured, you can sign RPMS with it. Before
+doing so, you of course need the RPM(s) to sign and also to add the following to
+the signing user&#8217;s ~/.rpmmacros file:</p>
+<p><strong>~/.rpmmacros</strong>:</p>
+<div class="highlight-python"><div class="highlight"><pre>%_signature gpg
+%_gpg_name John Doe (RPM Development) &lt;jdoe@example.com&gt;
+</pre></div>
+</div>
+<p>Please note that the &#8216;%_gpg_name&#8217; must match exactly how it is listed via the
+key. If you forget this information, you can list the GPG keys on your system:</p>
+<div class="highlight-python"><div class="highlight"><pre>[you@linuxbox ~]$ gpg --list-keys
+
+/home/you/.gnupg/secring.gpg
+----------------------------
+sec   1024D/454CBFAB 2009-12-30
+uid                  John Doe (RPM Developer) &lt;jdoe@example.com&gt;
+ssb   2048g/767143C3 2009-12-30
+</pre></div>
+</div>
+<p><em>Note: Any users wishing to sign RPMs with this GPG Key need to install the
+Private GPG Key for signing. For that reason you may wish to restrict access to
+the GPG key to a shared users that everyone else sudo&#8217;s to in order to sign RPMs
+limiting how spread out the Private portion of the key is, and keeping it more
+secure.</em></p>
+<p>Once everything is setup, signing RPMs is as easy as:</p>
+<div class="highlight-python"><div class="highlight"><pre>[you@linuxbox ~]$ rpm --resign /path/to/rpms/*.rpm
+</pre></div>
+</div>
+<p>Looking at the info of a package [rpm -qip /path/to/signed/package.rpm]
+you can see our signature:</p>
+<div class="highlight-python"><div class="highlight"><pre>Signature   : DSA/SHA1, Wed Dec 30 17:57:49 2009, Key ID f7ba18a0454cbfab
+</pre></div>
+</div>
+<p>Notice that the second half of the Key ID is our key &#8216;454CBFAB&#8217;.</p>
+</div>
+<div class="section" id="installing-a-public-gpg-key">
+<h2>Installing a Public GPG Key<a class="headerlink" href="#installing-a-public-gpg-key" title="Permalink to this headline">¶</a></h2>
+<p>In order to restrict Yum to only install signed RPMs you must set &#8216;gpgcheck=1&#8217;
+in the yum configuration for the repo, and have the Public GPG Key installed:</p>
+<div class="highlight-python"><div class="highlight"><pre>[you@linuxbox ~]$ rpm --import http://example.com/pub/MYORG-GPG-KEY
+</pre></div>
+</div>
+<p><em>Or wherever you made it publicly available at.</em></p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/pages/CreatingAGPGKeyandSigningRPMs.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        
+        </p>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<center>
+
+<table cellpadding=55 cellspacing=0>
+  <tr>
+    <td valign=top>
+      <div><font size=4><p><b>Quick Links</b></p></font></div>
+      <div><li><a class='bottomlinks' href='About.html'>About</a></li></div>
+      <div><li><a class='bottomlinks' href='../index.html'>Sitemap</a></li></div>
+      <div><li><a class='bottomlinks' href='Repos.html'>Repositories</a></li></div>
+      <div><li><a class='bottomlinks' href='GettingStarted.html'>Getting Started</a></li></div>
+      <div><li><a class='bottomlinks' href='FAQs.html'>FAQs</a></li></div>
+    </td>
+  
+    <td valign=top>
+      <div><font size=4><p><b>Contact</b></p></font></div>
+      <div><li><a class='bottomlinks' href='http://launchpad.net/~ius-community'>Mailing list</a></li></div>
+      <div><li><a class='bottomlinks' href='https://answers.launchpad.net/ius'>Question & Answer</a></li></div>
+      <div><li><a class='bottomlinks' href='https://bugs.launchpad.net/ius'>Submit a Bug</a></li></div>
+      <div><li><a class='bottomlinks' href='mailto:coredev@iuscommunity.org'>coredev@iuscommunity.org</a></li></div>
+      <div><li><font color=grey>irc.freenode.net #iuscommunity</font></li></div>
+    </td>
+    
+    <td>
+      <p><a href='https://launchpad.net/ius'><img src="../_static/launchpad.png" /></a></p>
+      <p><a href='https://github.com/iuscommunity-pkg'><img src="../_static/github.png" /></a></p>
+    </td>
+    
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td><font color=grey size=2>Hosted by</font></td>
+    <td>
+      <a href="http://www.rackspacecloud.com">
+        <img src="../_static/rackspace_cloud.png" alt="Rackspace Cloud" />
+      </a>
+    </td>
+  </tr>
+</table>
+  
+</center>
+  </body>
+</html>

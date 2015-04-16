@@ -1,0 +1,424 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Upgrading the Old Way &mdash; IUS Community Project 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="IUS Community Project 0.1 documentation" href="../index.html" />
+    <link rel="next" title="What Is Happening In The Community" href="WhatIsHappeningInTheCommunity.html" />
+    <link rel="prev" title="The SafeRepo Initiative" href="TheSafeRepoInitiative.html" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="../_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+<style>
+  a.bottomlinks:link {color: #4DC0EA; }
+  a.bottomlinks:active {color: #4DC0EA; }
+  a.bottomlinks:visited {color: #4DC0EA; }
+  a.bottomlinks:hover {color: #4DC0EA; }
+  
+#navibar {
+            clear: both; float: right; display: block; font-size: 1.8em; 
+            line-height: 120%; margin: 0; padding:0 10px;
+         }
+         
+#navibar ul { list-style: none; margin: 0; padding: 0; }
+#navibar ul li { float: left; list-style-type: none; }
+
+#navibar li a {
+                    font-weight: bold; color: #ffffff; display: block;
+                    line-height: 34px; padding: 0 15px; text-decoration: none;
+                    text-shadow: #0e0e6c 0px 0px 2px; border-right: solid 1px #446aa8;
+                    font-size: 13px; outline: none;
+              }
+                                  
+#navibar ul { float: left; height: 35px;
+              background: url("../_static/bg-tabs-highlight.png") repeat-x;
+            }
+  
+</style>
+
+  </head>
+  <body>
+<table width=100% cellpadding=0
+  <tr>
+    <td>
+      <a href="About.html">
+        <img class="logo" src="../_static/site_banner.png" alt="Logo"/>
+      </a>
+    </td>
+  </tr>
+
+  <tr>    
+    <td valign='bottom'>
+      <div id="navibar">
+        <ul>
+          <li><a href="WhatIsHappeningInTheCommunity.html">What's Happening</a></li>
+          <li><a href="About.html">About</a></li>
+          <li><a href="Documentation.html">Docs</a></li>
+          <li><a href="Testimonials.html">Testimonials</a></li>
+          <li><a href="Repos.html">Repos</a></li>
+          <li><a href="Tools.html">Tools</a></li>
+          <li><a href="GettingStarted.html">Getting Started</a></li>
+          <li><a href="FAQs.html">FAQs</a></li>
+          <li><a href="../index.html">Sitemap</a></li>
+        </div>
+    </td>
+    
+  </tr>
+</table>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="upgrading-the-old-way">
+<span id="upgradingtheoldway"></span><h1>Upgrading the Old Way<a class="headerlink" href="#upgrading-the-old-way" title="Permalink to this headline">¶</a></h1>
+<p>The following outlines the old way to upgrade/downgrade IUS packages. These
+processes still work, but have been replaced by the usage of the
+&#8216;yum-replace-plugin&#8217;:</p>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#upgrading-the-old-way" id="id1">Upgrading the Old Way</a><ul>
+<li><a class="reference internal" href="#upgrading-stock-rhel-packages-to-ius-packages" id="id2">Upgrading Stock RHEL Packages to IUS Packages</a></li>
+<li><a class="reference internal" href="#downgrading-from-ius-packages-to-stock-rhel-packages" id="id3">Downgrading from IUS Packages to Stock RHEL Packages</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="upgrading-stock-rhel-packages-to-ius-packages">
+<h2>Upgrading Stock RHEL Packages to IUS Packages<a class="headerlink" href="#upgrading-stock-rhel-packages-to-ius-packages" title="Permalink to this headline">¶</a></h2>
+<p>Admittedly, upgrading from stock RHEL packages to IUS is not exactly an easy
+transition, but trust us it&#8217;s worth it in the long run. Because of the way IUS
+packages are created, you can not simply do a &#8216;yum upgrade &lt;package&gt;&#8217; because
+the IUS packages actually conflict with the stock RHEL packages. What you really
+need to do is first remove the stock RHEL packages, and then install the
+corresponding IUS package you want. Lets use php on my stock RHEL5 box and first
+see what packages we need to remove:</p>
+<div class="highlight-python"><div class="highlight"><pre>[root@el5-i386 ~]# rpm -qa | grep php
+php-gd-5.1.6-23.2.el5_3
+php-cli-5.1.6-23.2.el5_3
+php-odbc-5.1.6-23.2.el5_3
+php-mbstring-5.1.6-23.2.el5_3
+php-pear-1.4.9-4.el5.1
+php-pdo-5.1.6-23.2.el5_3
+php-5.1.6-23.2.el5_3
+php-xml-5.1.6-23.2.el5_3
+php-common-5.1.6-23.2.el5_3
+php-ldap-5.1.6-23.2.el5_3
+php-mysql-5.1.6-23.2.el5_3
+php-imap-5.1.6-23.2.el5_3
+</pre></div>
+</div>
+<p><em>Note: php-pear is not part of the php package set. It is it&#8217;s own package.</em></p>
+<p>Looking at this list I can see that I want to remove everything but &#8216;php-pear&#8217;.
+You can do this by &#8216;rpm -e &#8211;nodeps...&#8217; but a cleaner, safer, more appropriate
+way would be to use yum shell:</p>
+<p><strong>Short version with no output</strong>:</p>
+<div class="highlight-python"><div class="highlight"><pre>[root@el5-i386 ~]# yum shell
+
+&gt; remove php-gd php-cli php-odbc php-mbstring php-pdo php php-xml php-common php-ldap php-mysql php-imap
+Setting up Remove Process
+
+&gt; install php52-gd php52-cli php52-odbc php52-mbstring php52-pdo php52 php52-xml php52-common php52-ldap php52-mysql php52-imap
+
+&gt; transaction solve
+
+&gt; transaction run
+</pre></div>
+</div>
+<p><em>NOTE: It is *very</em> important that you run &#8216;transaction solve&#8217; to ensure all
+dependencies are being met with the new packages. Removing packages with unmet
+dependencies in Yum can lead to a nightmare of packages being removed.*</p>
+<p><strong>Long version with output</strong>:</p>
+<div class="highlight-python"><div class="highlight"><pre>[root@el5-i386 ~]# yum shell
+
+Loaded plugins: downloadonly, rhnplugin, security
+Setting up Yum Shell
+
+&gt; remove php-gd php-cli php-odbc php-mbstring php-pdo php php-xml php-common php-ldap php-mysql php-imap
+Setting up Remove Process
+
+&gt; install php52-gd php52-cli php52-odbc php52-mbstring php52-pdo php52 php52-xml php52-common php52-ldap php52-mysql php52-imap
+
+Excluding Packages in global exclude list
+Finished
+Setting up Install Process
+Parsing package install arguments
+&gt; transaction solve
+--&gt; Running transaction check
+---&gt; Package php52-ldap.x86_64 0:5.2.11-1.ius.el5 set to be updated
+---&gt; Package php52-common.x86_64 0:5.2.11-1.ius.el5 set to be updated
+---&gt; Package php52-xml.x86_64 0:5.2.11-1.ius.el5 set to be updated
+---&gt; Package php-cli.x86_64 0:5.1.6-23.2.el5_3 set to be erased
+---&gt; Package php52.x86_64 0:5.2.11-1.ius.el5 set to be updated
+---&gt; Package php-mbstring.x86_64 0:5.1.6-23.2.el5_3 set to be erased
+---&gt; Package php52-mysql.x86_64 0:5.2.11-1.ius.el5 set to be updated
+---&gt; Package php52-cli.x86_64 0:5.2.11-1.ius.el5 set to be updated
+---&gt; Package php-imap.x86_64 0:5.1.6-23.2.el5_3 set to be erased
+---&gt; Package php-mysql.x86_64 0:5.1.6-23.2.el5_3 set to be erased
+---&gt; Package php.x86_64 0:5.1.6-23.2.el5_3 set to be erased
+---&gt; Package php-odbc.x86_64 0:5.1.6-23.2.el5_3 set to be erased
+---&gt; Package php52-gd.x86_64 0:5.2.11-1.ius.el5 set to be updated
+---&gt; Package php52-pdo.x86_64 0:5.2.11-1.ius.el5 set to be updated
+---&gt; Package php52-imap.x86_64 0:5.2.11-1.ius.el5 set to be updated
+---&gt; Package php52-odbc.x86_64 0:5.2.11-1.ius.el5 set to be updated
+---&gt; Package php52-mbstring.x86_64 0:5.2.11-1.ius.el5 set to be updated
+---&gt; Package php-gd.x86_64 0:5.1.6-23.2.el5_3 set to be erased
+---&gt; Package php-pdo.x86_64 0:5.1.6-23.2.el5_3 set to be erased
+---&gt; Package php-common.x86_64 0:5.1.6-23.2.el5_3 set to be erased
+---&gt; Package php-xml.x86_64 0:5.1.6-23.2.el5_3 set to be erased
+---&gt; Package php-ldap.x86_64 0:5.1.6-23.2.el5_3 set to be erased
+--&gt; Finished Dependency Resolution
+Success resolving dependencies
+
+&gt; transaction run
+
+--&gt; Running transaction check
+--&gt; Finished Dependency Resolution
+
+====================================================================================================
+ Package                   Arch              Version                     Repository            Size
+====================================================================================================
+Installing:
+ php52                     x86_64            5.2.11-1.ius.el5            ius                  1.4 M
+ php52-cli                 x86_64            5.2.11-1.ius.el5            ius                  2.6 M
+ php52-common              x86_64            5.2.11-1.ius.el5            ius                  246 k
+ php52-gd                  x86_64            5.2.11-1.ius.el5            ius                  124 k
+ php52-imap                x86_64            5.2.11-1.ius.el5            ius                   60 k
+ php52-ldap                x86_64            5.2.11-1.ius.el5            ius                   41 k
+ php52-mbstring            x86_64            5.2.11-1.ius.el5            ius                  1.1 M
+ php52-mysql               x86_64            5.2.11-1.ius.el5            ius                   94 k
+ php52-odbc                x86_64            5.2.11-1.ius.el5            ius                   59 k
+ php52-pdo                 x86_64            5.2.11-1.ius.el5            ius                   73 k
+ php52-xml                 x86_64            5.2.11-1.ius.el5            ius                  113 k
+Removing:
+ php                       x86_64            5.1.6-23.2.el5_3            installed            3.0 M
+ php-cli                   x86_64            5.1.6-23.2.el5_3            installed            5.3 M
+ php-common                x86_64            5.1.6-23.2.el5_3            installed            397 k
+ php-gd                    x86_64            5.1.6-23.2.el5_3            installed            333 k
+ php-imap                  x86_64            5.1.6-23.2.el5_3            installed             98 k
+ php-ldap                  x86_64            5.1.6-23.2.el5_3            installed             49 k
+ php-mbstring              x86_64            5.1.6-23.2.el5_3            installed            1.8 M
+ php-mysql                 x86_64            5.1.6-23.2.el5_3            installed            196 k
+ php-odbc                  x86_64            5.1.6-23.2.el5_3            installed             88 k
+ php-pdo                   x86_64            5.1.6-23.2.el5_3            installed            114 k
+ php-xml                   x86_64            5.1.6-23.2.el5_3            installed            241 k
+
+Transaction Summary
+====================================================================================================
+Install     11 Package(s)
+Update       0 Package(s)
+Remove      11 Package(s)
+
+Total download size: 5.9 M
+Is this ok [y/N]: y
+
+Downloading Packages:
+(1/11): php52-ldap-5.2.11-1.ius.el5.x86_64.rpm                               |  41 kB     00:00
+(2/11): php52-odbc-5.2.11-1.ius.el5.x86_64.rpm                               |  59 kB     00:00
+(3/11): php52-imap-5.2.11-1.ius.el5.x86_64.rpm                               |  60 kB     00:00
+(4/11): php52-pdo-5.2.11-1.ius.el5.x86_64.rpm                                |  73 kB     00:00
+(5/11): php52-mysql-5.2.11-1.ius.el5.x86_64.rpm                              |  94 kB     00:00
+(6/11): php52-xml-5.2.11-1.ius.el5.x86_64.rpm                                | 113 kB     00:00
+(7/11): php52-gd-5.2.11-1.ius.el5.x86_64.rpm                                 | 124 kB     00:00
+(8/11): php52-common-5.2.11-1.ius.el5.x86_64.rpm                             | 246 kB     00:00
+(9/11): php52-mbstring-5.2.11-1.ius.el5.x86_64.rpm                           | 1.1 MB     00:00
+(10/11): php52-5.2.11-1.ius.el5.x86_64.rpm                                   | 1.4 MB     00:00
+(11/11): php52-cli-5.2.11-1.ius.el5.x86_64.rpm                               | 2.6 MB     00:00
+----------------------------------------------------------------------------------------------------
+Total                                                                49 kB/s | 5.9 MB     02:02
+warning: rpmts_HdrFromFdno: Header V3 DSA signature: NOKEY, key ID 9cd4953f
+Importing GPG key 0x9CD4953F &quot;IUS Community Project &lt;coredev@iuscommunity.org&gt;&quot; from /etc/pki/rpm-gpg/IUS-COMMUNITY-GPG-KEY
+Is this ok [y/N]: y
+Running rpm_check_debug
+Running Transaction Test
+Finished Transaction Test
+Transaction Test Succeeded
+Running Transaction
+  Installing     : php52-common                                    [ 1/22]
+  Installing     : php52-pdo                                       [ 2/22]
+  Installing     : php52-odbc                                      [ 3/22]
+  Installing     : php52-mysql                                     [ 4/22]
+  Installing     : php52                                           [ 5/22]
+  Installing     : php52-mbstring                                  [ 6/22]
+  Installing     : php52-ldap                                      [ 7/22]
+  Installing     : php52-cli                                       [ 8/22]
+  Installing     : php52-xml                                       [ 9/22]
+  Installing     : php52-imap                                      [10/22]
+  Installing     : php52-gd                                        [11/22]
+  Erasing        : php                                             [12/22]
+  Erasing        : php-gd                                          [13/22]
+  Erasing        : php-xml                                         [14/22]
+  Erasing        : php-cli                                         [15/22]
+  Erasing        : php-common                                      [16/22]
+  Erasing        : php-pdo                                         [17/22]
+  Erasing        : php-mysql                                       [18/22]
+  Erasing        : php-odbc                                        [19/22]
+  Erasing        : php-imap                                        [20/22]
+  Erasing        : php-mbstring                                    [21/22]
+  Erasing        : php-ldap                                        [22/22]
+
+Removed: php.x86_64 0:5.1.6-23.2.el5_3 php-cli.x86_64 0:5.1.6-23.2.el5_3 php-common.x86_64 0:5.1.6-23.2.el5_3 php-gd.x86_64
+0:5.1.6-23.2.el5_3 php-imap.x86_64 0:5.1.6-23.2.el5_3 php-ldap.x86_64 0:5.1.6-23.2.el5_3 php-mbstring.x86_64 0:5.1.6-23.2.el5_3
+php-mysql.x86_64 0:5.1.6-23.2.el5_3 php-odbc.x86_64 0:5.1.6-23.2.el5_3 php-pdo.x86_64 0:5.1.6-23.2.el5_3 php-xml.x86_64 0:5.1.6-23.2.el5_3
+Installed: php52.x86_64 0:5.2.11-1.ius.el5 php52-cli.x86_64 0:5.2.11-1.ius.el5 php52-common.x86_64 0:5.2.11-1.ius.el5 php52-gd.x86_64
+0:5.2.11-1.ius.el5 php52-imap.x86_64 0:5.2.11-1.ius.el5 php52-ldap.x86_64 0:5.2.11-1.ius.el5 php52-mbstring.x86_64 0:5.2.11-1.ius.el5
+php52-mysql.x86_64 0:5.2.11-1.ius.el5 php52-odbc.x86_64 0:5.2.11-1.ius.el5 php52-pdo.x86_64 0:5.2.11-1.ius.el5 php52-xml.x86_64 0:5.2.11-1.ius.el5
+Finished Transaction
+&gt; Leaving Shell
+</pre></div>
+</div>
+<p>And now, you should have a working install of PHP 5.2 on RHEL5:</p>
+<div class="highlight-python"><div class="highlight"><pre>[root@el5-i386 ~]# php -v
+PHP 5.2.10 (cli) (built: Jul 28 2009 14:54:01)
+Copyright (c) 1997-2009 The PHP Group
+Zend Engine v2.2.0, Copyright (c) 1998-2009 Zend Technologies
+</pre></div>
+</div>
+<p>But don&#8217;t forget to check and restart Apache:</p>
+<div class="highlight-python"><div class="highlight"><pre>[root@el5-i386 ~]# httpd -t
+Syntax OK
+
+[root@el5-i386 ~]# /etc/init.d/httpd restart
+Stopping httpd:                                            [  OK  ]
+Starting httpd:                                            [  OK  ]
+</pre></div>
+</div>
+</div>
+<div class="section" id="downgrading-from-ius-packages-to-stock-rhel-packages">
+<h2>Downgrading from IUS Packages to Stock RHEL Packages<a class="headerlink" href="#downgrading-from-ius-packages-to-stock-rhel-packages" title="Permalink to this headline">¶</a></h2>
+<p>Downgrading is really the same process but backwards. You first want to
+determine which packages you want/need to remove:</p>
+<div class="highlight-python"><div class="highlight"><pre>[root@el5-i386 ~]# rpm -qa | grep php52
+php52-common-5.2.10-1.2.ius.el5
+php52-mbstring-5.2.10-1.2.ius.el5
+php52-xml-5.2.10-1.2.ius.el5
+php52-cli-5.2.10-1.2.ius.el5
+php52-mysql-5.2.10-1.2.ius.el5
+php52-ldap-5.2.10-1.2.ius.el5
+php52-pdo-5.2.10-1.2.ius.el5
+php52-odbc-5.2.10-1.2.ius.el5
+php52-5.2.10-1.2.ius.el5
+php52-gd-5.2.10-1.2.ius.el5
+php52-imap-5.2.10-1.2.ius.el5
+</pre></div>
+</div>
+<p>You then need to remove, and replace with stock packages:</p>
+<div class="highlight-python"><div class="highlight"><pre>[root@el5-i386 ~]# yum shell
+
+&gt; remove php52-gd php52-cli php52-odbc php52-mbstring php52-pdo php52 php52-xml php52-common php52-ldap php52-mysql php52-imap
+
+&gt; install php-gd php-cli php-odbc php-mbstring php-pdo php php-xml php-common php-ldap php-mysql php-imap
+Setting up Remove Process
+
+&gt; transaction solve
+
+&gt; transaction run
+</pre></div>
+</div>
+<p>And of course we once again have stock PHP for EL5:</p>
+<div class="highlight-python"><div class="highlight"><pre>[root@el5-i386 ~]# php -v
+PHP 5.1.6 (cli) (built: Feb 26 2009 07:01:10)
+Copyright (c) 1997-2006 The PHP Group
+Zend Engine v2.1.0, Copyright (c) 1998-2006 Zend Technologies
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/pages/UpgradingTheOldWay.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        
+        </p>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<center>
+
+<table cellpadding=55 cellspacing=0>
+  <tr>
+    <td valign=top>
+      <div><font size=4><p><b>Quick Links</b></p></font></div>
+      <div><li><a class='bottomlinks' href='About.html'>About</a></li></div>
+      <div><li><a class='bottomlinks' href='../index.html'>Sitemap</a></li></div>
+      <div><li><a class='bottomlinks' href='Repos.html'>Repositories</a></li></div>
+      <div><li><a class='bottomlinks' href='GettingStarted.html'>Getting Started</a></li></div>
+      <div><li><a class='bottomlinks' href='FAQs.html'>FAQs</a></li></div>
+    </td>
+  
+    <td valign=top>
+      <div><font size=4><p><b>Contact</b></p></font></div>
+      <div><li><a class='bottomlinks' href='http://launchpad.net/~ius-community'>Mailing list</a></li></div>
+      <div><li><a class='bottomlinks' href='https://answers.launchpad.net/ius'>Question & Answer</a></li></div>
+      <div><li><a class='bottomlinks' href='https://bugs.launchpad.net/ius'>Submit a Bug</a></li></div>
+      <div><li><a class='bottomlinks' href='mailto:coredev@iuscommunity.org'>coredev@iuscommunity.org</a></li></div>
+      <div><li><font color=grey>irc.freenode.net #iuscommunity</font></li></div>
+    </td>
+    
+    <td>
+      <p><a href='https://launchpad.net/ius'><img src="../_static/launchpad.png" /></a></p>
+      <p><a href='https://github.com/iuscommunity-pkg'><img src="../_static/github.png" /></a></p>
+    </td>
+    
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td><font color=grey size=2>Hosted by</font></td>
+    <td>
+      <a href="http://www.rackspacecloud.com">
+        <img src="../_static/rackspace_cloud.png" alt="Rackspace Cloud" />
+      </a>
+    </td>
+  </tr>
+</table>
+  
+</center>
+  </body>
+</html>

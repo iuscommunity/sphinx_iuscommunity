@@ -2,6 +2,5 @@
 .token
 *.swp
 *egg*
-_build
 .idea
 env

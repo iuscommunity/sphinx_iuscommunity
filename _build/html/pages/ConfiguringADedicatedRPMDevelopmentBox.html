@@ -1,0 +1,631 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Configuring a Dedicated RPM Development Box &mdash; IUS Community Project 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="IUS Community Project 0.1 documentation" href="../index.html" />
+    <link rel="next" title="Contributing to IUS" href="ContributingToIUS.html" />
+    <link rel="prev" title="Available Packages" href="AvailablePackages.html" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="../_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+<style>
+  a.bottomlinks:link {color: #4DC0EA; }
+  a.bottomlinks:active {color: #4DC0EA; }
+  a.bottomlinks:visited {color: #4DC0EA; }
+  a.bottomlinks:hover {color: #4DC0EA; }
+  
+#navibar {
+            clear: both; float: right; display: block; font-size: 1.8em; 
+            line-height: 120%; margin: 0; padding:0 10px;
+         }
+         
+#navibar ul { list-style: none; margin: 0; padding: 0; }
+#navibar ul li { float: left; list-style-type: none; }
+
+#navibar li a {
+                    font-weight: bold; color: #ffffff; display: block;
+                    line-height: 34px; padding: 0 15px; text-decoration: none;
+                    text-shadow: #0e0e6c 0px 0px 2px; border-right: solid 1px #446aa8;
+                    font-size: 13px; outline: none;
+              }
+                                  
+#navibar ul { float: left; height: 35px;
+              background: url("../_static/bg-tabs-highlight.png") repeat-x;
+            }
+  
+</style>
+
+  </head>
+  <body>
+<table width=100% cellpadding=0
+  <tr>
+    <td>
+      <a href="About.html">
+        <img class="logo" src="../_static/site_banner.png" alt="Logo"/>
+      </a>
+    </td>
+  </tr>
+
+  <tr>    
+    <td valign='bottom'>
+      <div id="navibar">
+        <ul>
+          <li><a href="WhatIsHappeningInTheCommunity.html">What's Happening</a></li>
+          <li><a href="About.html">About</a></li>
+          <li><a href="Documentation.html">Docs</a></li>
+          <li><a href="Testimonials.html">Testimonials</a></li>
+          <li><a href="Repos.html">Repos</a></li>
+          <li><a href="Tools.html">Tools</a></li>
+          <li><a href="GettingStarted.html">Getting Started</a></li>
+          <li><a href="FAQs.html">FAQs</a></li>
+          <li><a href="../index.html">Sitemap</a></li>
+        </div>
+    </td>
+    
+  </tr>
+</table>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="configuring-a-dedicated-rpm-development-box">
+<span id="id1"></span><h1>Configuring a Dedicated RPM Development Box<a class="headerlink" href="#configuring-a-dedicated-rpm-development-box" title="Permalink to this headline">¶</a></h1>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#configuring-a-dedicated-rpm-development-box" id="id2">Configuring a Dedicated RPM Development Box</a><ul>
+<li><a class="reference internal" href="#introduction" id="id3">Introduction</a><ul>
+<li><a class="reference internal" href="#system-requirements" id="id4">System Requirements</a></li>
+<li><a class="reference internal" href="#conventions-and-vocabulary" id="id5">Conventions and Vocabulary</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#objectives" id="id6">Objectives</a></li>
+<li><a class="reference internal" href="#os-configuration" id="id7">OS Configuration</a><ul>
+<li><a class="reference internal" href="#ensure-the-system-is-up-to-date" id="id8">Ensure The System is Up-To-Date</a></li>
+<li><a class="reference internal" href="#ensure-system-is-secured" id="id9">Ensure System is Secured</a></li>
+<li><a class="reference internal" href="#configure-3rd-party-yum-repositories" id="id10">Configure 3rd Party Yum Repositories</a></li>
+<li><a class="reference internal" href="#install-fedora-mock-and-other-packages" id="id11">Install Fedora Mock and Other Packages</a></li>
+<li><a class="reference internal" href="#configure-global-environment-settings" id="id12">Configure Global Environment Settings</a></li>
+<li><a class="reference internal" href="#add-modify-users" id="id13">Add / Modify Users</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mock-configurations" id="id14">Mock Configurations</a><ul>
+<li><a class="reference internal" href="#setting-global-defaults" id="id15">Setting Global Defaults</a></li>
+<li><a class="reference internal" href="#stock-build-targets" id="id16">Stock Build Targets</a></li>
+<li><a class="reference internal" href="#custom-build-targets" id="id17">Custom Build Targets</a></li>
+<li><a class="reference internal" href="#a-sample-build-with-mock" id="id18">A Sample Build with Mock</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>This article serves to outline the steps necessary to configure a dedicated RPM
+Development server. There are some thing to consider depending on how this system
+is to be used:</p>
+<blockquote>
+<div><ul class="simple">
+<li><strong>Minimal Install</strong>. The majority of work will be done via the Fedora Mock
+utility, therefore you really don&#8217;t need or want to have any unnecessary
+software or services running on the system that could effect performance or
+open up security holes.</li>
+<li><strong>Locked Down</strong>. If this system is to be used as the primary development server,
+it is also likely that you might want to sign RPM with a custom GPG key. The
+private GPG Key must be kept as secure as possible, therefore there should be
+no incoming access allowed to this server. SSH should really be the only
+incoming service, but should be locked down to specific management IPs rather
+than globally open.</li>
+<li><strong>Limited User Access</strong>. It is easy to simply hand out sudo access to all the
+users who need to access this system, however unless all of those users are
+trusted with your private GPG Key it is strongly recommended that user access
+be limited. If you are in an environment where a lot of users want/need
+access to this development server then it is recommended that you have yet
+another dedicated server strictly for signing RPMs with the private GPG Key.</li>
+</ul>
+</div></blockquote>
+<div class="section" id="system-requirements">
+<h3>System Requirements<a class="headerlink" href="#system-requirements" title="Permalink to this headline">¶</a></h3>
+<p>Building RPMs with Mock is primarily CPU intensive, especially for larger
+packages that require a lot of source code compilation. That said, more CPU is
+better but the following would be recommended minimum specs:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Redhat/CentOS 5+ or Fedora Core 10+ (Minimal Install)</li>
+<li>64bit OS Installation (required to build i386 and x86_64 packages)</li>
+<li>2Ghz CPU or better</li>
+<li>512M Memory or better</li>
+<li>Several Gigs of free hard drive space. Each build performed by Mock create a
+chrooted install, and installs all necessary RPMs required to build the SRPM
+you are working with. This can range from a few hundred megs to over a gig
+depending. Mock does do caching which helps, however until files are removed
+the disk usage will grow with each build (for different targets).</li>
+</ul>
+</div></blockquote>
+<p>For this article I am using a minimal install CentOS 5.4 installation.</p>
+</div>
+<div class="section" id="conventions-and-vocabulary">
+<h3>Conventions and Vocabulary<a class="headerlink" href="#conventions-and-vocabulary" title="Permalink to this headline">¶</a></h3>
+<p>All commands are prefixed with a generic shell, and appear in a code block such
+as:</p>
+<div class="highlight-python"><div class="highlight"><pre>[user@mockbuild]$ echo &quot;This is a regular user shell&quot;
+
+[root@mockbuild]# echo &quot;This is a root shell&quot;
+</pre></div>
+</div>
+<p>Take note of the user [user&#64;, root&#64;] and shell variable [#, $] for each command.
+Some pieces of the article require root access, some are expected to be run as a
+regular user account.</p>
+<p>The hostname we use is &#8216;mockbuild&#8217; to signify this machine we are working on.
+If the pwd [present working directory] is important, we will first prefix any
+commands with a &#8216;cd&#8217; [change directory] statement to signify that you should
+change to a specific directory. For example:</p>
+<div class="highlight-python"><div class="highlight"><pre>[user@mockbuild]$ mkdir ~/buildroot/{RPMS,SRPMS,BUILD,SPECS,SOURCES} -p
+
+[user@mockbuild]$ cd ~/buildroot
+
+[user@mockbuild]$ ls -lah
+total 28K
+drwxrwxr-x 7 user user 4.0K Nov  4 20:57 .
+drwx------ 4 user user 4.0K Nov  4 20:57 ..
+drwxrwxr-x 2 user user 4.0K Nov  4 20:57 BUILD
+drwxrwxr-x 2 user user 4.0K Nov  4 20:57 RPMS
+drwxrwxr-x 2 user user 4.0K Nov  4 20:57 SOURCES
+drwxrwxr-x 2 user user 4.0K Nov  4 20:57 SPECS
+drwxrwxr-x 2 user user 4.0K Nov  4 20:57 SRPMS
+</pre></div>
+</div>
+<p>The two users we primarily use are &#8216;user&#8217; and &#8216;root&#8217;.</p>
+</div>
+</div>
+<div class="section" id="objectives">
+<h2>Objectives<a class="headerlink" href="#objectives" title="Permalink to this headline">¶</a></h2>
+<p>The following are the objectives we plan to accomplish throughout this article:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Have a clean host system dedicated for local RPM Development</li>
+<li>Secure the server from outside access</li>
+<li>Optimize the OS Environment for Mock</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="os-configuration">
+<h2>OS Configuration<a class="headerlink" href="#os-configuration" title="Permalink to this headline">¶</a></h2>
+<p>This article assumes you are using a minimal 64bit install of either
+Redhat/CentOS EL5+ or Fedora Core 10+. The minimal install ensure that the
+system is not bloated with unnecessary files or services. The following also
+assumes that you have root access on the server.</p>
+<div class="section" id="ensure-the-system-is-up-to-date">
+<h3>Ensure The System is Up-To-Date<a class="headerlink" href="#ensure-the-system-is-up-to-date" title="Permalink to this headline">¶</a></h3>
+<p>You first want to ensure the system is up-to-date with any available patches.
+This is easily done with the following:</p>
+<div class="highlight-python"><div class="highlight"><pre>[root@mockbuild]# yum upgrade
+</pre></div>
+</div>
+<p>Optionally, you may wish to ensure the system is configured for automatic
+nightly updates [recommended]. This is easily configured via the yum-cron
+package:</p>
+<div class="highlight-python"><div class="highlight"><pre>[root@mockbuild]# yum install yum-cron
+</pre></div>
+</div>
+<p>By default, yum-cron will run nightly and apply any updates that are available
+for your system. If this is not preferred you can also set <strong>CHECK_ONLY=yes</strong> in the
+configuration file <strong>/etc/sysconfig/yum-cron</strong>. This will check for updates,
+but not apply them.</p>
+</div>
+<div class="section" id="ensure-system-is-secured">
+<h3>Ensure System is Secured<a class="headerlink" href="#ensure-system-is-secured" title="Permalink to this headline">¶</a></h3>
+<p>As with any system you want to ensure that there is no unauthorized access,
+especially when talking about signing packages with a GPG Key. The system that
+has the private GPG key install but be as secure as possible. Ensuring proper
+security is a bit outside of the scope of this article, however the most basic
+measure would be to ensure the following:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Allow RELATED, and ESTABLISHED incoming traffic</li>
+<li>Allow NEW, RELATED, and ESTABLISHED outgoing traffic</li>
+<li>Allow incoming SSH connections from only specific IP Addresses or
+ranges(do not use DNS hostnames)</li>
+<li>Reject or Drop all other traffic.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="configure-3rd-party-yum-repositories">
+<h3>Configure 3rd Party Yum Repositories<a class="headerlink" href="#configure-3rd-party-yum-repositories" title="Permalink to this headline">¶</a></h3>
+<p>You may wish to have 3rd party yum repos setup as well, though keep in mind that
+this is for the host system only. You have to add 3rd party repo configs to your
+mock configuration files as well if you wish to build against packages in the
+3rd party repo (more on that later). Because we want to use the Fedora Mock
+utility, we want to install the Fedora EPEL repository:</p>
+<div class="highlight-python"><div class="highlight"><pre>[root@mockbuild]# rpm -Uvh http://download.fedora.redhat.com/pub/epel/5/i386/epel-release-5-3.noarch.rpm
+</pre></div>
+</div>
+<p>This will create the yum repositories for Fedora EPEL in
+<strong>/etc/yum.repos.d/epel.repo</strong> as well as import the EPEL GPG Key.</p>
+</div>
+<div class="section" id="install-fedora-mock-and-other-packages">
+<h3>Install Fedora Mock and Other Packages<a class="headerlink" href="#install-fedora-mock-and-other-packages" title="Permalink to this headline">¶</a></h3>
+<p>The Fedora Mock utility is in EPEL, and can be installed via Yum:</p>
+<div class="highlight-python"><div class="highlight"><pre>[root@mockbuild]# yum install mock.noarch rpm-build
+</pre></div>
+</div>
+</div>
+<div class="section" id="configure-global-environment-settings">
+<h3>Configure Global Environment Settings<a class="headerlink" href="#configure-global-environment-settings" title="Permalink to this headline">¶</a></h3>
+<p>There are a number of global settings we can make that will optimize the use of
+this system for RPM Development with Mock.</p>
+<p><strong>/etc/profile.d/mock.sh</strong>:</p>
+<p>We prefer to add an alias for the mock command that adds a unique extension to
+the end of each build. This is critical on a shared system where you might have
+multiple developers building against the same target. Add the following to
+<strong>/etc/profile.d/mock.sh</strong> as well as any other global mock environment changes you
+need:</p>
+<div class="highlight-python"><div class="highlight"><pre>alias mock=&quot;mock --uniqueext=$USER&quot;
+</pre></div>
+</div>
+<p>And make the file executable:</p>
+<div class="highlight-python"><div class="highlight"><pre>[root@mockbuild]# chmod +x /etc/profile.d/mock.sh
+</pre></div>
+</div>
+<p><strong>/etc/skel</strong>:</p>
+<p>Setting up a default /etc/skel can help provide a decent &#8216;starting point&#8217; for
+users, and help encourage a common practice on working with files. The following
+sets up /etc/skel.</p>
+<p>Create the buildroot for packaging:</p>
+<div class="highlight-python"><div class="highlight"><pre>[root@rpmbuild]# mkdir /etc/skel/packages
+
+[root@rpmbuild]# cd /etc/skel/packages
+
+[root@rpmbuild]# mkdir buildroot.clean/{RPMS,SRPMS,SPECS,BUILD,SOURCES} -p
+</pre></div>
+</div>
+<p>Create the RPM Macros file to set rpmbuild defaults by adding the following to
+<strong>/etc/skel/.rpmmacros</strong>:</p>
+<div class="highlight-python"><div class="highlight"><pre>%_topdir %(pwd)
+%el5 1
+%rhel 5
+</pre></div>
+</div>
+<p><em>Note, these settings are for RHEL / CentOS 5 and would be different for Fedora
+Core or others.</em></p>
+<p>We set each user&#8217;s _topdir (default: /usr/src/redhat) to &#8216;pwd&#8217; [present working
+directory] as it makes working out of multiple build roots easier. Remember,
+this system is dedicated to RPM Development! We will explain this a bit more in
+detailed later in the article. Setting _topdir to &#8216;pwd&#8217; is a preference and can
+be modified based on each individuals needs.</p>
+</div>
+<div class="section" id="add-modify-users">
+<h3>Add / Modify Users<a class="headerlink" href="#add-modify-users" title="Permalink to this headline">¶</a></h3>
+<p>At this point you should have everything in place to setup users properly.</p>
+<p>New Users:</p>
+<div class="highlight-python"><div class="highlight"><pre>[root@mockbuild]# useradd &lt;username&gt;
+
+[root@mockbuild]# passwd &lt;username&gt;
+
+[root@mockbuild]# usermod -aG mock &lt;username&gt;
+</pre></div>
+</div>
+<p>Existing Users:</p>
+<div class="highlight-python"><div class="highlight"><pre>[root@mockbuild]# usermod -aG mock &lt;username&gt;
+
+[root@mockbuild]# sudo -u &lt;username&gt; cp -a /etc/skel/packages /home/&lt;username&gt;
+
+[root@mockbuild]# sudo -u &lt;username&gt; cp -a /etc/skel/.rpmmacros /home/&lt;username&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="mock-configurations">
+<h2>Mock Configurations<a class="headerlink" href="#mock-configurations" title="Permalink to this headline">¶</a></h2>
+<p>Mock comes with a number of default configurations for building against Fedora
+Core and CentOS with Fedora EPEL. All target configuration files are in
+<strong>/etc/mock</strong>.</p>
+<div class="section" id="setting-global-defaults">
+<h3>Setting Global Defaults<a class="headerlink" href="#setting-global-defaults" title="Permalink to this headline">¶</a></h3>
+<p>Global defaults are in <strong>/etc/mock/site-defaults.cfg</strong>, of which each individual
+target config can override. For the majority of Mock users, the defaults are
+preferred and shouldn&#8217;t really need to be modified.</p>
+</div>
+<div class="section" id="stock-build-targets">
+<h3>Stock Build Targets<a class="headerlink" href="#stock-build-targets" title="Permalink to this headline">¶</a></h3>
+<p>As mentioned, mock comes with a number of stock build targets. As an example,
+lets look at the mock config for Fedora Core 10 x86_64.</p>
+<p><strong>/etc/mock/fedora-10-x86_64.cfg</strong>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">config_opts</span><span class="p">[</span><span class="s">&#39;root&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;fedora-10-x86_64&#39;</span>
+<span class="n">config_opts</span><span class="p">[</span><span class="s">&#39;target_arch&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;x86_64&#39;</span>
+<span class="n">config_opts</span><span class="p">[</span><span class="s">&#39;chroot_setup_cmd&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;groupinstall buildsys-build&#39;</span>
+<span class="n">config_opts</span><span class="p">[</span><span class="s">&#39;dist&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;fc10&#39;</span>  <span class="c"># only useful for --resultdir variable subst</span>
+
+<span class="n">config_opts</span><span class="p">[</span><span class="s">&#39;yum.conf&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;&quot;&quot;</span>
+<span class="s">[main]</span>
+<span class="s">cachedir=/var/cache/yum</span>
+<span class="s">debuglevel=1</span>
+<span class="s">reposdir=/dev/null</span>
+<span class="s">logfile=/var/log/yum.log</span>
+<span class="s">retries=20</span>
+<span class="s">obsoletes=1</span>
+<span class="s">gpgcheck=0</span>
+<span class="s">assumeyes=1</span>
+<span class="s"># grub/syslinux on x86_64 need glibc-devel.i386 which pulls in glibc.i386, need to exclude all</span>
+<span class="s"># .i?86 packages except these.</span>
+<span class="s">#exclude=[0-9A-Za-fh-z]*.i?86 g[0-9A-Za-km-z]*.i?86 gl[0-9A-Za-hj-z]*.i?86 gli[0-9A-Zac-z]*.i?86 glib[0-9A-Za-bd-z]*.i?86</span>
+<span class="s"># The above is not needed anymore with yum multilib policy of &quot;best&quot; which is the default in Fedora.</span>
+
+<span class="s"># repos</span>
+
+<span class="s">[fedora]</span>
+<span class="s">name=fedora</span>
+<span class="s">mirrorlist=http://mirrors.fedoraproject.org/mirrorlist?repo=fedora-10&amp;arch=x86_64</span>
+<span class="s">failovermethod=priority</span>
+
+<span class="s">[updates-released]</span>
+<span class="s">name=updates</span>
+<span class="s">mirrorlist=http://mirrors.fedoraproject.org/mirrorlist?repo=updates-released-f10&amp;arch=x86_64</span>
+<span class="s">failovermethod=priority</span>
+
+<span class="s">[local]</span>
+<span class="s">name=local</span>
+<span class="s">baseurl=http://koji.fedoraproject.org/static-repos/dist-fc10-build-current/x86_64/</span>
+<span class="s">cost=2000</span>
+<span class="s">enabled=0</span>
+<span class="s">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+<p>Essentially, the config simply sets a number of unique configuration options
+including the Yum config to use for the build. It is recommended to keep the
+stock config files as-is so that you have a basis for &#8216;building against a stock
+distro&#8217; as apposed to custom targets that might include additional 3rd party
+repositories.</p>
+</div>
+<div class="section" id="custom-build-targets">
+<h3>Custom Build Targets<a class="headerlink" href="#custom-build-targets" title="Permalink to this headline">¶</a></h3>
+<p>Custom build targets can be created by simply copying a stock config and adding
+the changes and additional 3rd party repositories that you might want to build
+against. As an example, I will create a custom build target that builds against
+CentOS 5 x86_64 + Fedora EPEL 5 + IUS 5 repositories.</p>
+<p><strong>/etc/mock/centos-5-x86_64-epel-ius.cfg</strong>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">config_opts</span><span class="p">[</span><span class="s">&#39;root&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;centos-5-x86_64-epel-ius&#39;</span>
+<span class="n">config_opts</span><span class="p">[</span><span class="s">&#39;target_arch&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;x86_64&#39;</span>
+<span class="n">config_opts</span><span class="p">[</span><span class="s">&#39;chroot_setup_cmd&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;install buildsys-build&#39;</span>
+<span class="n">config_opts</span><span class="p">[</span><span class="s">&#39;dist&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;el5&#39;</span>  <span class="c"># only useful for --resultdir variable subst</span>
+
+<span class="n">config_opts</span><span class="p">[</span><span class="s">&#39;yum.conf&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;&quot;&quot;</span>
+<span class="s">[main]</span>
+<span class="s">cachedir=/var/cache/yum</span>
+<span class="s">debuglevel=1</span>
+<span class="s">logfile=/var/log/yum.log</span>
+<span class="s">reposdir=/dev/null</span>
+<span class="s">retries=20</span>
+<span class="s">obsoletes=1</span>
+<span class="s">gpgcheck=0</span>
+<span class="s">assumeyes=1</span>
+<span class="s"># grub/syslinux on x86_64 need glibc-devel.i386 which pulls in glibc.i386, need to exclude all</span>
+<span class="s"># .i?86 packages except these.</span>
+<span class="s">exclude=[0-9A-Za-fh-z]*.i?86 g[0-9A-Za-km-z]*.i?86 gl[0-9A-Za-hj-z]*.i?86 gli[0-9A-Zac-z]*.i?86 glib[0-9A-Za-bd-z]*.i?86</span>
+
+<span class="s"># repos</span>
+
+<span class="s">[core]</span>
+<span class="s">name=base</span>
+<span class="s">mirrorlist=http://mirrorlist.centos.org/?release=5&amp;arch=x86_64&amp;repo=os</span>
+
+<span class="s">[update]</span>
+<span class="s">name=updates</span>
+<span class="s">mirrorlist=http://mirrorlist.centos.org/?release=5&amp;arch=x86_64&amp;repo=updates</span>
+
+<span class="s">[groups]</span>
+<span class="s">name=groups</span>
+<span class="s">baseurl=http://buildsys.fedoraproject.org/buildgroups/rhel5/x86_64/</span>
+
+<span class="s">[extras]</span>
+<span class="s">name=epel</span>
+<span class="s">mirrorlist=http://mirrors.fedoraproject.org/mirrorlist?repo=epel-5&amp;arch=x86_64</span>
+
+<span class="s">[testing]</span>
+<span class="s">name=epel-testing</span>
+<span class="s">enabled=0</span>
+<span class="s">mirrorlist=http://mirrors.fedoraproject.org/mirrorlist?repo=testing-epel5&amp;arch=x86_64</span>
+
+<span class="s">[local]</span>
+<span class="s">name=local</span>
+<span class="s">baseurl=http://koji.fedoraproject.org/static-repos/dist-5E-epel-build-current/x86_64/</span>
+<span class="s">cost=2000</span>
+<span class="s">enabled=0</span>
+
+<span class="s">[ius]</span>
+<span class="s">name=ius</span>
+<span class="s">mirrorlist=http://dmirr.iuscommunity.org/mirrorlist/?repo=ius-el5&amp;arch=$basearch</span>
+<span class="s">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="a-sample-build-with-mock">
+<h3>A Sample Build with Mock<a class="headerlink" href="#a-sample-build-with-mock" title="Permalink to this headline">¶</a></h3>
+<p>The following steps outline a few basic commands for building and working with
+mock. Keep in mind that every build should be out of its own build root.
+Meaning, you don&#8217;t want to build multiple packages out of the same buildroot as
+that can lead to file clobbering and a lot of confusion. For this example I am
+going to pull down an existing source RPM from EPEL, and rebuild it with Mock:</p>
+<p>Setup the unique, dedicated build root for this package:</p>
+<div class="highlight-python"><div class="highlight"><pre>[user@mockbuild]$ cd ~/packages
+
+[user@mockbuild]$ cp -a buildroot.clean libmcrypt
+
+[user@mockbuild]$ cd libmcrypt
+
+[user@mockbuild]$ ls -lah
+drwxr-xr-x 7 user user 4.0K Nov  4 23:14 .
+drwxr-xr-x 4 user user 4.0K Nov  5 00:55 ..
+drwxr-xr-x 2 user user 4.0K Nov  4 23:14 BUILD
+drwxr-xr-x 2 user user 4.0K Nov  4 23:14 RPMS
+drwxr-xr-x 2 user user 4.0K Nov  4 23:14 SOURCES
+drwxr-xr-x 2 user user 4.0K Nov  4 23:14 SPECS
+drwxr-xr-x 2 user user 4.0K Nov  4 23:14 SRPMS
+</pre></div>
+</div>
+<p>Install the original source rpm:</p>
+<div class="highlight-python"><div class="highlight"><pre>[user@mockbuild]$ rpm -Uvh http://mirror.rackspace.com/epel/5Server/SRPMS/libmcrypt-2.5.7-5.el5.src.rpm
+
+[user@mockbuild]$ ls -lah SPECS/
+total 12K
+drwxr-xr-x 2 user user 4.0K Nov  5 00:57 .
+drwxr-xr-x 7 user user 4.0K Nov  4 23:14 ..
+-rw-rw-r-- 1 user user 2.0K Oct  8  2006 libmcrypt.spec
+</pre></div>
+</div>
+<p>Make changes, rebuild the source rpm, and build with mock:</p>
+<div class="highlight-python"><div class="highlight"><pre>[user@mockbuild]$ rpmbuild -bs SPECS/libmcrypt.spec --nodeps
+Wrote: /home/user/packages/libmcrypt/SRPMS/libmcrypt-2.5.7-5.src.rpm
+
+
+[user@mockbuild]$ mock -r centos-5-x86_64-epel-ius rebuild SRPMS/libmcrypt-2.5.7-5.src.rpm
+INFO: mock.py version 0.9.14 starting...
+State Changed: init plugins
+State Changed: start
+INFO: Start(SRPMS/libmcrypt-2.5.7-5.src.rpm)  Config(centos-5-x86_64-epel-ius)
+State Changed: lock buildroot
+State Changed: clean
+State Changed: init
+State Changed: lock buildroot
+Mock Version: 0.9.14
+INFO: Mock Version: 0.9.14
+INFO: enabled root cache
+INFO: enabled yum cache
+State Changed: cleaning yum metadata
+INFO: enabled ccache
+State Changed: running yum
+State Changed: creating cache
+State Changed: setup
+State Changed: build
+INFO: Done(SRPMS/libmcrypt-2.5.7-5.src.rpm) Config(centos-5-x86_64-epel-ius) 5 minutes 26 seconds
+INFO: Results and/or logs in: /var/lib/mock/centos-5-x86_64-epel-ius-user/result
+</pre></div>
+</div>
+<p>As you can see we made changes to the spec, and then just rebuilt the source rpm
+in our local root. From there, we build our source rpm against the destination
+target [centos-5-x86_64-epel-ius]. Take notice that our &#8216;&lt;username&gt;&#8217; is tagged
+on to the end of the target work directory, making it unique to our user so
+other users building against the same target won&#8217;t clobber our build.</p>
+<p>To view your results, see the result dir of the build:</p>
+<div class="highlight-python"><div class="highlight"><pre>[you@mockbuild]$ ls -lah /var/lib/mock/centos-5-x86_64-epel-ius-user/result/
+total 1.3M
+drwxrwsr-x 2 user   mock 4.0K Nov  5 01:08 .
+drwxrwsr-x 4 root   mock 4.0K Nov  5 01:02 ..
+-rw-rw-r-- 1 user   mock 300K Nov  5 01:12 build.log
+-rw-r--r-- 1 user   mock 516K Nov  5 01:12 libmcrypt-2.5.7-5.el5.src.rpm
+-rw-r--r-- 1 user   mock 114K Nov  5 01:12 libmcrypt-2.5.7-5.el5.x86_64.rpm
+-rw-r--r-- 1 user   mock 176K Nov  5 01:12 libmcrypt-debuginfo-2.5.7-5.el5.x86_64.rpm
+-rw-r--r-- 1 user   mock 103K Nov  5 01:12 libmcrypt-devel-2.5.7-5.el5.x86_64.rpm
+-rw-rw-r-- 1 user   mock  55K Nov  5 01:12 root.log
+-rw-rw-r-- 1 user   mock  570 Nov  5 01:12 state.log
+</pre></div>
+</div>
+<p>Should the build fail, you can view the &#8216;build.log&#8217; in the result dir for the
+output of the rpmbuild command that mock ran. Modify your spec, rebuild the
+source rpm again, and then rebuild with mock once again. However, this time you
+want to skip the initial setup of the chroot so be sure to add the &#8211;no-clean
+flag to avoid cleaning the existing chroot and starting from scratch (it will be
+much faster).</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/pages/ConfiguringADedicatedRPMDevelopmentBox.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        
+        </p>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<center>
+
+<table cellpadding=55 cellspacing=0>
+  <tr>
+    <td valign=top>
+      <div><font size=4><p><b>Quick Links</b></p></font></div>
+      <div><li><a class='bottomlinks' href='About.html'>About</a></li></div>
+      <div><li><a class='bottomlinks' href='../index.html'>Sitemap</a></li></div>
+      <div><li><a class='bottomlinks' href='Repos.html'>Repositories</a></li></div>
+      <div><li><a class='bottomlinks' href='GettingStarted.html'>Getting Started</a></li></div>
+      <div><li><a class='bottomlinks' href='FAQs.html'>FAQs</a></li></div>
+    </td>
+  
+    <td valign=top>
+      <div><font size=4><p><b>Contact</b></p></font></div>
+      <div><li><a class='bottomlinks' href='http://launchpad.net/~ius-community'>Mailing list</a></li></div>
+      <div><li><a class='bottomlinks' href='https://answers.launchpad.net/ius'>Question & Answer</a></li></div>
+      <div><li><a class='bottomlinks' href='https://bugs.launchpad.net/ius'>Submit a Bug</a></li></div>
+      <div><li><a class='bottomlinks' href='mailto:coredev@iuscommunity.org'>coredev@iuscommunity.org</a></li></div>
+      <div><li><font color=grey>irc.freenode.net #iuscommunity</font></li></div>
+    </td>
+    
+    <td>
+      <p><a href='https://launchpad.net/ius'><img src="../_static/launchpad.png" /></a></p>
+      <p><a href='https://github.com/iuscommunity-pkg'><img src="../_static/github.png" /></a></p>
+    </td>
+    
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td><font color=grey size=2>Hosted by</font></td>
+    <td>
+      <a href="http://www.rackspacecloud.com">
+        <img src="../_static/rackspace_cloud.png" alt="Rackspace Cloud" />
+      </a>
+    </td>
+  </tr>
+</table>
+  
+</center>
+  </body>
+</html>

@@ -1,0 +1,768 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>IUS Client Usage Guide &mdash; IUS Community Project 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="IUS Community Project 0.1 documentation" href="../index.html" />
+    <link rel="next" title="IUS Community Project Vocabulary" href="Vocabulary.html" />
+    <link rel="prev" title="Getting Started" href="GettingStarted.html" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="../_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+<style>
+  a.bottomlinks:link {color: #4DC0EA; }
+  a.bottomlinks:active {color: #4DC0EA; }
+  a.bottomlinks:visited {color: #4DC0EA; }
+  a.bottomlinks:hover {color: #4DC0EA; }
+  
+#navibar {
+            clear: both; float: right; display: block; font-size: 1.8em; 
+            line-height: 120%; margin: 0; padding:0 10px;
+         }
+         
+#navibar ul { list-style: none; margin: 0; padding: 0; }
+#navibar ul li { float: left; list-style-type: none; }
+
+#navibar li a {
+                    font-weight: bold; color: #ffffff; display: block;
+                    line-height: 34px; padding: 0 15px; text-decoration: none;
+                    text-shadow: #0e0e6c 0px 0px 2px; border-right: solid 1px #446aa8;
+                    font-size: 13px; outline: none;
+              }
+                                  
+#navibar ul { float: left; height: 35px;
+              background: url("../_static/bg-tabs-highlight.png") repeat-x;
+            }
+  
+</style>
+
+  </head>
+  <body>
+<table width=100% cellpadding=0
+  <tr>
+    <td>
+      <a href="About.html">
+        <img class="logo" src="../_static/site_banner.png" alt="Logo"/>
+      </a>
+    </td>
+  </tr>
+
+  <tr>    
+    <td valign='bottom'>
+      <div id="navibar">
+        <ul>
+          <li><a href="WhatIsHappeningInTheCommunity.html">What's Happening</a></li>
+          <li><a href="About.html">About</a></li>
+          <li><a href="Documentation.html">Docs</a></li>
+          <li><a href="Testimonials.html">Testimonials</a></li>
+          <li><a href="Repos.html">Repos</a></li>
+          <li><a href="Tools.html">Tools</a></li>
+          <li><a href="GettingStarted.html">Getting Started</a></li>
+          <li><a href="FAQs.html">FAQs</a></li>
+          <li><a href="../index.html">Sitemap</a></li>
+        </div>
+    </td>
+    
+  </tr>
+</table>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="ius-client-usage-guide">
+<h1>IUS Client Usage Guide<a class="headerlink" href="#ius-client-usage-guide" title="Permalink to this headline">¶</a></h1>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#ius-client-usage-guide" id="id2">IUS Client Usage Guide</a><ul>
+<li><a class="reference internal" href="#summary" id="id3">Summary</a></li>
+<li><a class="reference internal" href="#end-user-agreement" id="id4">End User Agreement</a></li>
+<li><a class="reference internal" href="#information-on-ius-packages" id="id5">Information on IUS Packages</a></li>
+<li><a class="reference internal" href="#package-categories" id="id6">Package Categories</a><ul>
+<li><a class="reference internal" href="#primary-packages" id="id7">Primary Packages:</a></li>
+<li><a class="reference internal" href="#secondary-supporting-packages" id="id8">Secondary Supporting Packages:</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#package-types" id="id9">Package Types</a><ul>
+<li><a class="reference internal" href="#conflict-replace-packages" id="id10">Conflict Replace Packages:</a></li>
+<li><a class="reference internal" href="#parallel-install-packages" id="id11">Parallel Install Packages:</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#configuration" id="id12">Configuration</a></li>
+<li><a class="reference internal" href="#see-what-packages-are-available" id="id13">See What Packages Are Available</a></li>
+<li><a class="reference internal" href="#upgrading-stock-rhel-packages-to-ius-packages" id="id14">Upgrading Stock RHEL Packages to IUS Packages</a></li>
+<li><a class="reference internal" href="#downgrading-from-ius-packages-to-stock-rhel-packages" id="id15">Downgrading from IUS Packages to Stock RHEL Packages</a></li>
+<li><a class="reference internal" href="#known-yum-dependency-resolution-issues" id="id16">Known Yum Dependency Resolution Issues</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>This document outlines the basic client side usage of IUS. For common questions
+regarding IUS please see the <a class="reference internal" href="FAQs.html#faqs"><em>FAQs</em></a>.</p>
+</div>
+<div class="section" id="end-user-agreement">
+<h2>End User Agreement<a class="headerlink" href="#end-user-agreement" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://dl.iuscommunity.org/pub/ius/IUS-COMMUNITY-EUA">http://dl.iuscommunity.org/pub/ius/IUS-COMMUNITY-EUA</a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="information-on-ius-packages">
+<span id="id1"></span><h2>Information on IUS Packages<a class="headerlink" href="#information-on-ius-packages" title="Permalink to this headline">¶</a></h2>
+<p>The following explains a little bit behind how IUS packages are organized.</p>
+</div>
+<div class="section" id="package-categories">
+<h2>Package Categories<a class="headerlink" href="#package-categories" title="Permalink to this headline">¶</a></h2>
+<p>The packaging model of IUS is broken up into two package categories:</p>
+<div class="section" id="primary-packages">
+<h3>Primary Packages:<a class="headerlink" href="#primary-packages" title="Permalink to this headline">¶</a></h3>
+<p>The packages represent our purpose in maintaining these repositories.
+All primary packages will be maintained inline with upstream stable sources.
+In short, these are the packages that we focus our time on most, and have the
+highest priority. Almost always, with little exception, these packages
+explicitly replace a package that already exists in RHEL. For example:
+mysql50 and mysql51 both explicitly replace mysql as shipped with RHEL.</p>
+</div>
+<div class="section" id="secondary-supporting-packages">
+<h3>Secondary Supporting Packages:<a class="headerlink" href="#secondary-supporting-packages" title="Permalink to this headline">¶</a></h3>
+<p>Supporting packages are those that have been
+added to enhance the usability and appeal of the Primary Packages.
+These will most often be additional libraries such as PECL for PHP, or libraries
+for Python. Supporting Packages might not replace anything in RHEL, but
+sometimes do. In should be noted that IUS is not focused on adding extra
+packages for RHEL. If we want to package something additional for stock
+RHEL we will do so through <a class="reference external" href="https://fedoraproject.org/wiki/EPEL">Fedora EPEL</a>. Supporting Packages might not follow
+upstream stable sources in the fashion that the Primary Packages do. If it&#8217;s
+stable, and works... we may not update these packages for a long time
+(or until an update is requested).</p>
+</div>
+</div>
+<div class="section" id="package-types">
+<h2>Package Types<a class="headerlink" href="#package-types" title="Permalink to this headline">¶</a></h2>
+<p>IUS Packages will be one of two types: Conflicting or Parallel.</p>
+<div class="section" id="conflict-replace-packages">
+<h3>Conflict Replace Packages:<a class="headerlink" href="#conflict-replace-packages" title="Permalink to this headline">¶</a></h3>
+<p>Almost all IUS packages will be conflicting. This means, the packages that they
+replace must first be uninstalled before the IUS version is installed.
+For example: mysql50 and mysql51 both conflict with mysql. They provide &#8216;mysql&#8217;
+but they do not obsolete mysql, therefore simply subscribing to the IUS Yum
+Repositories will not upgrade anything automatically. If you attempt to install
+mysql5X packages from IUS you will get Yum errors. That said, once you remove
+the original packages (mysql, mysql-server, mysql-devel, etc) and install the
+IUS counterparts everything will function the same.</p>
+</div>
+<div class="section" id="parallel-install-packages">
+<h3>Parallel Install Packages:<a class="headerlink" href="#parallel-install-packages" title="Permalink to this headline">¶</a></h3>
+<p>In some cases it makes sense to maintain Parallel Packages, meaning packages
+that you can install side-by-side with their stock counter parts. A perfect
+example of this would be Python, or in IUS python26. On RHEL and most other
+linux distributions python is a critical piece that the system relies on.
+Upgrading Python on RHEL can cause major problems including break the update
+management system. Yes, there are ways around it... but they are all messy and
+not recommended. By parallel installing Python 2.6 alongside the stock Python
+2.4 the system remains intact and you can access both versions of Python.</p>
+<p>Unfortunately this layout leads to confusion, as there is nothing to signify
+which packages are conflicting/replacement packages and which can be installed
+side-by-side. Maybe one day we&#8217;ll figure out a better schema.</p>
+</div>
+</div>
+<div class="section" id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<p>Client configuration can be automatically setup by installing the ius-release
+package, which also requires the epel-release package. Both packages can be
+found within the respective repo for your OS:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://dl.iuscommunity.org/pub/ius/stable">http://dl.iuscommunity.org/pub/ius/stable</a></li>
+</ul>
+</div></blockquote>
+<p>The following is an example, please note you may need to adjust the URLs for
+your system:</p>
+<div class="highlight-python"><div class="highlight"><pre>root@linuxbox ~]# wget http://dl.iuscommunity.org/pub/ius/stable/Redhat/5/x86_64/ius-release-1-2.ius.el5.noarch.rpm
+
+root@linuxbox ~]# wget http://dl.iuscommunity.org/pub/ius/stable/Redhat/5/x86_64/epel-release-1-1.ius.el5.noarch.rpm
+
+root@linuxbox ~]# rpm -Uvh ius-release*.rpm epel-release*.rpm
+</pre></div>
+</div>
+</div>
+<div class="section" id="see-what-packages-are-available">
+<h2>See What Packages Are Available<a class="headerlink" href="#see-what-packages-are-available" title="Permalink to this headline">¶</a></h2>
+<p>You can easily see what software is available to you by doing a &#8216;yum search&#8217;
+or by going to the <a class="reference external" href="http://dl.iuscommunity.org/pub/ius">IUS Community Repo</a> directly. Keep in mind that packages will
+be added to IUS regularly so check back often:</p>
+<div class="highlight-python"><div class="highlight"><pre>[root@el5-i386 ~]# yum list | grep -w \.ius\.
+
+mod_python26-debuginfo.i386            3.3.1-10.ius.el5       ius-testing
+mysql50.i386                           5.0.83-2.ius.el5       ius-testing
+mysql50-bench.i386                     5.0.83-2.ius.el5       ius-testing
+mysql50-debuginfo.i386                 5.0.83-2.ius.el5       ius-testing
+mysql50-devel.i386                     5.0.83-2.ius.el5       ius-testing
+mysql50-server.i386                    5.0.83-2.ius.el5       ius-testing
+mysql51.i386                           5.1.36-2.ius.el5       ius-testing
+mysql51-bench.i386                     5.1.36-2.ius.el5       ius-testing
+mysql51-debuginfo.i386                 5.1.36-2.ius.el5       ius-testing
+mysql51-devel.i386                     5.1.36-2.ius.el5       ius-testing
+mysql51-plugins-archive.i386           5.1.36-2.ius.el5       ius-testing
+mysql51-plugins-blackhole.i386         5.1.36-2.ius.el5       ius-testing
+mysql51-plugins-example.i386           5.1.36-2.ius.el5       ius-testing
+mysql51-plugins-federated.i386         5.1.36-2.ius.el5       ius-testing
+mysql51-server.i386                    5.1.36-2.ius.el5       ius-testing
+php52.i386                             5.2.10-1.2.ius.el5     ius-testing
+php52-cli.i386                         5.2.10-1.2.ius.el5     ius-testing
+php52-common.i386                      5.2.10-1.2.ius.el5     ius-testing
+php52-gd.i386                          5.2.10-1.2.ius.el5     ius-testing
+php52-imap.i386                        5.2.10-1.2.ius.el5     ius-testing
+php52-ldap.i386                        5.2.10-1.2.ius.el5     ius-testing
+php52-mbstring.i386                    5.2.10-1.2.ius.el5     ius-testing
+php52-mysql.i386                       5.2.10-1.2.ius.el5     ius-testing
+php52-odbc.i386                        5.2.10-1.2.ius.el5     ius-testing
+php52-pdo.i386                         5.2.10-1.2.ius.el5     ius-testing
+php52-xml.i386                         5.2.10-1.2.ius.el5     ius-testing
+php52-bcmath.i386                      5.2.10-1.2.ius.el5     ius-testing
+php52-dba.i386                         5.2.10-1.2.ius.el5     ius-testing
+php52-debuginfo.i386                   5.2.10-1.2.ius.el5     ius-testing
+php52-devel.i386                       5.2.10-1.2.ius.el5     ius-testing
+php52-mcrypt.i386                      5.2.10-1.2.ius.el5     ius-testing
+php52-mssql.i386                       5.2.10-1.2.ius.el5     ius-testing
+php52-ncurses.i386                     5.2.10-1.2.ius.el5     ius-testing
+php52-pgsql.i386                       5.2.10-1.2.ius.el5     ius-testing
+php52-snmp.i386                        5.2.10-1.2.ius.el5     ius-testing
+php52-soap.i386                        5.2.10-1.2.ius.el5     ius-testing
+php52-tidy.i386                        5.2.10-1.2.ius.el5     ius-testing
+php52-xmlrpc.i386                      5.2.10-1.2.ius.el5     ius-testing
+php53.i386                             5.3.0-1.ius.el5        ius-testing
+php53-bcmath.i386                      5.3.0-1.ius.el5        ius-testing
+php53-cli.i386                         5.3.0-1.ius.el5        ius-testing
+php53-common.i386                      5.3.0-1.ius.el5        ius-testing
+php53-dba.i386                         5.3.0-1.ius.el5        ius-testing
+php53-debuginfo.i386                   5.3.0-1.ius.el5        ius-testing
+php53-devel.i386                       5.3.0-1.ius.el5        ius-testing
+php53-gd.i386                          5.3.0-1.ius.el5        ius-testing
+php53-imap.i386                        5.3.0-1.ius.el5        ius-testing
+php53-ldap.i386                        5.3.0-1.ius.el5        ius-testing
+php53-mbstring.i386                    5.3.0-1.ius.el5        ius-testing
+php53-mcrypt.i386                      5.3.0-1.ius.el5        ius-testing
+php53-mssql.i386                       5.3.0-1.ius.el5        ius-testing
+php53-mysql.i386                       5.3.0-1.ius.el5        ius-testing
+php53-odbc.i386                        5.3.0-1.ius.el5        ius-testing
+php53-pdo.i386                         5.3.0-1.ius.el5        ius-testing
+php53-pgsql.i386                       5.3.0-1.ius.el5        ius-testing
+php53-snmp.i386                        5.3.0-1.ius.el5        ius-testing
+php53-soap.i386                        5.3.0-1.ius.el5        ius-testing
+php53-tidy.i386                        5.3.0-1.ius.el5        ius-testing
+php53-xml.i386                         5.3.0-1.ius.el5        ius-testing
+php53-xmlrpc.i386                      5.3.0-1.ius.el5        ius-testing
+python26-debuginfo.i386                2.6-4.5.ius.el5        ius-testing
+python26-devel.i386                    2.6-4.5.ius.el5        ius-testing
+python26-libs.i386                     2.6-4.5.ius.el5        ius-testing
+python26-setuptools.noarch             0.6c9-1.1.ius.el5      ius-testing
+python26-test.i386                     2.6-4.5.ius.el5        ius-testing
+python26-tools.i386                    2.6-4.5.ius.el5        ius-testing
+</pre></div>
+</div>
+</div>
+<div class="section" id="upgrading-stock-rhel-packages-to-ius-packages">
+<h2>Upgrading Stock RHEL Packages to IUS Packages<a class="headerlink" href="#upgrading-stock-rhel-packages-to-ius-packages" title="Permalink to this headline">¶</a></h2>
+<p>The IUS repository has a package called &#8216;yum-plugin-replace&#8217;. This package is
+<em>not</em> required by the &#8216;ius-release&#8217; package, but can be installed via:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ sudo yum install yum-plugin-replace
+</pre></div>
+</div>
+<p>The replace plugin was written specifically for IUS to assist in upgrading from
+stock packages to IUS packageXY style packages.</p>
+<p>If for some reason these processes and the yum-plugin-replace do not work
+correctly, you can also try <a class="reference internal" href="UpgradingTheOldWay.html#upgradingtheoldway"><em>Upgrading the Old Way</em></a>.</p>
+<p>Using &#8216;php&#8217; as an example, we are going to show how to upgrade from stock RHEL
+packages to the IUS counterparts:</p>
+<div class="highlight-python"><div class="highlight"><pre>[root@linuxbox ~]# rpm -qa | grep php
+php-pear-1.4.9-6.el5
+php-common-5.1.6-27.el5
+php-cli-5.1.6-27.el5
+php-devel-5.1.6-27.el5
+php-5.1.6-27.el5
+
+[root@linuxbox ~]# yum replace php --replace-with php53
+Loaded plugins: replace
+Excluding Packages in global exclude list
+Finished
+Replacing packages takes time, please be patient...
+
+WARNING: Unable to resolve all providers: [&#39;config(php-common)&#39;, &#39;dbase.so()(64bit)&#39;, &#39;php-dbase&#39;, &#39;php-mime_magic&#39;, &#39;php-pcntl&#39;]
+
+This may be normal depending on the package.  Continue? [y/N] y
+
+Removed:
+  php.x86_64 0:5.1.6-27.el5        php-cli.x86_64 0:5.1.6-27.el5  php-common.x86_64 0:5.1.6-27.el5
+  php-devel.x86_64 0:5.1.6-27.el5  php-pear.noarch 1:1.4.9-6.el5
+
+Installed:
+  php53.x86_64 0:5.3.2-6.ius.el5                   php53-cli.x86_64 0:5.3.2-6.ius.el5
+  php53-common.x86_64 0:5.3.2-6.ius.el5            php53-devel.x86_64 0:5.3.2-6.ius.el5
+  php53-pear.noarch 1:1.8.1-4.ius.el5              php53-pspell.x86_64 0:5.3.2-6.ius.el5
+
+Complete!
+</pre></div>
+</div>
+<p>As you can see there is a WARNING that the &#8216;replace&#8217; operation was unable to
+resolve all providers. This means that the &#8216;php53&#8217; package doesn&#8217;t provide
+everything that the &#8216;php&#8217; packages did. This is normal, and should be expected
+when upgrading major versions of software. At times this will also be because of
+something missing in the newer packages. For example, dbase was removed from
+php53 core ... however &#8216;config(php-common)&#8217; should likely be added to the php53
+packages and is simply just an rpm spec change that needs to happen. The
+yum-plugin-replace is new, and therefore small issues like this will be resolved
+in the near future as they are discovered.</p>
+<p>You will notice that the &#8216;replace&#8217; plugin determines all the required sub
+packages that are required to resolve the deps provided by the stock versions
+package set. Additionally, the plugin will attempt to install any external
+packages that might need to be replaced as well. For example, the &#8216;php-pear&#8217;
+package is not part of the &#8216;php&#8217; package set. Therefore, it needs to be replaced
+by &#8216;php53-pear&#8217; ... another example would be with any PECL sub packages that
+might be installed (assuming the php53-pecl-xxxxxx package is available in IUS).</p>
+<p>The following is the full output from the command:</p>
+<div class="highlight-python"><div class="highlight"><pre>[root@linuxbox ~]# yum replace php --replace-with php53
+Loaded plugins: replace
+Excluding Packages in global exclude list
+Finished
+Replacing packages takes time, please be patient...
+
+WARNING: Unable to resolve all providers: [&#39;config(php-common)&#39;, &#39;dbase.so()(64bit)&#39;, &#39;php-dbase&#39;, &#39;php-mime_magic&#39;, &#39;php-pcntl&#39;]
+
+This may be normal depending on the package.  Continue? [y/N] y
+Resolving Dependencies
+--&gt; Running transaction check
+---&gt; Package php.x86_64 0:5.1.6-27.el5 set to be erased
+---&gt; Package php-cli.x86_64 0:5.1.6-27.el5 set to be erased
+---&gt; Package php-common.x86_64 0:5.1.6-27.el5 set to be erased
+---&gt; Package php-devel.x86_64 0:5.1.6-27.el5 set to be erased
+---&gt; Package php-pear.noarch 1:1.4.9-6.el5 set to be erased
+---&gt; Package php53.x86_64 0:5.3.2-6.ius.el5 set to be updated
+---&gt; Package php53-cli.x86_64 0:5.3.2-6.ius.el5 set to be updated
+---&gt; Package php53-common.x86_64 0:5.3.2-6.ius.el5 set to be updated
+---&gt; Package php53-devel.x86_64 0:5.3.2-6.ius.el5 set to be updated
+---&gt; Package php53-pear.noarch 1:1.8.1-4.ius.el5 set to be updated
+---&gt; Package php53-pspell.x86_64 0:5.3.2-6.ius.el5 set to be updated
+--&gt; Finished Dependency Resolution
+
+Dependencies Resolved
+
+====================================================================================================
+ Package                 Arch              Version                       Repository            Size
+====================================================================================================
+Installing:
+ php53                   x86_64            5.3.2-6.ius.el5               ius                  2.0 M
+ php53-cli               x86_64            5.3.2-6.ius.el5               ius                  3.1 M
+ php53-common            x86_64            5.3.2-6.ius.el5               ius                  557 k
+ php53-devel             x86_64            5.3.2-6.ius.el5               ius                  595 k
+ php53-pear              noarch            1:1.8.1-4.ius.el5             ius                  420 k
+ php53-pspell            x86_64            5.3.2-6.ius.el5               ius                   22 k
+Removing:
+ php                     x86_64            5.1.6-27.el5                  installed            6.2 M
+ php-cli                 x86_64            5.1.6-27.el5                  installed            5.3 M
+ php-common              x86_64            5.1.6-27.el5                  installed            397 k
+ php-devel               x86_64            5.1.6-27.el5                  installed            2.5 M
+ php-pear                noarch            1:1.4.9-6.el5                 installed            1.8 M
+
+Transaction Summary
+====================================================================================================
+Install       6 Package(s)
+Upgrade       0 Package(s)
+Remove        5 Package(s)
+Reinstall     0 Package(s)
+Downgrade     0 Package(s)
+
+Total download size: 6.6 M
+Is this ok [y/N]: y
+Downloading Packages:
+(1/6): php53-pspell-5.3.2-6.ius.el5.x86_64.rpm                               |  22 kB     00:00
+(2/6): php53-pear-1.8.1-4.ius.el5.noarch.rpm                                 | 420 kB     00:00
+(3/6): php53-common-5.3.2-6.ius.el5.x86_64.rpm                               | 557 kB     00:00
+(4/6): php53-devel-5.3.2-6.ius.el5.x86_64.rpm                                | 595 kB     00:00
+(5/6): php53-5.3.2-6.ius.el5.x86_64.rpm                                      | 2.0 MB     00:00
+(6/6): php53-cli-5.3.2-6.ius.el5.x86_64.rpm                                  | 3.1 MB     00:00
+----------------------------------------------------------------------------------------------------
+Total                                                                11 MB/s | 6.6 MB     00:00
+Running rpm_check_debug
+Running Transaction Test
+Finished Transaction Test
+Transaction Test Succeeded
+Running Transaction
+  Installing     : php53-cli                                                                   1/11
+  Installing     : php53-common                                                                2/11
+  Installing     : php53                                                                       3/11
+  Installing     : php53-devel                                                                 4/11
+  Installing     : php53-pspell                                                                5/11
+  Installing     : php53-pear                                                                  6/11
+  Erasing        : php-common                                                                  7/11
+  Erasing        : php-cli                                                                     8/11
+  Erasing        : php                                                                         9/11
+  Erasing        : php-devel                                                                  10/11
+  Erasing        : php-pear                                                                   11/11
+
+Removed:
+  php.x86_64 0:5.1.6-27.el5        php-cli.x86_64 0:5.1.6-27.el5  php-common.x86_64 0:5.1.6-27.el5
+  php-devel.x86_64 0:5.1.6-27.el5  php-pear.noarch 1:1.4.9-6.el5
+
+Installed:
+  php53.x86_64 0:5.3.2-6.ius.el5                   php53-cli.x86_64 0:5.3.2-6.ius.el5
+  php53-common.x86_64 0:5.3.2-6.ius.el5            php53-devel.x86_64 0:5.3.2-6.ius.el5
+  php53-pear.noarch 1:1.8.1-4.ius.el5              php53-pspell.x86_64 0:5.3.2-6.ius.el5
+
+Complete!
+</pre></div>
+</div>
+<p>And now, you should have a working install of PHP 5.3 on RHEL5:</p>
+<div class="highlight-python"><div class="highlight"><pre>[root@linuxbox ~]# php -v
+PHP 5.3.2 (cli) (built: Jun 24 2010 17:22:02)
+Copyright (c) 1997-2010 The PHP Group
+Zend Engine v2.3.0, Copyright (c) 1998-2010 Zend Technologies
+</pre></div>
+</div>
+<p>But don&#8217;t forget to check and restart Apache:</p>
+<div class="highlight-python"><div class="highlight"><pre>[root@el5-i386 ~]# httpd -t
+Syntax OK
+
+[root@el5-i386 ~]# /etc/init.d/httpd restart
+Stopping httpd:                                            [  OK  ]
+Starting httpd:
+</pre></div>
+</div>
+<p>As the plugin suggest one piece of software is being replaced by another, for
+example you can not replace mysql with mysql55 if mysql is not initially
+installed:</p>
+<div class="highlight-python"><div class="highlight"><pre># yum replace mysql --replace-with mysql55
+Loaded plugins: fastestmirror, replace
+Loading mirror speeds from cached hostfile
+ * base: centos-distro.cavecreek.net
+ * epel: fedora-epel.mirror.lstn.net
+ * extras: centos.mirror.lstn.net
+ * ius: pancks.sothatswhy.org.uk
+ * updates: mirror.raystedman.net
+Replacing packages takes time, please be patient...
+Error: Package &#39;mysql&#39; is not installed.
+</pre></div>
+</div>
+<p>One of the main reasons you may run in to this is with Enterprise Linux 6.</p>
+<p>Enterprise Linux 6 comes pre installed with mysql-libs as it is required by
+Postfix, but does not come with mysql. The simplest solution in these cases
+would be to first install mysql from base Redhat:</p>
+<div class="highlight-python"><div class="highlight"><pre># yum install mysql
+Loaded plugins: fastestmirror, replace
+Loading mirror speeds from cached hostfile
+ * base: centos-distro.cavecreek.net
+ * epel: fedora-epel.mirror.lstn.net
+ * extras: centos.mirror.lstn.net
+ * ius: pancks.sothatswhy.org.uk
+ * updates: mirror.raystedman.net
+Setting up Install Process
+Resolving Dependencies
+--&gt; Running transaction check
+---&gt; Package mysql.i686 0:5.1.52-1.el6_0.1 set to be updated
+--&gt; Finished Dependency Resolution
+
+Dependencies Resolved
+
+====================================================================================================
+ Package                 Arch            Version                      Repository            Size
+====================================================================================================
+Installing:
+ mysql                   i686             5.1.52-1.el6_0.1             updates               898 k
+
+Transaction Summary
+====================================================================================================
+Install       1 Package(s)
+Upgrade       0 Package(s)
+
+Total download size: 898 k
+Installed size: 2.3 M
+Is this ok [y/N]: y
+Downloading Packages:
+mysql-5.1.52-1.el6_0.1.i686.rpm                                                    | 898 kB     00:06
+Running rpm_check_debug
+Running Transaction Test
+Transaction Test Succeeded
+Running Transaction
+Warning: RPMDB altered outside of yum.
+  Installing     : mysql-5.1.52-1.el6_0.1.i686                                      1/1
+
+Installed:
+  mysql.i686 0:5.1.52-1.el6_0.1
+
+Complete!
+</pre></div>
+</div>
+<p>Then replace with mysql55 from IUS:</p>
+<div class="highlight-python"><div class="highlight"><pre># yum replace mysql --replace-with mysql55
+Loaded plugins: fastestmirror, replace
+Loading mirror speeds from cached hostfile
+ * base: centos-distro.cavecreek.net
+ * epel: mirror.utexas.edu
+ * extras: centos.mirror.lstn.net
+ * ius: pancks.sothatswhy.org.uk
+ * updates: mirror.raystedman.net
+Replacing packages takes time, please be patient...
+
+WARNING: Unable to resolve all providers: [&#39;config(mysql-libs)&#39;, &#39;libmysqlclient.so.16&#39;, &#39;libmysqlclient.so.16(libmysqlclient_16)&#39;,
+&#39;libmysqlclient_r.so.16&#39;, &#39;libmysqlclient_r.so.16(libmysqlclient_16)&#39;, &#39;mysql-libs(x86-32)&#39;, &#39;mysql(x86-32)&#39;]
+
+This may be normal depending on the package.  Continue? [y/N] y
+Resolving Dependencies
+--&gt; Running transaction check
+---&gt; Package mysql.i686 0:5.1.52-1.el6_0.1 set to be erased
+---&gt; Package mysql-libs.i686 0:5.1.52-1.el6_0.1 set to be erased
+--&gt; Processing Dependency: libmysqlclient.so.16 for package: 2:postfix-2.6.6-2.el6.i686
+--&gt; Processing Dependency: libmysqlclient.so.16 for package: perl-DBD-MySQL-4.013-3.el6.i686
+--&gt; Processing Dependency: libmysqlclient.so.16(libmysqlclient_16) for package: 2:postfix-2.6.6-2.el6.i686
+--&gt; Processing Dependency: libmysqlclient.so.16(libmysqlclient_16) for package: perl-DBD-MySQL-4.013-3.el6.i686
+---&gt; Package mysql55.i686 0:5.5.15-2.ius.el6 set to be updated
+--&gt; Processing Dependency: mysqlclient16 for package: mysql55-5.5.15-2.ius.el6.i686
+---&gt; Package mysql55-libs.i686 0:5.5.15-2.ius.el6 set to be updated
+--&gt; Running transaction check
+---&gt; Package mysqlclient16.i686 0:5.1.56-1.ius.el6 set to be updated
+---&gt; Package perl-DBD-MySQL.i686 0:4.013-3.el6 set to be erased
+---&gt; Package postfix.i686 2:2.6.6-2.el6 set to be erased
+--&gt; Processing Dependency: /usr/sbin/sendmail for package: cronie-1.4.4-2.el6.i686
+--&gt; Running transaction check
+---&gt; Package cronie.i686 0:1.4.4-2.el6 set to be erased
+--&gt; Processing Dependency: cronie = 1.4.4-2.el6 for package: cronie-anacron-1.4.4-2.el6.i686
+--&gt; Running transaction check
+---&gt; Package cronie-anacron.i686 0:1.4.4-2.el6 set to be erased
+--&gt; Processing Dependency: /etc/cron.d for package: crontabs-1.10-32.1.el6.noarch
+--&gt; Restarting Dependency Resolution with new changes.
+--&gt; Running transaction check
+---&gt; Package crontabs.noarch 0:1.10-32.1.el6 set to be erased
+--&gt; Finished Dependency Resolution
+--&gt; Running transaction check
+---&gt; Package cronie.i686 0:1.4.4-2.el6 set to be erased
+---&gt; Package cronie-anacron.i686 0:1.4.4-2.el6 set to be erased
+---&gt; Package crontabs.noarch 0:1.10-32.1.el6 set to be erased
+---&gt; Package perl-DBD-MySQL.i686 0:4.013-3.el6 set to be erased
+---&gt; Package postfix.i686 2:2.6.6-2.el6 set to be erased
+--&gt; Finished Dependency Resolution
+
+Dependencies Resolved
+
+====================================================================================================
+ Package                 Arch            Version                      Repository            Size
+====================================================================================================
+Installing:
+ mysql55                 i686             5.5.15-2.ius.el6             ius                  5.8 M
+ mysql55-libs            i686             5.5.15-2.ius.el6             ius                  773 k
+Removing:
+ mysql                   i686             5.1.52-1.el6_0.1             @updates             2.3 M
+ mysql-libs              i686             5.1.52-1.el6_0.1             @updates             3.9 M
+Installing for dependencies:
+ mysqlclient16           i686             5.1.56-1.ius.el6             ius                  4.0 M
+
+Transaction Summary
+====================================================================================================
+Install       3 Package(s)
+Upgrade       0 Package(s)
+Remove        2 Package(s)
+Reinstall     0 Package(s)
+Downgrade     0 Package(s)
+
+Total download size: 11 M
+Is this ok [y/N]: y
+Downloading Packages:
+(1/3): mysql55-5.5.15-2.ius.el6.i686.rpm                                                          | 5.8 MB     00:02
+(2/3): mysql55-libs-5.5.15-2.ius.el6.i686.rpm                                                     | 773 kB     00:00
+(3/3): mysqlclient16-5.1.56-1.ius.el6.i686.rpm                                                    | 4.0 MB     00:01
+------------------------------------------------------------------------------------------------------
+Total                                                                                             2.7 MB/s |  11 MB     00:03
+Running rpm_check_debug
+Running Transaction Test
+Transaction Test Succeeded
+Running Transaction
+  Installing     : mysql55-libs-5.5.15-2.ius.el6.i686                                             1/5
+  Installing     : mysqlclient16-5.1.56-1.ius.el6.i686                                            2/5
+  Installing     : mysql55-5.5.15-2.ius.el6.i686                                                  3/5
+  Erasing        : mysql-5.1.52-1.el6_0.1.i686                                                    4/5
+  Erasing        : mysql-libs-5.1.52-1.el6_0.1.i686                                               5/5
+
+Removed:
+  mysql.i686 0:5.1.52-1.el6_0.1                                                         mysql-libs.i686 0:5.1.52-1.el6_0.1
+
+Installed:
+  mysql55.i686 0:5.5.15-2.ius.el6                                                       mysql55-libs.i686 0:5.5.15-2.ius.el6
+
+Dependency Installed:
+  mysqlclient16.i686 0:5.1.56-1.ius.el6
+
+Complete!
+</pre></div>
+</div>
+</div>
+<div class="section" id="downgrading-from-ius-packages-to-stock-rhel-packages">
+<h2>Downgrading from IUS Packages to Stock RHEL Packages<a class="headerlink" href="#downgrading-from-ius-packages-to-stock-rhel-packages" title="Permalink to this headline">¶</a></h2>
+<p>Please note that downgrading using the yum &#8216;replace&#8217; plugin is slightly
+experimental, and may not work for all package sets. If you have issues,
+please use the old way.</p>
+<p>Downgrading is really the same process but backwards. The &#8216;replace&#8217; plugin for
+yum also works for downgrading (but will produce many more missing providers):</p>
+<div class="highlight-python"><div class="highlight"><pre>[root@linuxbox ~]# yum replace php53 --replace-with php
+Loaded plugins: replace
+Excluding Packages in global exclude list
+Finished
+Replacing packages takes time, please be patient...
+
+WARNING: Unable to resolve all providers: [&#39;php53-cgi&#39;, &#39;php53-pcntl&#39;, &#39;php53-readline&#39;, &#39;php53-cli&#39;, &#39;config(php53-common)&#39;, &#39;curl.so()(64bit)&#39;, &#39;fileinfo.so()(64bit)&#39;, &#39;json.so()(64bit)&#39;, &#39;phar.so()(64bit)&#39;, &#39;php(api)&#39;, &#39;php(zend-abi)&#39;, &#39;php-json&#39;, &#39;php-pecl(Fileinfo)&#39;, &#39;php-pecl(json)&#39;, &#39;php-pecl(phar)&#39;, &#39;php-pecl(zip)&#39;, &#39;php-pecl-Fileinfo&#39;, &#39;php-pecl-json&#39;, &#39;php-pecl-phar&#39;, &#39;php-pecl-zip&#39;, &#39;php-zip&#39;, &#39;php53(api)&#39;, &#39;php53(zend-abi)&#39;, &#39;php53-api&#39;, &#39;php53-bz2&#39;, &#39;php53-calendar&#39;, &#39;php53-ctype&#39;, &#39;php53-curl&#39;, &#39;php53-date&#39;, &#39;php53-exif&#39;, &#39;php53-ftp&#39;, &#39;php53-gettext&#39;, &#39;php53-gmp&#39;, &#39;php53-hash&#39;, &#39;php53-iconv&#39;, &#39;php53-json&#39;, &#39;php53-libxml&#39;, &#39;php53-openssl&#39;, &#39;php53-pcre&#39;, &#39;php53-pecl(Fileinfo)&#39;, &#39;php53-pecl(json)&#39;, &#39;php53-pecl(phar)&#39;, &#39;php53-pecl(zip)&#39;, &#39;php53-pecl-Fileinfo&#39;, &#39;php53-pecl-json&#39;, &#39;php53-pecl-phar&#39;, &#39;php53-pecl-zip&#39;, &#39;php53-posix&#39;, &#39;php53-reflection&#39;, &#39;php53-session&#39;, &#39;php53-shmop&#39;, &#39;php53-simplexml&#39;, &#39;php53-sockets&#39;, &#39;php53-spl&#39;, &#39;php53-sysvmsg&#39;, &#39;php53-sysvsem&#39;, &#39;php53-sysvshm&#39;, &#39;php53-tokenizer&#39;, &#39;php53-wddx&#39;, &#39;php53-zend-abi&#39;, &#39;php53-zip&#39;, &#39;php53-zlib&#39;, &#39;zip.so()(64bit)&#39;, &#39;php53-common&#39;, &#39;config(php53-devel)&#39;, &#39;php53-devel&#39;, &#39;config(php53-pspell)&#39;, &#39;pspell.so()(64bit)&#39;, &#39;php53-pspell&#39;]
+
+This may be normal depending on the package.  Continue? [y/N] y
+
+
+Removed:
+  php53.x86_64 0:5.3.2-6.ius.el5                   php53-cli.x86_64 0:5.3.2-6.ius.el5
+  php53-common.x86_64 0:5.3.2-6.ius.el5            php53-devel.x86_64 0:5.3.2-6.ius.el5
+  php53-pear.noarch 1:1.8.1-4.ius.el5              php53-pspell.x86_64 0:5.3.2-6.ius.el5
+
+Installed:
+  php.x86_64 0:5.1.6-27.el5        php-cli.x86_64 0:5.1.6-27.el5  php-common.x86_64 0:5.1.6-27.el5
+  php-devel.x86_64 0:5.1.6-27.el5  php-pear.noarch 1:1.4.9-6.el5
+
+Complete!
+</pre></div>
+</div>
+<p>And of course we once again have stock PHP for EL5:</p>
+<div class="highlight-python"><div class="highlight"><pre>[root@el5-i386 ~]# php -v
+PHP 5.1.6 (cli) (built: Feb 26 2009 07:01:10)
+Copyright (c) 1997-2006 The PHP Group
+Zend Engine v2.1.0, Copyright (c) 1998-2006 Zend Technologies
+</pre></div>
+</div>
+</div>
+<div class="section" id="known-yum-dependency-resolution-issues">
+<h2>Known Yum Dependency Resolution Issues<a class="headerlink" href="#known-yum-dependency-resolution-issues" title="Permalink to this headline">¶</a></h2>
+<p>The IUS CoreDev Team is aware of an issue with the previous versions of Yum and
+how it resolves dependencies when installing packages. For background on this
+matter please see the upstream bug reports that we have submitted:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="https://bugs.launchpad.net/ius/+bug/453543">LaunchPad IUS Bug #453543</a></li>
+<li><a class="reference external" href="http://web.archive.org/web/20120114083114/http://yum.baseurl.org/ticket/296">Yum Bug #296</a></li>
+<li><a class="reference external" href="https://bugzilla.redhat.com/show_bug.cgi?id=529719">Red Hat Bug #529719</a></li>
+</ul>
+</div></blockquote>
+<p>As of Yum 3.2.26 (backported: 3.2.22-23) this is no longer a problem.</p>
+<p>We had previously implemented an optional and temporary workaround by
+backporting the original patch that we submitted to a yum3 package in the IUS
+EL 5 repositories. If you had used this yum3 package, please revert to the
+stock version of yum in RHEL 5.5/6.0:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># yum install yum-utils</span>
+
+<span class="c"># yumdownloader yum</span>
+
+<span class="c"># rpm -e --nodeps yum3</span>
+
+<span class="c"># rpm -Uvh yum-*.rpm</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/pages/IUSClientUsageGuide.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        
+        <h3>Translations</h3>
+        <p style="font-size: 100%">
+            <a target=_blank href="http://science.webhostinggeeks.com/ius-klijent-vodica-za"><b>Serbo-Croatian</b></a>
+            <i>language by Vera Djuraskovic.</i>
+        
+        </p>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<center>
+
+<table cellpadding=55 cellspacing=0>
+  <tr>
+    <td valign=top>
+      <div><font size=4><p><b>Quick Links</b></p></font></div>
+      <div><li><a class='bottomlinks' href='About.html'>About</a></li></div>
+      <div><li><a class='bottomlinks' href='../index.html'>Sitemap</a></li></div>
+      <div><li><a class='bottomlinks' href='Repos.html'>Repositories</a></li></div>
+      <div><li><a class='bottomlinks' href='GettingStarted.html'>Getting Started</a></li></div>
+      <div><li><a class='bottomlinks' href='FAQs.html'>FAQs</a></li></div>
+    </td>
+  
+    <td valign=top>
+      <div><font size=4><p><b>Contact</b></p></font></div>
+      <div><li><a class='bottomlinks' href='http://launchpad.net/~ius-community'>Mailing list</a></li></div>
+      <div><li><a class='bottomlinks' href='https://answers.launchpad.net/ius'>Question & Answer</a></li></div>
+      <div><li><a class='bottomlinks' href='https://bugs.launchpad.net/ius'>Submit a Bug</a></li></div>
+      <div><li><a class='bottomlinks' href='mailto:coredev@iuscommunity.org'>coredev@iuscommunity.org</a></li></div>
+      <div><li><font color=grey>irc.freenode.net #iuscommunity</font></li></div>
+    </td>
+    
+    <td>
+      <p><a href='https://launchpad.net/ius'><img src="../_static/launchpad.png" /></a></p>
+      <p><a href='https://github.com/iuscommunity-pkg'><img src="../_static/github.png" /></a></p>
+    </td>
+    
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td><font color=grey size=2>Hosted by</font></td>
+    <td>
+      <a href="http://www.rackspacecloud.com">
+        <img src="../_static/rackspace_cloud.png" alt="Rackspace Cloud" />
+      </a>
+    </td>
+  </tr>
+</table>
+  
+</center>
+  </body>
+</html>

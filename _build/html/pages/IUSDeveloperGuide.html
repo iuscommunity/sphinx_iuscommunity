@@ -1,0 +1,689 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>IUS Developer Guide &mdash; IUS Community Project 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="IUS Community Project 0.1 documentation" href="../index.html" />
+    <link rel="next" title="IUS Package Wish List" href="IUSPackageWishList.html" />
+    <link rel="prev" title="IUS Community Project Vocabulary" href="Vocabulary.html" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="../_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+<style>
+  a.bottomlinks:link {color: #4DC0EA; }
+  a.bottomlinks:active {color: #4DC0EA; }
+  a.bottomlinks:visited {color: #4DC0EA; }
+  a.bottomlinks:hover {color: #4DC0EA; }
+  
+#navibar {
+            clear: both; float: right; display: block; font-size: 1.8em; 
+            line-height: 120%; margin: 0; padding:0 10px;
+         }
+         
+#navibar ul { list-style: none; margin: 0; padding: 0; }
+#navibar ul li { float: left; list-style-type: none; }
+
+#navibar li a {
+                    font-weight: bold; color: #ffffff; display: block;
+                    line-height: 34px; padding: 0 15px; text-decoration: none;
+                    text-shadow: #0e0e6c 0px 0px 2px; border-right: solid 1px #446aa8;
+                    font-size: 13px; outline: none;
+              }
+                                  
+#navibar ul { float: left; height: 35px;
+              background: url("../_static/bg-tabs-highlight.png") repeat-x;
+            }
+  
+</style>
+
+  </head>
+  <body>
+<table width=100% cellpadding=0
+  <tr>
+    <td>
+      <a href="About.html">
+        <img class="logo" src="../_static/site_banner.png" alt="Logo"/>
+      </a>
+    </td>
+  </tr>
+
+  <tr>    
+    <td valign='bottom'>
+      <div id="navibar">
+        <ul>
+          <li><a href="WhatIsHappeningInTheCommunity.html">What's Happening</a></li>
+          <li><a href="About.html">About</a></li>
+          <li><a href="Documentation.html">Docs</a></li>
+          <li><a href="Testimonials.html">Testimonials</a></li>
+          <li><a href="Repos.html">Repos</a></li>
+          <li><a href="Tools.html">Tools</a></li>
+          <li><a href="GettingStarted.html">Getting Started</a></li>
+          <li><a href="FAQs.html">FAQs</a></li>
+          <li><a href="../index.html">Sitemap</a></li>
+        </div>
+    </td>
+    
+  </tr>
+</table>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="ius-developer-guide">
+<span id="iusdeveloperguide"></span><h1>IUS Developer Guide<a class="headerlink" href="#ius-developer-guide" title="Permalink to this headline">¶</a></h1>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#ius-developer-guide" id="id4">IUS Developer Guide</a><ul>
+<li><a class="reference internal" href="#introduction" id="id5">Introduction</a></li>
+<li><a class="reference internal" href="#package-guidelines" id="id6">Package Guidelines</a></li>
+<li><a class="reference internal" href="#package-categories" id="id7">Package Categories</a><ul>
+<li><a class="reference internal" href="#primary-packages" id="id8">Primary Packages:</a></li>
+<li><a class="reference internal" href="#secondary-supporting-packages" id="id9">Secondary Supporting Packages:</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#package-types" id="id10">Package Types</a><ul>
+<li><a class="reference internal" href="#addon-packages" id="id11">Addon Packages</a></li>
+<li><a class="reference internal" href="#replacement-packages" id="id12">Replacement Packages</a></li>
+<li><a class="reference internal" href="#parallel-installable-packages" id="id13">Parallel Installable Packages</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#additional-packaging-notes" id="id14">Additional Packaging Notes</a><ul>
+<li><a class="reference internal" href="#ius-packages-provide-conflict-never-obsolete" id="id15">IUS Packages Provide/Conflict - Never Obsolete</a></li>
+<li><a class="reference internal" href="#a-note-on-external-sub-packages" id="id16">A Note on External Sub Packages</a></li>
+<li><a class="reference internal" href="#ius-packages-follow-fedora-package-collection" id="id17">IUS Packages Follow Fedora Package Collection</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id1" id="id18">Package Wish List</a></li>
+<li><a class="reference internal" href="#managing-updates" id="id19">Managing Updates</a></li>
+<li><a class="reference internal" href="#converting-existing-packages-for-ius" id="id20">Converting Existing Packages For IUS</a><ul>
+<li><a class="reference internal" href="#rename-the-spec-file" id="id21">Rename The Spec File</a></li>
+<li><a class="reference internal" href="#add-the-ius-release-tag" id="id22">Add The IUS Release Tag</a></li>
+<li><a class="reference internal" href="#define-the-base-version-and-real-name" id="id23">Define The Base Version, and Real Name</a></li>
+<li><a class="reference internal" href="#update-all-sub-packages" id="id24">Update All Sub Packages</a></li>
+<li><a class="reference internal" href="#modify-the-setup-line" id="id25">Modify The %setup Line</a></li>
+<li><a class="reference internal" href="#a-note-on-buildrequires-requires" id="id26">A Note On BuildRequires/Requires</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#contributing-packages-or-changes" id="id27">Contributing Packages or Changes</a><ul>
+<li><a class="reference internal" href="#branching-bazaar-repos" id="id28">Branching Bazaar Repos</a></li>
+<li><a class="reference internal" href="#modifying-packages" id="id29">Modifying Packages</a></li>
+<li><a class="reference internal" href="#committing-changes-to-launch-pad" id="id30">Committing Changes To Launch Pad</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#building-packages-with-fedora-mock" id="id31">Building Packages with Fedora Mock</a><ul>
+<li><a class="reference internal" href="#installing-mock" id="id32">Installing Mock</a></li>
+<li><a class="reference internal" href="#example-ius-mock-config" id="id33">Example IUS Mock Config</a></li>
+<li><a class="reference internal" href="#building-with-mock" id="id34">Building With Mock</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>This article outlines the basics of RPM packaging guidelines for IUS. It is a
+work in progress. If you need help on how to configure a local build system see
+<a class="reference internal" href="ConfiguringADedicatedRPMDevelopmentBox.html#configuring-a-dedicated-rpm-development-box"><em>Configuring a Dedicated RPM Development Box</em></a>.</p>
+</div>
+<div class="section" id="package-guidelines">
+<h2>Package Guidelines<a class="headerlink" href="#package-guidelines" title="Permalink to this headline">¶</a></h2>
+<p>The following outlines standard guidelines that packaging developers should
+follow when creating and working with packages for IUS. In general we attempt to
+follow the <a class="reference external" href="https://fedoraproject.org/wiki/Packaging:Guidelines">Fedora Packaging Guidelines</a> where possible, which should be a
+starting point for anyone just getting into packaging.</p>
+</div>
+<div class="section" id="package-categories">
+<h2>Package Categories<a class="headerlink" href="#package-categories" title="Permalink to this headline">¶</a></h2>
+<p>The packaging model of IUS is broken up into two package categories:</p>
+<div class="section" id="primary-packages">
+<h3>Primary Packages:<a class="headerlink" href="#primary-packages" title="Permalink to this headline">¶</a></h3>
+<p>The packages represent our purpose in maintaining these
+repositories. All primary packages will be maintained inline with upstream
+stable sources. In short, these are the packages that we focus our time on most,
+and have the highest priority. Almost always, with little exception, these
+packages explicitly replace a package that already exists in RHEL. For example:
+mysql50 and mysql51 both explicitly replace mysql as shipped with RHEL.</p>
+</div>
+<div class="section" id="secondary-supporting-packages">
+<h3>Secondary Supporting Packages:<a class="headerlink" href="#secondary-supporting-packages" title="Permalink to this headline">¶</a></h3>
+<p>Supporting packages are those that have been
+added to enhance the usability and appeal of the Primary Packages. These will
+most often be additional libraries such as PECL for PHP, or libraries for
+Python. Supporting Packages might not replace anything in RHEL, but sometimes
+do. In should be noted that IUS is not focused on adding extra packages for
+RHEL. If we want to package something additional for stock RHEL we will do so
+through <a class="reference external" href="https://fedoraproject.org/wiki/EPEL">Fedora EPEL</a>. Supporting Packages might not follow upstream stable
+sources in the fashion that the Primary Packages do. If it&#8217;s stable, and
+works... we may not update these packages for a long time (or until an update
+is requested).</p>
+</div>
+</div>
+<div class="section" id="package-types">
+<h2>Package Types<a class="headerlink" href="#package-types" title="Permalink to this headline">¶</a></h2>
+<p>See the SafeRepo Initiative specification.</p>
+<div class="section" id="addon-packages">
+<h3>Addon Packages<a class="headerlink" href="#addon-packages" title="Permalink to this headline">¶</a></h3>
+<p>IUS Does Not Add Packages to RHEL. IUS provides newer versions of existing
+software. If you have a package that you want to add to RHEL, you should go
+through <a class="reference external" href="https://fedoraproject.org/wiki/EPEL">Fedora EPEL</a>. The exception to this is Supporting Packages. For example,
+php52 replaces stock php... however we might add php52-pecl-XXXX that might not
+exist in RHEL but adds features for the use of php52. Another exception is m
+ysql50-percona-highperf, which replaces mysql but is not just a newer version of
+the same software, it is patched by Percona.</p>
+</div>
+<div class="section" id="replacement-packages">
+<h3>Replacement Packages<a class="headerlink" href="#replacement-packages" title="Permalink to this headline">¶</a></h3>
+<p>This type of package Provides the same software that another Stock Package
+(i.e. php53 provides php). The following rules apply:</p>
+<p>Can not Obsolete a Stock Distro Package
+Can not have the same name as another Stock Distro Package
+Must Provide the software it is replacing and be [more or less] compatible with
+other Stock Distro Packages that require it.
+Must explicitly Conflict with a Stock Distro Package (via the spec).
+For example the package php53 &#8220;Conflicts: php &lt; 5.3&#8221;, but it &#8220;Provides:
+php = %{version}-%{release}&#8221;.
+Must not automatically install, upgrade, or replace Stock Distro Packages
+when subscribing to the repo.</p>
+</div>
+<div class="section" id="parallel-installable-packages">
+<h3>Parallel Installable Packages<a class="headerlink" href="#parallel-installable-packages" title="Permalink to this headline">¶</a></h3>
+<p>This type of package is very much like a Replacement Package, however it is
+meant to be installed side-by-side with the Stock Distro Package that it would
+otherwise replace. Some distros sometimes use this technique to introduce newer
+software while not interrupting the system and software that require the older
+version of it. Python for example is a system critical piece of software.
+Upgrading it will always cause issues, however by parallel installing a newer
+version of python you have the best of both words. Users/Applications that
+require a newer version of that software can explicitly call the alternate
+location while other software continues to work fine. The following rules apply:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Can not Obsolete a Stock Distro Package</li>
+<li>Can not have the same name as another Stock Distro Package</li>
+<li>Can not Provide the software it is installing next to. For example,
+python26 does not &#8220;Provide: python&#8221; because this might confuse other Stock
+Distro Packages to think that it can find python and its libraries in the
+stock location (it can&#8217;t).</li>
+<li>Must not automatically install, upgrade, or replace Stock Distro Packages
+when subscribing to the repo.</li>
+<li>Executable binaries must be renamed with the major version number. I.e.
+&#8216;/usr/bin/python&#8217; -&gt; &#8216;/usr/bin/python2.6&#8217;.</li>
+<li>An identifier can/should be added to the release, such as Release:
+1.ius.parallel%{?dist}.</li>
+<li>All directories must have alternate paths. I.e. &#8216;/var/lib/mysql&#8217; -&gt;
+&#8216;/var/lib/mysql51&#8217;.</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="additional-packaging-notes">
+<h2>Additional Packaging Notes<a class="headerlink" href="#additional-packaging-notes" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="ius-packages-provide-conflict-never-obsolete">
+<h3>IUS Packages Provide/Conflict - Never Obsolete<a class="headerlink" href="#ius-packages-provide-conflict-never-obsolete" title="Permalink to this headline">¶</a></h3>
+<p>Packages in the IUS repository never obsolete a RHEL package directly. Meaning,
+if I subscribe to an IUS repo nothing will update automatically. See <a class="reference internal" href="TheSafeRepoInitiative.html#the-saferepo-initiative"><em>The SafeRepo Initiative</em></a> for more on this. However, I can remove a RHEL package and
+replace it with an IUS package that provides the same package. This is
+accomplished through a few steps that need to be added to the spec file of the
+IUS package.</p>
+<p>Lets take the &#8216;php52&#8217; package for example. This package &#8216;Provides: php&#8217;, but
+does not &#8216;Obsolete: php&#8217;. If we obsoleted &#8216;php&#8217; then as soon as we subscribed a
+system to IUS yum would attempt to update &#8216;php&#8217; with the &#8216;php52&#8217; counterparts.
+This is not desired. The following directives in the spec help perform this:</p>
+<div class="highlight-python"><div class="highlight"><pre>%define basever 5.2
+%define real_name php
+%define name php52
+
+... snip ...
+
+Provides:  %{real_name} = %{version}-%{release}
+Conflicts: %{real_name} &lt; %{basever}
+Conflicts: php51
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This has to be done for all subpackages accordingly as well.</p>
+</div>
+<p>Assuming that we have other packages such as an older &#8216;php51&#8217; for other branches
+of PHP we want our &#8216;php52&#8217; package to conflict with those packages. We also want
+our &#8216;php52&#8217; package to conflict with &#8216;php &lt; 5.2&#8217;. Because we are building
+specifically for the purpose of upgrading to a newer branch of software, it is
+safe to assume that RHEL will never upgrade PHP to 5.2 (using RHEL 5 in the
+example).</p>
+<p>Note: The exception to obsoletes is when an IUS package obsoletes another IUS
+package... for example, php53-pear might have obsoleted php-pear18.</p>
+</div>
+<div class="section" id="a-note-on-external-sub-packages">
+<h3>A Note on External Sub Packages<a class="headerlink" href="#a-note-on-external-sub-packages" title="Permalink to this headline">¶</a></h3>
+<p>The above example works well for &#8216;base&#8217; packages. For example, &#8216;php&#8217; is the base
+package... it&#8217;s real name is &#8216;php&#8217; (which is also the source name) and the IUS
+name is &#8216;php52&#8217; or &#8216;php53&#8217;. That said, it is not as clean of an example for
+external sub packages such as &#8216;php-eaccellerator&#8217; which is packaged for &#8216;php5x&#8217;
+but not together with the base package. So for example you might do:</p>
+<div class="highlight-python"><div class="highlight"><pre>%global php_basever 5.2
+
+Name: php52-eaccelerator
+
+... snip ...
+
+Requires: php52 &gt;= %{php_basever}
+Provides: php-eaccelerator = %{version}-%{release}
+</pre></div>
+</div>
+<p>You&#8217;ll notice that we do not &#8216;Conflict: php-eaccelerator &lt; %{base_ver}&#8217; because
+in this context we are not upgrading php-eaccelerator to another major branch,
+we updated php to another major branch. Since the base package &#8216;php52&#8217; already
+handled the conflict with &#8216;php &lt; %{basever}&#8217; and php52-eaccelerator requires
+&#8216;php52&#8217; it is safe to assume the hard conflicts will be handled.</p>
+</div>
+<div class="section" id="ius-packages-follow-fedora-package-collection">
+<h3>IUS Packages Follow Fedora Package Collection<a class="headerlink" href="#ius-packages-follow-fedora-package-collection" title="Permalink to this headline">¶</a></h3>
+<p>Because Fedora is upstream to RHEL, IUS follows changes that the Fedora
+maintainers make upstream. Meaning, anytime we make updates to a package we
+pull the latest Fedora SRPM as well and implement any patches/changes/etc that
+are relevant. We do not replace our SRPM with the Fedora SRPM... but rather
+manually go through the latest Fedora spec and make any relavant changes that
+haven&#8217;t been made yet.</p>
+</div>
+</div>
+<div class="section" id="id1">
+<span id="id2"></span><h2>Package Wish List<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>IUS users are encouraged to submit packages to the <a class="reference external" href="https://bugs.launchpad.net/ius/+bugs?field.tag=wishlist">Package Wish List</a> when they
+want something added to IUS. This is a good place to start for new contributors
+who want to help with packaging bug might not have any packages in mind.</p>
+</div>
+<div class="section" id="managing-updates">
+<span id="id3"></span><h2>Managing Updates<a class="headerlink" href="#managing-updates" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference internal" href="ManagingUpdates.html#managing-updates"><em>Managing Updates</em></a>.</p>
+</div>
+<div class="section" id="converting-existing-packages-for-ius">
+<h2>Converting Existing Packages For IUS<a class="headerlink" href="#converting-existing-packages-for-ius" title="Permalink to this headline">¶</a></h2>
+<p>In general, when creating a new IUS package you will start with the SRPM of the
+software from the latest version in RHEL, or more preferably Fedora (since we
+are building the latest sources from upstream) and build up from there. We
+want our packages to follow Redhat/Fedora standards as much as possible to
+ensure seamless upgrades from stock RHEL to IUS packages.</p>
+<p>The following points are examples, but not limited to the changes that will need
+to be made to the spec to build for IUS.</p>
+<div class="section" id="rename-the-spec-file">
+<h3>Rename The Spec File<a class="headerlink" href="#rename-the-spec-file" title="Permalink to this headline">¶</a></h3>
+<p>The spec file should match the new name of the package.
+Using php as an example:</p>
+<div class="highlight-python"><div class="highlight"><pre>you@linuxbox buildroot]$ mv SPECS/php.spec SPECS/php52.spec
+</pre></div>
+</div>
+</div>
+<div class="section" id="add-the-ius-release-tag">
+<h3>Add The IUS Release Tag<a class="headerlink" href="#add-the-ius-release-tag" title="Permalink to this headline">¶</a></h3>
+<p>IUS packages are designated by a &#8216;.ius&#8217; tag in the release.</p>
+<blockquote>
+<div>Release: 1.ius%{?dist}</div></blockquote>
+</div>
+<div class="section" id="define-the-base-version-and-real-name">
+<h3>Define The Base Version, and Real Name<a class="headerlink" href="#define-the-base-version-and-real-name" title="Permalink to this headline">¶</a></h3>
+<p>The base version is important as its used further down in the spec and makes
+things clean. Additionally, we need to reference the &#8216;real name&#8217; of the package
+through out the spec. The following should be added to the top of the spec
+before the Preamble:</p>
+<div class="highlight-python"><div class="highlight"><pre>%define basever 5.2
+%define real_name php
+%define name php52
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">We are using php as an example. Replace names accordingly.</p>
+</div>
+<p>Add the Provides/Conflicts for the Base Package</p>
+<p>Provides:  %{real_name} = %{version}-%{release}
+Conflicts: %{real_name} &lt; %{basever}
+Conflicts: php51</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The &#8216;Conflicts: php51&#8217; should list any ius packages previous to this
+one (php52 in our example). It does not need to list ius packages newer than it.</p>
+</div>
+</div>
+<div class="section" id="update-all-sub-packages">
+<h3>Update All Sub Packages<a class="headerlink" href="#update-all-sub-packages" title="Permalink to this headline">¶</a></h3>
+<p>All sub packages need to both provide the real name of the sub package, as well
+as require the new name of the package. Take the php52-devel package for
+example:</p>
+<div class="highlight-python"><div class="highlight"><pre>%package devel
+Group: Development/Libraries
+Summary: Files needed for building PHP extensions.
+Requires: %{name} = %{version}-%{release}, autoconf, automake
+Provides: %{real_name}-devel = %{version}-%{release}
+Conflicts: %{real_name}-devel &lt; %{base_ver}
+
+%description devel
+The php-devel package contains the files needed for building PHP
+extensions. If you need to compile your own PHP extensions, you will
+need to install this package.
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">We need to provide the &#8216;%{real_name}&#8217; of the sub package to resolve
+any dependencies in the system that are looking for the stock version of the
+software.</p>
+</div>
+</div>
+<div class="section" id="modify-the-setup-line">
+<h3>Modify The %setup Line<a class="headerlink" href="#modify-the-setup-line" title="Permalink to this headline">¶</a></h3>
+<p>We need to tell %setup to use the real name of our software here:</p>
+<div class="highlight-python"><div class="highlight"><pre>%setup -q -n %{real_name}-%{version}
+</pre></div>
+</div>
+</div>
+<div class="section" id="a-note-on-buildrequires-requires">
+<h3>A Note On BuildRequires/Requires<a class="headerlink" href="#a-note-on-buildrequires-requires" title="Permalink to this headline">¶</a></h3>
+<p>This can sound a bit confusing, however it should be noted that IUS packages
+should not explicitly BuildRequire/Require a stock RHEL packages that another
+IUS package replaces. This can cause dependency hell during the build process
+with Mock because yum calls for &#8216;XXX&#8217; package and if nothing is already
+installed you might get a conflict between all the packages that provide &#8216;XXX&#8217;
+package. For example.. if a php52-pecl-pear package has a &#8216;BuildRequires:
+php-pear&#8217; yum will freak out because php-pear requires php-cli ... and even
+though php52-cli provides php-cli, php52 isn&#8217;t installed yet... so yum tries to
+install php along with php-cli .... and things just explode. For that example,
+we now have &#8216;php52-pear&#8217; which isn&#8217;t really needed since php-pear works fine...
+but this allows us explicitly make sure that php52 gets installed at build time
+and not php.</p>
+</div>
+</div>
+<div class="section" id="contributing-packages-or-changes">
+<h2>Contributing Packages or Changes<a class="headerlink" href="#contributing-packages-or-changes" title="Permalink to this headline">¶</a></h2>
+<p>Currently we do not have a public build farm setup. We are debating whether to
+move everything to a dedicate Koji instance, or continue development on our
+existing build system and setup a public instance of that. In the mean time
+developers that want to contribute can simply branch our bazaar repos from which
+we can merge from and submit the builds to the build farm.</p>
+<div class="section" id="branching-bazaar-repos">
+<h3>Branching Bazaar Repos<a class="headerlink" href="#branching-bazaar-repos" title="Permalink to this headline">¶</a></h3>
+<p>Each package has its own branch hosted on our <a class="reference external" href="https://launchpad.net/ius">LaunchPad</a> project page. You can
+create your own branch, make changes, and then request a merge. Once merges have
+been approved your changes will appear in the next package release.</p>
+<p>Assuming you have a <a class="reference external" href="https://launchpad.net/ius">LaunchPad</a> account, the following is an example of merging
+from the official ius branch to make your changes:</p>
+<div class="highlight-python"><div class="highlight"><pre>you@linux ]$ mkdir ius
+
+you@linux ]$ cd ius
+
+you@linux ]$ bzr launchpad-login &lt;your_launchpad_login&gt;
+
+you@linux ]$ bzr init
+
+you@linux ]$ bzr branch lp:~ius-coredev/ius/php52
+Branched 7 revision(s).
+
+you@linux ]$ cd php52
+
+you@linux ]$ ls -lah
+total 32K
+drwxrwxr-x 8 you you 4.0K Oct 13 15:52 .
+drwxrwxr-x 4 you you 4.0K Oct 13 15:50 ..
+drwxrwxr-x 2 you you 4.0K Oct 13 15:52 BUILD
+drwxrwxr-x 6 you you 4.0K Oct 13 15:52 .bzr
+drwxrwxr-x 2 you you 4.0K Oct 13 15:52 RPMS
+drwxrwxr-x 2 you you 4.0K Oct 13 15:52 SOURCES
+drwxrwxr-x 2 you you 4.0K Oct 13 15:52 SPECS
+drwxrwxr-x 2 you you 4.0K Oct 13 15:52 SRPMS
+</pre></div>
+</div>
+</div>
+<div class="section" id="modifying-packages">
+<h3>Modifying Packages<a class="headerlink" href="#modifying-packages" title="Permalink to this headline">¶</a></h3>
+<p>After making changes, you want to make sure that they build (and you probably
+want to test installing and using the RPMs as well). It is recommended that
+packagers use the Fedora Mock utility for building as this ensures builds are
+clean and all dependencies are resolved. After modifying, an example build might
+look like (don&#8217;t forget to up the release):</p>
+<div class="highlight-python"><div class="highlight"><pre>you@linux ]$ rpmbuild -bs SPECS/php52.spec --nodeps
+Wrote: /home/you/ius/php52/SRPMS/php52-5.2.11-2.ius.src.rpm
+
+you@linux ]$ mock -r ius-5-x86_64 rebuild SRPMS/php52-5.2.11-2.ius.src.rpm
+INFO: mock.py version 0.9.14 starting...
+State Changed: init plugins
+State Changed: start
+INFO: Start(SRPMS/php52-5.2.11-2.ius.src.rpm)  Config(ius-5-x86_64)
+State Changed: lock buildroot
+State Changed: clean
+State Changed: init
+State Changed: lock buildroot
+Mock Version: 0.9.14
+State Changed: running yum
+State Changed: setup
+State Changed: build
+INFO: Done(SRPMS/php52-5.2.11-2.ius.src.rpm) Config(ius-5-x86_64) 13 minutes 10 seconds
+INFO: Results and/or logs in: /var/lib/mock/ius-5-x86_64-you/result
+</pre></div>
+</div>
+<p>For more information, and an example IUS Mock config, see the Building Packages
+with Fedora Mock section. Should you&#8217;re build, and testing be successful you
+then want to commit your changes.</p>
+</div>
+<div class="section" id="committing-changes-to-launch-pad">
+<h3>Committing Changes To Launch Pad<a class="headerlink" href="#committing-changes-to-launch-pad" title="Permalink to this headline">¶</a></h3>
+<p>Under the <a class="reference external" href="http://code.launchpad.net/ius">IUS Community Project</a> branches, click &#8216;Register a Branch&#8217;.</p>
+<blockquote>
+<div><ul class="simple">
+<li>Name: &lt;package_name&gt;</li>
+<li>Type: Hosted</li>
+<li>Status: Development</li>
+<li>Register Branch</li>
+</ul>
+</div></blockquote>
+<p>This creates a branch like lp:~you/ius/php52. You want to commit changes locally
+first and include a detailed log of the changes you made. Then, for the IUS
+CoreDev Team to be able to merge your changes in you need to commit to the
+<a class="reference external" href="https://launchpad.net/ius">LaunchPad</a> branch under your accound:</p>
+<div class="highlight-python"><div class="highlight"><pre>you@linux ]$ bzr add SOURCES/php-5.2.11-mysourcechange.patch
+
+you@linux ]$ bzr commit -m &#39;Adding patch to fix something in the source.&#39;
+
+you@linux ]$ bzr push lp:~you/ius/php52 --use-existing-dir
+Created new branch.
+</pre></div>
+</div>
+<p>Once your branch is complete, go back to your Branches page for your user, click
+the branch and then click &#8216;Propose for merging into another branch&#8217;. At this
+point you want to choose the branch for the package. Note, this is the target
+branch (where the proposed changes need to be applied).</p>
+</div>
+</div>
+<div class="section" id="building-packages-with-fedora-mock">
+<h2>Building Packages with Fedora Mock<a class="headerlink" href="#building-packages-with-fedora-mock" title="Permalink to this headline">¶</a></h2>
+<p>The Fedora Mock utility is the preferred way of building packages locally.</p>
+<div class="section" id="installing-mock">
+<h3>Installing Mock<a class="headerlink" href="#installing-mock" title="Permalink to this headline">¶</a></h3>
+<p>The mock package can be installed from Fedora, and Fedora EPEL repositories:</p>
+<div class="highlight-python"><div class="highlight"><pre>root@linux ~]# yum install mock.noarch
+
+root@linux ~]# usermod -aG mock &lt;username&gt;
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">All users building with mock need to be added to the mock system group
+(as I did above for &lt;username&gt;).</p>
+</div>
+</div>
+<div class="section" id="example-ius-mock-config">
+<h3>Example IUS Mock Config<a class="headerlink" href="#example-ius-mock-config" title="Permalink to this headline">¶</a></h3>
+<p>Copy the following to /etc/mock/ius-5-x86_64.cfg:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">config_opts</span><span class="p">[</span><span class="s">&#39;root&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;epel-5-x86_64&#39;</span>
+<span class="n">config_opts</span><span class="p">[</span><span class="s">&#39;target_arch&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;x86_64&#39;</span>
+<span class="n">config_opts</span><span class="p">[</span><span class="s">&#39;legal_host_arches&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;x86_64&#39;</span><span class="p">,)</span>
+<span class="n">config_opts</span><span class="p">[</span><span class="s">&#39;chroot_setup_cmd&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;install buildsys-build&#39;</span>
+<span class="n">config_opts</span><span class="p">[</span><span class="s">&#39;dist&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;el5&#39;</span>  <span class="c"># only useful for --resultdir variable subst</span>
+<span class="n">config_opts</span><span class="p">[</span><span class="s">&#39;macros&#39;</span><span class="p">][</span><span class="s">&#39;%__arch_install_post&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;%{nil}&#39;</span>
+
+<span class="n">config_opts</span><span class="p">[</span><span class="s">&#39;yum.conf&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;&quot;&quot;</span>
+<span class="s">[main]</span>
+<span class="s">cachedir=/var/cache/yum</span>
+<span class="s">debuglevel=1</span>
+<span class="s">logfile=/var/log/yum.log</span>
+<span class="s">reposdir=/dev/null</span>
+<span class="s">retries=20</span>
+<span class="s">obsoletes=1</span>
+<span class="s">gpgcheck=0</span>
+<span class="s">assumeyes=1</span>
+<span class="s">syslog_ident=mock</span>
+<span class="s">syslog_device=</span>
+
+<span class="s"># repos</span>
+
+<span class="s">[core]</span>
+<span class="s">name=base</span>
+<span class="s">mirrorlist=http://mirrorlist.centos.org/?release=5&amp;arch=x86_64&amp;repo=os</span>
+
+<span class="s">[update]</span>
+<span class="s">name=updates</span>
+<span class="s">mirrorlist=http://mirrorlist.centos.org/?release=5&amp;arch=x86_64&amp;repo=updates</span>
+
+<span class="s">[groups]</span>
+<span class="s">name=groups</span>
+<span class="s">baseurl=http://buildsys.fedoraproject.org/buildgroups/rhel5/x86_64/</span>
+
+<span class="s">[extras]</span>
+<span class="s">name=epel</span>
+<span class="s">mirrorlist=http://mirrors.fedoraproject.org/mirrorlist?repo=epel-5&amp;arch=x86_64</span>
+
+<span class="s">[testing]</span>
+<span class="s">name=epel-testing</span>
+<span class="s">enabled=0</span>
+<span class="s">mirrorlist=http://mirrors.fedoraproject.org/mirrorlist?repo=testing-epel5&amp;arch=x86_64</span>
+
+<span class="s">[local]</span>
+<span class="s">name=local</span>
+<span class="s">baseurl=http://kojipkgs.fedoraproject.org/repos/dist-5E-epel-build/latest/x86_64/</span>
+<span class="s">cost=2000</span>
+<span class="s">enabled=0</span>
+
+<span class="s">[epel-debug]</span>
+<span class="s">name=epel-debug</span>
+<span class="s">mirrorlist=http://mirrors.fedoraproject.org/mirrorlist?repo=epel-debug-5&amp;arch=x86_64</span>
+<span class="s">failovermethod=priority</span>
+<span class="s">enabled=0</span>
+
+<span class="s">[ius]</span>
+<span class="s">name=ius</span>
+<span class="s">mirrorlist=http://dmirr.iuscommunity.org/mirrorlist?repo=ius-el5&amp;arch=$basearch</span>
+<span class="s">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="building-with-mock">
+<h3>Building With Mock<a class="headerlink" href="#building-with-mock" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre>you@linux buildroot]$ vi SPECS/mypackage.spec
+
+you@linux buildroot]$ rpmbuild -bs SPECS mypackages.spec
+
+you@linux buildroot]$ mock -r ius-5-x86_64 rebuild SRPMS/mypackage-0.1-1.ius.src.rpm
+</pre></div>
+</div>
+<p>Results will be in /var/lib/mock/ius-5-x86_64.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/pages/IUSDeveloperGuide.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        
+        </p>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<center>
+
+<table cellpadding=55 cellspacing=0>
+  <tr>
+    <td valign=top>
+      <div><font size=4><p><b>Quick Links</b></p></font></div>
+      <div><li><a class='bottomlinks' href='About.html'>About</a></li></div>
+      <div><li><a class='bottomlinks' href='../index.html'>Sitemap</a></li></div>
+      <div><li><a class='bottomlinks' href='Repos.html'>Repositories</a></li></div>
+      <div><li><a class='bottomlinks' href='GettingStarted.html'>Getting Started</a></li></div>
+      <div><li><a class='bottomlinks' href='FAQs.html'>FAQs</a></li></div>
+    </td>
+  
+    <td valign=top>
+      <div><font size=4><p><b>Contact</b></p></font></div>
+      <div><li><a class='bottomlinks' href='http://launchpad.net/~ius-community'>Mailing list</a></li></div>
+      <div><li><a class='bottomlinks' href='https://answers.launchpad.net/ius'>Question & Answer</a></li></div>
+      <div><li><a class='bottomlinks' href='https://bugs.launchpad.net/ius'>Submit a Bug</a></li></div>
+      <div><li><a class='bottomlinks' href='mailto:coredev@iuscommunity.org'>coredev@iuscommunity.org</a></li></div>
+      <div><li><font color=grey>irc.freenode.net #iuscommunity</font></li></div>
+    </td>
+    
+    <td>
+      <p><a href='https://launchpad.net/ius'><img src="../_static/launchpad.png" /></a></p>
+      <p><a href='https://github.com/iuscommunity-pkg'><img src="../_static/github.png" /></a></p>
+    </td>
+    
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td><font color=grey size=2>Hosted by</font></td>
+    <td>
+      <a href="http://www.rackspacecloud.com">
+        <img src="../_static/rackspace_cloud.png" alt="Rackspace Cloud" />
+      </a>
+    </td>
+  </tr>
+</table>
+  
+</center>
+  </body>
+</html>
