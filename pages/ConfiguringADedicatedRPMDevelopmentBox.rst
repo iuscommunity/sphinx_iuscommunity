@@ -360,7 +360,7 @@ CentOS 5 x86_64 + Fedora EPEL 5 + IUS 5 repositories.
     
     [ius]
     name=ius
-    mirrorlist=http://dmirr.iuscommunity.org/mirrorlist/?repo=ius-el5&arch=$basearch
+    mirrorlist=https://mirrors.iuscommunity.org/mirrorlist?repo=ius-el5&arch=$basearch
     """
 
 A Sample Build with Mock

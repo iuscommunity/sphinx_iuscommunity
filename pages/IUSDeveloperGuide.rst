@@ -496,7 +496,7 @@ Copy the following to /etc/mock/ius-5-x86_64.cfg::
     
     [ius]
     name=ius
-    mirrorlist=http://dmirr.iuscommunity.org/mirrorlist?repo=ius-el5&arch=$basearch
+    mirrorlist=https://mirrors.iuscommunity.org/mirrorlist?repo=ius-el5&arch=$basearch
     """
 
 Building With Mock

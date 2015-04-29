@@ -33,7 +33,7 @@ Accessing our Yum Repositories
 ===============================
 
 Our official yum repository is available at https://dl.iuscommunity.org/pub/ius.
-Additional mirrors are available, and can be viewed `here <http://dmirr.iuscommunity.org/ius/>`_.
+Additional mirrors are available, and can be viewed `here <https://mirrors.iuscommunity.org/mirrors>`_.
 
 .. _Subscribing_to_the_IUS_Yum_Repository:
 
