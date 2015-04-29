@@ -1,7 +1,7 @@
 :tocdepth: 2
 
 .. _answers section: http://answers.launchpad.net/ius
-.. _testing repository: http://dl.iuscommunity.org/pub/ius/testing
+.. _testing repository: https://dl.iuscommunity.org/pub/ius/testing
 .. _bug tracking system: http://bugs.launchpad.net/ius
 .. _Fedora Koji: http://fedoraproject.org/wiki/Koji
 

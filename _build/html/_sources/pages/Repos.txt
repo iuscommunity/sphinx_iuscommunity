@@ -1,30 +1,30 @@
 :tocdepth: 2
 
-.. _testing: http://dl.iuscommunity.org/pub/ius/testing/
-.. _development: http://dl.iuscommunity.org/pub/ius/development/
-.. _archive: http://dl.iuscommunity.org/pub/ius/archive/
+.. _testing: https://dl.iuscommunity.org/pub/ius/testing/
+.. _development: https://dl.iuscommunity.org/pub/ius/development/
+.. _archive: https://dl.iuscommunity.org/pub/ius/archive/
 
-.. _RHEL 5 i386: http://dl.iuscommunity.org/pub/ius/stable/Redhat/5/i386/repoview/
-.. _RHEL 5 x86_64: http://dl.iuscommunity.org/pub/ius/stable/Redhat/5/x86_64/repoview/
-.. _RHEL 5 Source RPMS: http://dl.iuscommunity.org/pub/ius/stable/Redhat/5/SRPMS/repoview/
+.. _RHEL 5 i386: https://dl.iuscommunity.org/pub/ius/stable/Redhat/5/i386/repoview/
+.. _RHEL 5 x86_64: https://dl.iuscommunity.org/pub/ius/stable/Redhat/5/x86_64/repoview/
+.. _RHEL 5 Source RPMS: https://dl.iuscommunity.org/pub/ius/stable/Redhat/5/SRPMS/repoview/
 
-.. _CentOS 5 i386: http://dl.iuscommunity.org/pub/ius/stable/CentOS/5/i386/repoview/
-.. _CentOS 5 x86_64: http://dl.iuscommunity.org/pub/ius/stable/CentOS/5/x86_64/repoview/
-.. _CentOS 5 Source RPMS: http://dl.iuscommunity.org/pub/ius/stable/CentOS/5/SRPMS/repoview/
+.. _CentOS 5 i386: https://dl.iuscommunity.org/pub/ius/stable/CentOS/5/i386/repoview/
+.. _CentOS 5 x86_64: https://dl.iuscommunity.org/pub/ius/stable/CentOS/5/x86_64/repoview/
+.. _CentOS 5 Source RPMS: https://dl.iuscommunity.org/pub/ius/stable/CentOS/5/SRPMS/repoview/
 
-.. _RHEL 6 i386: http://dl.iuscommunity.org/pub/ius/stable/Redhat/6/i386/repoview/
-.. _RHEL 6 x86_64: http://dl.iuscommunity.org/pub/ius/stable/Redhat/6/x86_64/repoview/
-.. _RHEL 6 Source RPMS: http://dl.iuscommunity.org/pub/ius/stable/Redhat/6/SRPMS/repoview/
+.. _RHEL 6 i386: https://dl.iuscommunity.org/pub/ius/stable/Redhat/6/i386/repoview/
+.. _RHEL 6 x86_64: https://dl.iuscommunity.org/pub/ius/stable/Redhat/6/x86_64/repoview/
+.. _RHEL 6 Source RPMS: https://dl.iuscommunity.org/pub/ius/stable/Redhat/6/SRPMS/repoview/
 
-.. _CentOS 6 i386: http://dl.iuscommunity.org/pub/ius/stable/CentOS/6/i386/repoview/
-.. _CentOS 6 x86_64: http://dl.iuscommunity.org/pub/ius/stable/CentOS/6/x86_64/repoview/
-.. _CentOS 6 Source RPMS: http://dl.iuscommunity.org/pub/ius/stable/CentOS/6/SRPMS/repoview/
+.. _CentOS 6 i386: https://dl.iuscommunity.org/pub/ius/stable/CentOS/6/i386/repoview/
+.. _CentOS 6 x86_64: https://dl.iuscommunity.org/pub/ius/stable/CentOS/6/x86_64/repoview/
+.. _CentOS 6 Source RPMS: https://dl.iuscommunity.org/pub/ius/stable/CentOS/6/SRPMS/repoview/
 
-.. _RHEL 7 x86_64: http://dl.iuscommunity.org/pub/ius/stable/Redhat/7/x86_64/repoview/
-.. _RHEL 7 Source RPMS: http://dl.iuscommunity.org/pub/ius/stable/Redhat/7/SRPMS/repoview/
+.. _RHEL 7 x86_64: https://dl.iuscommunity.org/pub/ius/stable/Redhat/7/x86_64/repoview/
+.. _RHEL 7 Source RPMS: https://dl.iuscommunity.org/pub/ius/stable/Redhat/7/SRPMS/repoview/
 
-.. _CentOS 7 x86_64: http://dl.iuscommunity.org/pub/ius/stable/CentOS/7/x86_64/repoview/
-.. _CentOS 7 Source RPMS: http://dl.iuscommunity.org/pub/ius/stable/CentOS/7/SRPMS/repoview/
+.. _CentOS 7 x86_64: https://dl.iuscommunity.org/pub/ius/stable/CentOS/7/x86_64/repoview/
+.. _CentOS 7 Source RPMS: https://dl.iuscommunity.org/pub/ius/stable/CentOS/7/SRPMS/repoview/
 ============
 Repositories
 ============
@@ -78,25 +78,25 @@ The latest ius-release and epel-release can be found in the IUS Community
 repoview:
 
 **RHEL 5**:
- * http://dl.iuscommunity.org/pub/ius/stable/Redhat/5/x86_64/repoview/epel-release.html
- * http://dl.iuscommunity.org/pub/ius/stable/Redhat/5/x86_64/repoview/ius-release.html
+ * https://dl.iuscommunity.org/pub/ius/stable/Redhat/5/x86_64/repoview/epel-release.html
+ * https://dl.iuscommunity.org/pub/ius/stable/Redhat/5/x86_64/repoview/ius-release.html
 
 **CentOS 5**:
- * http://dl.iuscommunity.org/pub/ius/stable/CentOS/5/x86_64/repoview/epel-release.html
- * http://dl.iuscommunity.org/pub/ius/stable/CentOS/5/x86_64/repoview/ius-release.html
+ * https://dl.iuscommunity.org/pub/ius/stable/CentOS/5/x86_64/repoview/epel-release.html
+ * https://dl.iuscommunity.org/pub/ius/stable/CentOS/5/x86_64/repoview/ius-release.html
 
 **RHEL 6**:
- * http://dl.iuscommunity.org/pub/ius/stable/Redhat/6/x86_64/repoview/epel-release.html
- * http://dl.iuscommunity.org/pub/ius/stable/Redhat/6/x86_64/repoview/ius-release.html
+ * https://dl.iuscommunity.org/pub/ius/stable/Redhat/6/x86_64/repoview/epel-release.html
+ * https://dl.iuscommunity.org/pub/ius/stable/Redhat/6/x86_64/repoview/ius-release.html
 
 **CentOS 6**:
- * http://dl.iuscommunity.org/pub/ius/stable/CentOS/6/x86_64/repoview/epel-release.html
- * http://dl.iuscommunity.org/pub/ius/stable/CentOS/6/x86_64/repoview/ius-release.html
+ * https://dl.iuscommunity.org/pub/ius/stable/CentOS/6/x86_64/repoview/epel-release.html
+ * https://dl.iuscommunity.org/pub/ius/stable/CentOS/6/x86_64/repoview/ius-release.html
 
 **RHEL 7**:
- * http://dl.fedoraproject.org/pub/epel/7/x86_64/repoview/epel-release.html
- * http://dl.iuscommunity.org/pub/ius/stable/Redhat/7/x86_64/repoview/ius-release.html
+ * https://dl.fedoraproject.org/pub/epel/7/x86_64/repoview/epel-release.html
+ * https://dl.iuscommunity.org/pub/ius/stable/Redhat/7/x86_64/repoview/ius-release.html
 
 **CentOS 7**:
- * http://dl.fedoraproject.org/pub/epel/7/x86_64/repoview/epel-release.html
- * http://dl.iuscommunity.org/pub/ius/stable/CentOS/7/x86_64/repoview/ius-release.html
+ * https://dl.fedoraproject.org/pub/epel/7/x86_64/repoview/epel-release.html
+ * https://dl.iuscommunity.org/pub/ius/stable/CentOS/7/x86_64/repoview/ius-release.html

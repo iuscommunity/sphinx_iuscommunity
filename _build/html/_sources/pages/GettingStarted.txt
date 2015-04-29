@@ -1,6 +1,6 @@
 :tocdepth: 2
 
-.. _End User Agreement: http://dl.iuscommunity.org/pub/ius/IUS-COMMUNITY-EUA
+.. _End User Agreement: https://dl.iuscommunity.org/pub/ius/IUS-COMMUNITY-EUA
 .. _Launchpad IUS Bug #453543: http://bugs.launchpad.net/ius/+bug/453543
 .. _Launchpad: http://bugs.launchpad.net/ius
 .. _Yum Bug #296: http://web.archive.org/web/20120114083114/http://yum.baseurl.org/ticket/296
@@ -32,8 +32,8 @@ Bugs and Feature Requests can be submitted via our `Launchpad`_ tracking system.
 Accessing our Yum Repositories
 ===============================
 
-Our official yum repository is available at http://dl.iuscommunity.org/pub/ius.
-Additional mirrors are available, and can be viewed `here <http://dmirr.iuscommunity.org/ius/>`_.
+Our official yum repository is available at https://dl.iuscommunity.org/pub/ius.
+Additional mirrors are available, and can be viewed `here <https://mirrors.iuscommunity.org/mirrors>`_.
 
 .. _Subscribing_to_the_IUS_Yum_Repository:
 
