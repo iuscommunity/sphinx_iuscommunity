@@ -1,9 +1,9 @@
 :tocdepth: 2
 
-.. _Red Hat Enterprise Linux 5: http://dl.iuscommunity.org/pub/ius/stable/Redhat/5/x86_64/
-.. _RHEL 5 repoview: http://dl.iuscommunity.org/pub/ius/stable/Redhat/5/x86_64/repoview
-.. _Red Hat Enterprise Linux 6: http://dl.iuscommunity.org/pub/ius/stable/Redhat/6/x86_64/
-.. _RHEL 6 repoview: http://dl.iuscommunity.org/pub/ius/stable/Redhat/6/x86_64/repoview
+.. _Red Hat Enterprise Linux 5: https://dl.iuscommunity.org/pub/ius/stable/Redhat/5/x86_64/
+.. _RHEL 5 repoview: https://dl.iuscommunity.org/pub/ius/stable/Redhat/5/x86_64/repoview
+.. _Red Hat Enterprise Linux 6: https://dl.iuscommunity.org/pub/ius/stable/Redhat/6/x86_64/
+.. _RHEL 6 repoview: https://dl.iuscommunity.org/pub/ius/stable/Redhat/6/x86_64/repoview
 
 ==================
 Available Packages

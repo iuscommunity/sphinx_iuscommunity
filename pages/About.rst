@@ -1,7 +1,7 @@
 :tocdepth: 2
 
 .. _Rackspace Hosting: http://www.rackspace.com
-.. _End User Agreement: http://dl.iuscommunity.org/pub/ius/IUS-COMMUNITY-EUA
+.. _End User Agreement: https://dl.iuscommunity.org/pub/ius/IUS-COMMUNITY-EUA
 .. _mailing lists: http://launchpad.net/~ius-community
 .. _bug tracking system: http://bugs.launchpad.net/ius
 .. _IUS CoreDev Team: http://launchpad.net/~ius-coredev

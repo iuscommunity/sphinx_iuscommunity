@@ -1,7 +1,7 @@
 :tocdepth: 2
 
 .. _Fedora EPEL: https://fedoraproject.org/wiki/EPEL
-.. _IUS Community Repo: http://dl.iuscommunity.org/pub/ius
+.. _IUS Community Repo: https://dl.iuscommunity.org/pub/ius
 .. _LaunchPad IUS Bug #453543: https://bugs.launchpad.net/ius/+bug/453543
 .. _Yum Bug #296: http://web.archive.org/web/20120114083114/http://yum.baseurl.org/ticket/296
 .. _Red Hat Bug #529719: https://bugzilla.redhat.com/show_bug.cgi?id=529719
@@ -23,7 +23,7 @@ regarding IUS please see the :ref:`FAQs`.
 End User Agreement
 ==================
 
- * http://dl.iuscommunity.org/pub/ius/IUS-COMMUNITY-EUA
+ * https://dl.iuscommunity.org/pub/ius/IUS-COMMUNITY-EUA
 
 .. _Information_on_IUS_Packages:
 
@@ -103,14 +103,14 @@ Client configuration can be automatically setup by installing the ius-release
 package, which also requires the epel-release package. Both packages can be
 found within the respective repo for your OS:
 
- * http://dl.iuscommunity.org/pub/ius/stable
+ * https://dl.iuscommunity.org/pub/ius/stable
 
 The following is an example, please note you may need to adjust the URLs for
 your system::
 
-    root@linuxbox ~]# wget http://dl.iuscommunity.org/pub/ius/stable/Redhat/5/x86_64/ius-release-1-2.ius.el5.noarch.rpm
+    root@linuxbox ~]# wget https://dl.iuscommunity.org/pub/ius/stable/Redhat/5/x86_64/ius-release-1-2.ius.el5.noarch.rpm
 
-    root@linuxbox ~]# wget http://dl.iuscommunity.org/pub/ius/stable/Redhat/5/x86_64/epel-release-1-1.ius.el5.noarch.rpm
+    root@linuxbox ~]# wget https://dl.iuscommunity.org/pub/ius/stable/Redhat/5/x86_64/epel-release-1-1.ius.el5.noarch.rpm
 
     root@linuxbox ~]# rpm -Uvh ius-release*.rpm epel-release*.rpm
 
