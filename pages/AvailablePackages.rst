@@ -6,6 +6,12 @@
 .. _RHEL 6 repoview: https://dl.iuscommunity.org/pub/ius/stable/Redhat/6/x86_64/repoview
 .. _Red Hat Enterprise Linux 7: https://dl.iuscommunity.org/pub/ius/stable/Redhat/7/x86_64/
 .. _RHEL 7 repoview: https://dl.iuscommunity.org/pub/ius/stable/Redhat/7/x86_64/repoview
+.. _CentOS 5: https://dl.iuscommunity.org/pub/ius/stable/CentOS/5/x86_64/
+.. _CentOS 5 repoview: https://dl.iuscommunity.org/pub/ius/stable/CentOS/5/x86_64/repoview
+.. _CentOS 6: https://dl.iuscommunity.org/pub/ius/stable/CentOS/6/x86_64/
+.. _CentOS 6 repoview: https://dl.iuscommunity.org/pub/ius/stable/CentOS/6/x86_64/repoview
+.. _CentOS 7: https://dl.iuscommunity.org/pub/ius/stable/CentOS/7/x86_64/
+.. _CentOS 7 repoview: https://dl.iuscommunity.org/pub/ius/stable/CentOS/7/x86_64/repoview
 
 ==================
 Available Packages
@@ -30,3 +36,9 @@ repoview for each distro to view packages:
 * `Red Hat Enterprise Linux 6`_  (`RHEL 6 repoview`_)
 
 * `Red Hat Enterprise Linux 7`_  (`RHEL 7 repoview`_)
+
+* `CentOS 5`_  (`CentOS 5 repoview`_)
+
+* `CentOS 6`_  (`CentOS 6 repoview`_)
+
+* `CentOS 7`_  (`CentOS 7 repoview`_)
