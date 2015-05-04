@@ -41,7 +41,7 @@ CentOS Packages in IUS Community Repositories
 
 *Jeffrey Ness* @ *March 25th 2013*
 
-With the addition of libjpeg-turb by Redhat `RHEA-2013:0422`_ and the fact
+With the addition of libjpeg-turbo by Redhat `RHEA-2013:0422`_ and the fact
 that `CentOS`_ is not always inline with the current Redhat release,
 IUS Community has decided to build CentOS packages along side the existing
 Redhat Enterprise Linux packages.
