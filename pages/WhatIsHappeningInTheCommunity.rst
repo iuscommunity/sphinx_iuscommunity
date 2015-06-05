@@ -14,28 +14,6 @@ on this page from time to time.
 .. contents::
     :backlinks: none
 
-RaspberryPi Packaging
-=====================
-
-*Jeffrey Ness* @ *April 1st 2013*
-
-.. image:: ../../_static/raspi.jpg
-
-The IUS Community is happy to announce we've just received our new
-infrastructure, and are preparing to begin packaging Enterprise Linux packages
-for the `RaspberryPi`_ platform.
-
-I know what you may be thinking, who uses `RaspberryPi`_ as a hardware platform
-for Enterprise Linux? Well we at the IUS Community believe this miniature
-hardware may be the future of running large scale applications.
-
-SD cards now days are upwards to tens if not hundreds of megabytes,
-once Enterprise Linux is loaded this will leave you multiple megabytes to
-store your databases and applications.
-
-Stay tuned for more information on this miniature news!
-
-
 CentOS Packages in IUS Community Repositories
 =============================================
 
