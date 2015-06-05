@@ -69,7 +69,9 @@ Releases
 
 * IUS packages are updated in line with the upstream software project.  This
   means that once upstream releases a new version, we will begin building RPMs
-  as soon as possible.
+  as soon as possible.  It also means that once software is declared "End of
+  Life" (EOL) by the upstream project, we remove it from our stable
+  repositories.
 * The SCL `Product Life Cycle`_ states that new packages will be released
   every 18 months.  These release are snapshots with backported security fixes,
   and are supported for a period of three years.
