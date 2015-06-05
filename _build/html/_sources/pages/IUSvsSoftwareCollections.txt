@@ -5,6 +5,8 @@
 .. _Filesystem Hierarchy Standard: http://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard
 .. _Product Life Cycle: https://access.redhat.com/support/policy/updates/rhscl/
 .. _RHEL 5 MySQL 5.5 migration guide: https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/5/html/Deployment_Guide/ch-Migrating_from_MySQL_5.0_to_MySQL_5.5.html
+.. _softwarecollections.org: https://www.softwarecollections.org
+.. _mailing list post: https://www.redhat.com/archives/sclorg/2014-November/msg00005.html
 
 ============================
 IUS vs. Software Collections
@@ -69,10 +71,15 @@ Releases
 
 * IUS packages are updated in line with the upstream software project.  This
   means that once upstream releases a new version, we will begin building RPMs
-  as soon as possible.
-* The SCL `Product Life Cycle`_ states that new packages will be released
-  every 18 months.  These release are snapshots with backported security fixes,
-  and are supported for a period of three years.
+  as soon as possible.  It also means that once software is declared "End of
+  Life" (EOL) by the upstream project, we remove it from our stable
+  repositories.
+* The `Product Life Cycle`_ for Red Hat Software Collections (RHSCL) states
+  that "Production Collections" are supported with security updates for three
+  years.  Major updates are grouped together and released as a new collection.
+* Software Collections from `softwarecollections.org`_ are community driven and have no
+  guarantees.  Please see this `mailing list post`_.
+
 
 FAQ
 ===
