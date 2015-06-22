@@ -44,9 +44,9 @@ Types of Packages
 File Locations
 ==============
 
-* Files from IUS packages are installed to standard `Filesystem Hierarchy
-  Standard`_ locations (/usr/bin, /usr/lib, etc).
-* Files from SCL packages are installed under /opt.
+* Files from IUS packages are installed to similar locations as stock packages,
+  such as /usr/bin, /usr/lib, /etc, /var, and so on.
+* Files from SCL packages are installed under /opt, /etc/opt, and /var/opt.
 
 Usage
 =====
