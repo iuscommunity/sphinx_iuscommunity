@@ -1,5 +1,7 @@
 :tocdepth: 2
 
+.. _ius.io: https://ius.io
+.. _sphinx_iuscommunity Github repo: https://github.com/iuscommunity/sphinx_iuscommunity
 .. _Red Hat Enterprise Linux 5: https://dl.iuscommunity.org/pub/ius/stable/Redhat/5/x86_64/
 .. _RHEL 5 repoview: https://dl.iuscommunity.org/pub/ius/stable/Redhat/5/x86_64/repoview
 .. _Red Hat Enterprise Linux 6: https://dl.iuscommunity.org/pub/ius/stable/Redhat/6/x86_64/
@@ -16,6 +18,11 @@
 ==================
 Available Packages
 ==================
+
+.. note:: As of September 24, 2015, `ius.io`_ has replaced this website.  This
+          site will stay up for about 30 days for archive purposes then redirect to
+          the new site.  The old site code be still be available at the
+          `sphinx_iuscommunity Github repo`_.
 
 .. contents::
     :backlinks: none
