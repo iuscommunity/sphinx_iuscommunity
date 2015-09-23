@@ -57,7 +57,7 @@
 </style>
 
   </head>
-  <body>
+  <body role="document">
 <table width=100% cellpadding=0
   <tr>
     <td>
@@ -90,7 +90,7 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="managing-updates">
 <span id="id1"></span><h1>Managing Updates<a class="headerlink" href="#managing-updates" title="Permalink to this headline">¶</a></h1>
@@ -132,7 +132,7 @@ at the upstream devs and let them know what the business is).</li>
 <div class="section" id="back-up-porting-from-rhel-and-fedora">
 <h3>Back-Up-Porting from RHEL and Fedora<a class="headerlink" href="#back-up-porting-from-rhel-and-fedora" title="Permalink to this headline">¶</a></h3>
 <p>It is very common that backports to RHEL packages and updates in the current
-version of Fedora might apply IUS packages. We call this <a class="reference internal" href="Vocabulary.html#back-up-porting"><em>back-up-porting</em></a>.
+version of Fedora might apply IUS packages. We call this <a class="reference internal" href="Vocabulary.html#back-up-porting"><span>back-up-porting</span></a>.
 This is sometimes required to get security fixes applied before the next upstream
 stable source release. Doing so takes a more intimate knowledge of the source of
 your package and should not be done without caution and thorough testing.</p>
@@ -162,14 +162,16 @@ making it to stable.</p>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="../_sources/pages/ManagingUpdates.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/pages/ManagingUpdates.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
       <input type="text" name="q" />

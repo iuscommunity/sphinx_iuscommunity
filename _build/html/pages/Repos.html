@@ -57,7 +57,7 @@
 </style>
 
   </head>
-  <body>
+  <body role="document">
 <table width=100% cellpadding=0
   <tr>
     <td>
@@ -90,7 +90,7 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="repositories">
 <h1>Repositories<a class="headerlink" href="#repositories" title="Permalink to this headline">¶</a></h1>
@@ -124,7 +124,7 @@
 <p>Packages can be downloaded directly, however it is recommended to set up
 your Yum client configurations to point to our repositories and install via yum.
 We have a package called &#8216;ius-release&#8217; that does all this for you.
-See the <a class="reference internal" href="GettingStarted.html#gettingstarted"><em>Getting Started</em></a> page.</p>
+See the <a class="reference internal" href="GettingStarted.html#gettingstarted"><span>Getting Started</span></a> page.</p>
 <p>Please note that we are still just getting started, and will be adding more
 repositories in the future.</p>
 </div>
@@ -177,14 +177,16 @@ repoview:</p>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="../_sources/pages/Repos.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/pages/Repos.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
       <input type="text" name="q" />

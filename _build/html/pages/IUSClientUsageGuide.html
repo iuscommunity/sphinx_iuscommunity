@@ -57,7 +57,7 @@
 </style>
 
   </head>
-  <body>
+  <body role="document">
 <table width=100% cellpadding=0
   <tr>
     <td>
@@ -90,7 +90,7 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="ius-client-usage-guide">
 <h1>IUS Client Usage Guide<a class="headerlink" href="#ius-client-usage-guide" title="Permalink to this headline">¶</a></h1>
@@ -123,7 +123,7 @@
 <div class="section" id="summary">
 <h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
 <p>This document outlines the basic client side usage of IUS. For common questions
-regarding IUS please see the <a class="reference internal" href="FAQs.html#faqs"><em>FAQs</em></a>.</p>
+regarding IUS please see the <a class="reference internal" href="FAQs.html#faqs"><span>FAQs</span></a>.</p>
 </div>
 <div class="section" id="end-user-agreement">
 <h2>End User Agreement<a class="headerlink" href="#end-user-agreement" title="Permalink to this headline">¶</a></h2>
@@ -298,7 +298,7 @@ python26-tools.i386                    2.6-4.5.ius.el5        ius-testing
 <p>The replace plugin was written specifically for IUS to assist in upgrading from
 stock packages to IUS packageXY style packages.</p>
 <p>If for some reason these processes and the yum-plugin-replace do not work
-correctly, you can also try <a class="reference internal" href="UpgradingTheOldWay.html#upgradingtheoldway"><em>Upgrading the Old Way</em></a>.</p>
+correctly, you can also try <a class="reference internal" href="UpgradingTheOldWay.html#upgradingtheoldway"><span>Upgrading the Old Way</span></a>.</p>
 <p>Using &#8216;php&#8217; as an example, we are going to show how to upgrade from stock RHEL
 packages to the IUS counterparts:</p>
 <div class="highlight-python"><div class="highlight"><pre>[root@linuxbox ~]# rpm -qa | grep php
@@ -691,14 +691,16 @@ stock version of yum in RHEL 5.5/6.0:</p>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="../_sources/pages/IUSClientUsageGuide.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/pages/IUSClientUsageGuide.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
       <input type="text" name="q" />

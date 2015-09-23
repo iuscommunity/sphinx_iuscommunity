@@ -57,7 +57,7 @@
 </style>
 
   </head>
-  <body>
+  <body role="document">
 <table width=100% cellpadding=0
   <tr>
     <td>
@@ -90,7 +90,7 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="ius-developer-guide">
 <span id="iusdeveloperguide"></span><h1>IUS Developer Guide<a class="headerlink" href="#ius-developer-guide" title="Permalink to this headline">¶</a></h1>
@@ -148,7 +148,7 @@
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p>This article outlines the basics of RPM packaging guidelines for IUS. It is a
 work in progress. If you need help on how to configure a local build system see
-<a class="reference internal" href="ConfiguringADedicatedRPMDevelopmentBox.html#configuring-a-dedicated-rpm-development-box"><em>Configuring a Dedicated RPM Development Box</em></a>.</p>
+<a class="reference internal" href="ConfiguringADedicatedRPMDevelopmentBox.html#configuring-a-dedicated-rpm-development-box"><span>Configuring a Dedicated RPM Development Box</span></a>.</p>
 </div>
 <div class="section" id="package-guidelines">
 <h2>Package Guidelines<a class="headerlink" href="#package-guidelines" title="Permalink to this headline">¶</a></h2>
@@ -246,7 +246,7 @@ when subscribing to the repo.</li>
 <div class="section" id="ius-packages-provide-conflict-never-obsolete">
 <h3>IUS Packages Provide/Conflict - Never Obsolete<a class="headerlink" href="#ius-packages-provide-conflict-never-obsolete" title="Permalink to this headline">¶</a></h3>
 <p>Packages in the IUS repository never obsolete a RHEL package directly. Meaning,
-if I subscribe to an IUS repo nothing will update automatically. See <a class="reference internal" href="TheSafeRepoInitiative.html#the-saferepo-initiative"><em>The SafeRepo Initiative</em></a> for more on this. However, I can remove a RHEL package and
+if I subscribe to an IUS repo nothing will update automatically. See <a class="reference internal" href="TheSafeRepoInitiative.html#the-saferepo-initiative"><span>The SafeRepo Initiative</span></a> for more on this. However, I can remove a RHEL package and
 replace it with an IUS package that provides the same package. This is
 accomplished through a few steps that need to be added to the spec file of the
 IUS package.</p>
@@ -319,7 +319,7 @@ who want to help with packaging bug might not have any packages in mind.</p>
 </div>
 <div class="section" id="managing-updates">
 <span id="id3"></span><h2>Managing Updates<a class="headerlink" href="#managing-updates" title="Permalink to this headline">¶</a></h2>
-<p>See <a class="reference internal" href="ManagingUpdates.html#managing-updates"><em>Managing Updates</em></a>.</p>
+<p>See <a class="reference internal" href="ManagingUpdates.html#managing-updates"><span>Managing Updates</span></a>.</p>
 </div>
 <div class="section" id="converting-existing-packages-for-ius">
 <h2>Converting Existing Packages For IUS<a class="headerlink" href="#converting-existing-packages-for-ius" title="Permalink to this headline">¶</a></h2>
@@ -617,14 +617,16 @@ you@linux buildroot]$ mock -r ius-5-x86_64 rebuild SRPMS/mypackage-0.1-1.ius.src
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="../_sources/pages/IUSDeveloperGuide.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/pages/IUSDeveloperGuide.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
       <input type="text" name="q" />
