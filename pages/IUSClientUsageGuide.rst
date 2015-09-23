@@ -1,5 +1,7 @@
 :tocdepth: 2
 
+.. _ius.io: https://ius.io
+.. _sphinx_iuscommunity Github repo: https://github.com/iuscommunity/sphinx_iuscommunity
 .. _Fedora EPEL: https://fedoraproject.org/wiki/EPEL
 .. _IUS Community Repo: https://dl.iuscommunity.org/pub/ius
 .. _LaunchPad IUS Bug #453543: https://bugs.launchpad.net/ius/+bug/453543
@@ -10,6 +12,11 @@
 ======================
 IUS Client Usage Guide
 ======================
+
+.. note:: As of September 24, 2015, `ius.io`_ has replaced this website.  This
+          site will stay up for about 30 days for archive purposes then redirect to
+          the new site.  The old site code be still be available at the
+          `sphinx_iuscommunity Github repo`_.
 
 .. contents::
     :backlinks: none
