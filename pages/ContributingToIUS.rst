@@ -1,5 +1,7 @@
 :tocdepth: 2
 
+.. _ius.io: https://ius.io
+.. _sphinx_iuscommunity Github repo: https://github.com/iuscommunity/sphinx_iuscommunity
 .. _IUS Community Team: http://launchpad.net/~ius-community
 .. _bug tracking system: http://bugs.launchpad.net/ius                  
 .. _IUS CoreDev Team: http://launchpad.net/~ius-coredev
@@ -10,6 +12,11 @@
 ===================
 Contributing to IUS
 ===================
+
+.. note:: As of September 24, 2015, `ius.io`_ has replaced this website.  This
+          site will stay up for about 30 days for archive purposes then redirect to
+          the new site.  The old site code be still be available at the
+          `sphinx_iuscommunity Github repo`_.
 
 .. contents::
     :backlinks: none
