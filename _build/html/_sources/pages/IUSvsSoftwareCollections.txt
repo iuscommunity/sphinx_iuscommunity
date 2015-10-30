@@ -16,7 +16,7 @@ IUS vs. Software Collections
 
 .. note:: As of September 24, 2015, `ius.io`_ has replaced this website.  This
           site will stay up for about 30 days for archive purposes then redirect to
-          the new site.  The old site code be still be available at the
+          the new site.  The old site code will remain available at the
           `sphinx_iuscommunity Github repo`_.
 
 .. contents::
